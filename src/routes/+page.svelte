@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 	import Barcode from '../components/Barcode.svelte';
 	import Triangles from '../components/Triangles.svelte';
+	import Demonstration from '../components/Demonstration.svelte';
 
 	export let data;
 
@@ -22,5 +23,6 @@
 
 <svelte:window on:resize={resize} />
 
-<Barcode {screenWidth} {screenHeight} {artists} />
+<!-- <Barcode {screenWidth} {screenHeight} {artists} /> -->
+<Demonstration {screenWidth} {screenHeight} {artists} />
 <Triangles {screenWidth} {screenHeight} {artists} />
