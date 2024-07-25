@@ -2,6 +2,9 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 	import { draw } from 'svelte/transition';
+	import { tweened } from 'svelte/motion';
+	import { linear as easing } from 'svelte/easing';
+	import { interpolateString } from 'd3-interpolate';
 
 	import Scrolly from './Scrolly.svelte';
 
@@ -11,12 +14,19 @@
 
 	let currentStep = 0;
 	let stepWidth = 300;
-	let linePath;
+	let activePath = 'M 0 0 l 0 0 v 0';
 
-	const demoArtist = artists[37];
-	const demoDebutAlbumDaysSinceRelease = demoArtist.albums[1].days_since_first_release;
+	let demoArtist = artists[37];
+	let demoDebutAlbumDaysSinceRelease = demoArtist.albums[1].days_since_first_release;
 
-	let maxViewBox = 0.5 * demoDebutAlbumDaysSinceRelease;
+	let linePath = tweened(null, {
+		interpolate: interpolateString,
+		duration: 1000,
+		easing
+	});
+
+	$: linePath.set(activePath);
+	$: console.log($linePath);
 
 	const steps = [
 		// 0
@@ -27,45 +37,34 @@
 
 	let scale = scaleLinear().domain([0, demoDebutAlbumDaysSinceRelease]).range([0, 11.5]);
 
-	console.log(demoDebutAlbumDaysSinceRelease);
-
 	$: {
-		if (currentStep == 0) {
+		if (currentStep === 0) {
 			setDebutAlbum();
-			maxViewBox = 0.5 * demoDebutAlbumDaysSinceRelease;
-		} else if (currentStep == 1) {
+		} else if (currentStep === 1) {
 			setSecondAlbum();
-			maxViewBox = 1.25 * demoDebutAlbumDaysSinceRelease;
 		}
 	}
 
 	const setDebutAlbum = function () {
-		linePath = `M 0 0`;
+		activePath = 'M 0 0 l 0 0 v 0';
+		linePath.set(activePath); // Update the linePath tweened store
 	};
 
 	const setSecondAlbum = function () {
-		linePath = `M 0 0 l ${scale(demoDebutAlbumDaysSinceRelease)} ${scale(demoDebutAlbumDaysSinceRelease)} v-${scale(demoDebutAlbumDaysSinceRelease)}`;
+		activePath = `M 0 0 l ${scale(demoDebutAlbumDaysSinceRelease)} ${scale(demoDebutAlbumDaysSinceRelease)} v-${scale(demoDebutAlbumDaysSinceRelease)}`;
+		linePath.set(activePath); // Update the linePath tweened store
 	};
-
-	const max = 12;
-	let show = true;
 </script>
 
 <div class="scroller">
 	<div class="plot">
-		{#if currentStep == 1}
-			<svg width={200} height={200} viewBox="0 0 12 12">
-				<g transform="translate(0 12) scale(1 -1)">
-					<path
-						transition:draw={{ duration: 1500 }}
-						d={linePath}
-						fill="none"
-						stroke="red"
-						stroke-width="0.1px"
-					/>
-				</g>
-			</svg>
-		{/if}
+		<svg width={200} height={200} viewBox="0 0 12 12">
+			<g transform="translate(0 12) scale(1 -1)">
+				{#if $linePath != null}
+					<path d={$linePath} fill="none" stroke="red" stroke-width="0.1px" />
+				{/if}
+			</g>
+		</svg>
 	</div>
 
 	<div class="steps-wrapper">
