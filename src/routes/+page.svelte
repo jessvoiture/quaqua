@@ -25,4 +25,4 @@
 
 <!-- <Barcode {screenWidth} {screenHeight} {artists} /> -->
 <Demonstration {screenWidth} {screenHeight} {artists} />
-<Triangles {screenWidth} {screenHeight} {artists} />
+<!-- <Triangles {screenWidth} {screenHeight} {artists} /> -->
