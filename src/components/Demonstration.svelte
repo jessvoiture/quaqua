@@ -10,37 +10,33 @@
 	export let screenHeight;
 	export let screenWidth;
 
-	// get adele's disco
-	const demoArtist = artists.filter((a) => a.artist === 'Adele')[0];
+	// Get Rihanna's discography
+	const demoArtist = artists.filter((a) => a.artist === 'Rihanna')[0];
 
 	const steps = [
-		// 0
 		`<p>step 0: show nothing</p>`,
-		// 1
 		'<p>step 2: show debut to second</p>',
-		// 2
 		'<p>step 3: show TWO LINES</p>',
-		// 3
 		'<p>step 4: show THREE LINES</p>'
 	];
 
 	let width;
 	let height;
-	let maxGapDays;
-	let viewboxWidth = tweened(10, { easing: quintOut, duration: 600 });
-	let viewboxHeight = tweened(10, { easing: quintOut, duration: 600 });
 
-	let currentStep = 0;
-	let stepWidth = 300;
-	let albumsShowing = demoArtist.albums.slice(0, 1);
 	let firstLLine;
 	let firstVLine;
 	let secondLLine;
 	let secondVLine;
 	let thirdLine;
 
-	$: width = 0.5 * screenWidth;
-	$: height = 0.5 * screenHeight;
+	let viewboxWidth = tweened(10, { easing: quintOut, duration: 600 });
+	let viewboxHeight = tweened(10, { easing: quintOut, duration: 600 });
+	let currentStep = 0;
+	let stepWidth = 300;
+	let albumsShowing = demoArtist.albums.slice(0, 1);
+
+	$: width = 0.8 * screenWidth;
+	$: height = 0.8 * screenHeight;
 
 	$: {
 		if (currentStep === 0) {
@@ -66,15 +62,11 @@
 	function setStep1() {
 		albumsShowing = demoArtist.albums.slice(0, 2);
 
-		const maxGapDays = albumsShowing.reduce(
-			(max, obj) => (obj.days_since_last_release > max ? obj.days_since_last_release : max),
-			-Infinity
-		);
-
+		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
 		const daysSinceDebut = albumsShowing[1].days_since_first_release;
 		const daysSinceLastRelease = albumsShowing[1].days_since_last_release;
 
-		viewboxWidth.set(daysSinceDebut);
+		viewboxWidth.set(daysSinceDebut + 3);
 		viewboxHeight.set(maxGapDays);
 
 		firstLLine = `M 0 0 l ${daysSinceDebut} ${daysSinceLastRelease}`;
@@ -84,11 +76,7 @@
 	function setStep2() {
 		albumsShowing = demoArtist.albums.slice(0, 3);
 
-		const maxGapDays = albumsShowing.reduce(
-			(max, obj) => (obj.days_since_last_release > max ? obj.days_since_last_release : max),
-			-Infinity
-		);
-
+		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
 		const daysSinceDebut = albumsShowing[2].days_since_first_release;
 		const daysSinceLastRelease = albumsShowing[2].days_since_last_release;
 
@@ -102,20 +90,32 @@
 
 	function setStep3() {
 		albumsShowing = demoArtist.albums;
+		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
+		const daysSinceDebut = albumsShowing[albumsShowing.length - 1].days_since_first_release;
 
-		const maxGapDays = albumsShowing.reduce(
-			(max, obj) => (obj.days_since_last_release > max ? obj.days_since_last_release : max),
-			-Infinity
-		);
-
-		const daysSinceDebut = albumsShowing[3].days_since_first_release;
-
-		viewboxWidth.set(daysSinceDebut + 3);
+		viewboxWidth.set(daysSinceDebut + 3, { duration: 1200 });
 		viewboxHeight.set(maxGapDays);
 
-		thirdLine = `M ${albumsShowing[2].days_since_first_release} 0 
-					l ${daysSinceDebut - albumsShowing[2].days_since_first_release} ${albumsShowing[3].days_since_last_release}
-					V 0`;
+		thirdLine = generatePath(albumsShowing);
+	}
+
+	function generatePath(albums) {
+		if (albums.length < 2) return '';
+
+		let path = `M ${albums[2].days_since_first_release} 0`;
+
+		for (let i = 3; i < albums.length; i++) {
+			const prevAlbum = albums[i - 1];
+			const currentAlbum = albums[i];
+
+			const x1 = prevAlbum.days_since_first_release;
+			const y1 = prevAlbum.days_since_last_release;
+			const x2 = currentAlbum.days_since_first_release;
+			const y2 = currentAlbum.days_since_last_release;
+
+			path += ` l ${x2 - x1} ${y2} V 0`;
+		}
+		return path;
 	}
 </script>
 
@@ -123,18 +123,35 @@
 	<div class="plot">
 		<svg {width} {height} viewBox="0 0 {$viewboxWidth} {$viewboxHeight}">
 			<g>
+				<!-- {#if currentStep >= 0}{/if} -->
+
 				{#if currentStep >= 1}
-					<DrawPath path={firstLLine} id="first-l-line" delayDur={0} />
-					<DrawPath path={firstVLine} id="first-v-line" delayDur={1600} />
+					<DrawPath path={firstLLine} id="first-l-line" delayDur={0} dur={1500} />
+					<DrawPath path={firstVLine} id="first-v-line" delayDur={1600} dur={1500} />
+
+					{#each albumsShowing as a}
+						<circle
+							transition:fade={{ delay: 3000 }}
+							cx={a.days_since_first_release}
+							cy="0"
+							r="5"
+							fill="red"
+						/>
+					{/each}
 				{/if}
 
 				{#if currentStep >= 2}
-					<DrawPath path={secondLLine} id="second-l-line" delayDur={0} />
-					<DrawPath path={secondVLine} id="second-v-line" delayDur={1600} />
+					<DrawPath path={secondLLine} id="second-l-line" delayDur={0} dur={1500} />
+					<DrawPath path={secondVLine} id="second-v-line" delayDur={1600} dur={1500} />
 				{/if}
 
 				{#if currentStep >= 3}
-					<DrawPath path={thirdLine} id="third-line" delayDur={0} />
+					<DrawPath
+						path={thirdLine}
+						id="third-line"
+						delayDur={0}
+						dur={albumsShowing.length * 800}
+					/>
 				{/if}
 			</g>
 		</svg>
