@@ -8,7 +8,8 @@
 </script>
 
 <path
-	transition:draw={{ duration: dur, delay: delayDur }}
+	in:draw={{ duration: dur, delay: delayDur }}
+	out:fade
 	class="line"
 	{id}
 	d={path}

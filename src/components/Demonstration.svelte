@@ -11,7 +11,7 @@
 	export let screenWidth;
 
 	// Get Rihanna's discography
-	const demoArtist = artists.filter((a) => a.artist === 'Rihanna')[0];
+	const demoArtist = artists.find((a) => a.artist === 'Rihanna');
 
 	const steps = [
 		`<p>step 0: show nothing</p>`,
@@ -29,11 +29,15 @@
 	let secondVLine;
 	let thirdLine;
 
-	let viewboxWidth = tweened(10, { easing: quintOut, duration: 600 });
-	let viewboxHeight = tweened(10, { easing: quintOut, duration: 600 });
+	let viewboxStartingWidth = 50;
+	let viewboxStartingHeight = 50;
 	let currentStep = 0;
 	let stepWidth = 300;
+	let viewboxWidth = tweened(viewboxStartingWidth, { easing: quintOut, duration: 600 });
+	let viewboxHeight = tweened(viewboxStartingHeight, { easing: quintOut, duration: 600 });
 	let albumsShowing = demoArtist.albums.slice(0, 1);
+	let debutAlbumX = tweened(viewboxStartingWidth / 2, { easing: quintOut, duration: 600 });
+	let debutAlbumY = tweened(viewboxStartingHeight / 2, { easing: quintOut, duration: 600 });
 
 	$: width = 0.8 * screenWidth;
 	$: height = 0.8 * screenHeight;
@@ -53,8 +57,10 @@
 	function setStep0() {
 		albumsShowing = demoArtist.albums.slice(0, 1);
 
-		viewboxWidth.set(albumsShowing[0].days_since_first_release);
-		viewboxHeight.set(albumsShowing[0].days_since_last_release);
+		viewboxWidth.set(viewboxStartingWidth);
+		viewboxHeight.set(viewboxStartingHeight);
+		debutAlbumX.set(viewboxStartingWidth / 2);
+		debutAlbumY.set(viewboxStartingHeight / 2);
 
 		firstLLine = `M 0 0`;
 	}
@@ -68,6 +74,8 @@
 
 		viewboxWidth.set(daysSinceDebut + 3);
 		viewboxHeight.set(maxGapDays);
+		debutAlbumX.set(0);
+		debutAlbumY.set(0);
 
 		firstLLine = `M 0 0 l ${daysSinceDebut} ${daysSinceLastRelease}`;
 		firstVLine = `M ${daysSinceDebut} ${daysSinceLastRelease} V 0`;
@@ -123,13 +131,15 @@
 	<div class="plot">
 		<svg {width} {height} viewBox="0 0 {$viewboxWidth} {$viewboxHeight}">
 			<g>
-				<!-- {#if currentStep >= 0}{/if} -->
+				{#if currentStep >= 0}
+					<circle transition:fade cx={$debutAlbumX} cy={$debutAlbumY} r="5" />
+				{/if}
 
 				{#if currentStep >= 1}
 					<DrawPath path={firstLLine} id="first-l-line" delayDur={0} dur={1500} />
 					<DrawPath path={firstVLine} id="first-v-line" delayDur={1600} dur={1500} />
 
-					{#each albumsShowing as a}
+					{#each albumsShowing.slice(1) as a}
 						<circle
 							transition:fade={{ delay: 3000 }}
 							cx={a.days_since_first_release}
