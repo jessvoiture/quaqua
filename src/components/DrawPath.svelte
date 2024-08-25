@@ -15,6 +15,6 @@
 	d={path}
 	fill="none"
 	stroke="red"
-	stroke-width="3px"
-	stroke-linecap="butt"
+	stroke-width="1.5px"
+	stroke-linecap="round"
 />

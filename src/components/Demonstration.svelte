@@ -29,15 +29,23 @@
 	let secondVLine;
 	let thirdLine;
 
-	let viewboxStartingWidth = 50;
-	let viewboxStartingHeight = 50;
-	let currentStep = 0;
-	let stepWidth = 300;
+	let viewBoxPadding = 60;
+	let viewboxStartingWidth = 30;
+	let viewboxStartingHeight = 30;
 	let viewboxWidth = tweened(viewboxStartingWidth, { easing: quintOut, duration: 600 });
 	let viewboxHeight = tweened(viewboxStartingHeight, { easing: quintOut, duration: 600 });
+	let currentStep = 0;
+	let stepWidth = 300;
 	let albumsShowing = demoArtist.albums.slice(0, 1);
-	let debutAlbumX = tweened(viewboxStartingWidth / 2, { easing: quintOut, duration: 600 });
-	let debutAlbumY = tweened(viewboxStartingHeight / 2, { easing: quintOut, duration: 600 });
+	let debutAlbumX = tweened(viewboxStartingWidth / 2, {
+		easing: quintOut,
+		duration: 600
+	});
+
+	let debutAlbumY = tweened(viewboxStartingHeight / 2, {
+		easing: quintOut,
+		duration: 600
+	});
 
 	$: width = 0.8 * screenWidth;
 	$: height = 0.8 * screenHeight;
@@ -129,10 +137,23 @@
 
 <div class="scroller">
 	<div class="plot">
-		<svg {width} {height} viewBox="0 0 {$viewboxWidth} {$viewboxHeight}">
+		<svg
+			{width}
+			{height}
+			viewBox="-{viewBoxPadding} -{viewBoxPadding} {$viewboxWidth +
+				2 * viewBoxPadding} {$viewboxHeight + 2 * viewBoxPadding}"
+		>
 			<g>
 				{#if currentStep >= 0}
-					<circle transition:fade cx={$debutAlbumX} cy={$debutAlbumY} r="5" />
+					<circle transition:fade cx={$debutAlbumX} cy={$debutAlbumY} r="5" fill="red" />
+					<text
+						x={$debutAlbumX}
+						y={$debutAlbumY - 15}
+						fill="black"
+						text-anchor="middle"
+						font-size="12px"
+						>{albumsShowing[0].album}
+					</text>
 				{/if}
 
 				{#if currentStep >= 1}
@@ -147,6 +168,14 @@
 							r="5"
 							fill="red"
 						/>
+						<text
+							x={a.days_since_first_release}
+							y={-15}
+							fill="black"
+							text-anchor="middle"
+							font-size="12px"
+							>{a.album}
+						</text>
 					{/each}
 				{/if}
 
@@ -191,5 +220,13 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	text {
+		font-size: 16px;
+	}
+
+	svg {
+		overflow: visible;
 	}
 </style>

@@ -23,6 +23,6 @@
 
 <svelte:window on:resize={resize} />
 
-<!-- <Barcode {screenWidth} {screenHeight} {artists} /> -->
+<Barcode {screenWidth} {screenHeight} {artists} />
 <Demonstration {screenWidth} {screenHeight} {artists} />
-<!-- <Triangles {screenWidth} {screenHeight} {artists} /> -->
+<Triangles {screenWidth} {screenHeight} {artists} />
