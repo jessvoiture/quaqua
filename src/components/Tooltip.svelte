@@ -30,7 +30,7 @@
           width: {tooltipWidth}px;"
 >
 	<div class="tooltip-content body-text">
-		<p>{$hoveredDatapoint.album}</p>
+		<p>{$hoveredDatapoint.artist}, {$hoveredDatapoint.album}</p>
 		<p>
 			{$hoveredDatapoint.album_release_date}
 		</p>

@@ -1,9 +1,11 @@
 <script>
 	import Scrolly from './Scrolly.svelte';
 	import { tweened } from 'svelte/motion';
-
-	import { scaleLinear, scaleBand } from 'd3-scale';
+	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
+
+	import Tooltip from './Tooltip.svelte';
+	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
 
 	export let flattenedArtists;
 	export let screenHeight;
@@ -15,9 +17,6 @@
 	const minReleaseDate = new Date(
 		Math.min(...flattenedArtists.map((album) => new Date(album.album_release_date)))
 	);
-	const maxReleaseDate = new Date(
-		Math.max(...flattenedArtists.map((album) => new Date(album.album_release_date)))
-	);
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
@@ -27,96 +26,137 @@
 
 	const padding = 15;
 
+	let currentStep = 0;
+	let stepWidth = 300;
+
+	// Add days_since_min_release_date to the data
 	let data = flattenedArtists.map((album) => {
 		const albumReleaseDate = new Date(album.album_release_date);
 
-		// Calculate the difference in days between album_release_date and minReleaseDate
 		const daysSinceMinReleaseDate = Math.floor(
 			(albumReleaseDate - minReleaseDate) / (1000 * 60 * 60 * 24)
 		);
 
 		return {
 			...album,
-			days_since_min_release_date: daysSinceMinReleaseDate // New key-value pair
+			days_since_min_release_date: daysSinceMinReleaseDate
 		};
 	});
 
-	let currentStep = 0;
-	let stepWidth = 300;
-	let previousDomain = [];
+	// Get unique artist count
+	const uniqueArtists = [...new Set(data.map((item) => item.artist))];
+	const uniqueArtistCount = uniqueArtists.length;
 
-	let artistMaxDays = data.reduce((acc, item) => {
-		if (!acc[item.artist]) {
-			acc[item.artist] = item.days_since_first_release;
-		} else {
-			if (item.days_since_first_release > acc[item.artist]) {
-				acc[item.artist] = item.days_since_first_release;
+	// Sorting by days_since_min_release_date
+	let artistsSortedByDebutDateArray = Array.from(
+		data.reduce((acc, album) => {
+			if (!acc.has(album.artist)) {
+				acc.set(album.artist, album.days_since_min_release_date);
 			}
-		}
-		return acc;
-	}, {});
+			return acc;
+		}, new Map())
+	)
+		.sort((a, b) => a[1] - b[1])
+		.map(([artist]) => artist);
 
-	let artistsSortedByDebutDate = data
-		.map((item) => item.artist)
-		.filter((value, index, self) => self.indexOf(value) === index)
-		.sort((a, b) => {
-			return a.first_album_release_date - b.first_album_release_date;
-		});
+	// Sorting by days_since_first_release
+	let artistsSortedByDaysActiveArray = Array.from(
+		data.reduce((acc, album) => {
+			if (!acc.has(album.artist) || acc.get(album.artist) < album.days_since_first_release) {
+				acc.set(album.artist, album.days_since_first_release);
+			}
+			return acc;
+		}, new Map())
+	)
+		.sort((a, b) => b[1] - a[1])
+		.map(([artist]) => artist);
 
-	let artistsSortedByDaysActive = Object.keys(artistMaxDays).sort((a, b) => {
-		return artistMaxDays[b] - artistMaxDays[a]; // Descending order
-	});
+	// Define the Y positions
+	let yPositionsDebut = new Map(
+		artistsSortedByDebutDateArray.map((artist, index) => [artist, index + 1])
+	);
+	let yPositionsActive = new Map(
+		artistsSortedByDaysActiveArray.map((artist, index) => [artist, index + 1])
+	);
 
-	let artistNames = artistsSortedByDebutDate;
+	// Merge data with yPositionsDebut and yPositionsActive
+	let dataSorted = data.map((album) => ({
+		...album,
+		indexByDebutDate: yPositionsDebut.get(album.artist),
+		indexByDaysActive: yPositionsActive.get(album.artist)
+	}));
 
+	// Responsive sizing
 	$: width = 0.8 * screenWidth;
 	$: height = 0.8 * screenHeight;
 	$: innerWidth = width - 2 * padding;
 	$: innerHeight = height - 2 * padding;
 
-	$: tweenedX = tweened(data.map((d) => d.days_since_min_release_date));
+	// Initialize tweened variables
+	$: tweenedX = tweened(dataSorted.map((d) => d.days_since_min_release_date));
+	$: tweenedY = tweened(dataSorted.map((d) => d.indexByDebutDate));
 
+	// Define scales
 	$: xExtent = extent($tweenedX);
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
-	$: yScale = scaleBand().domain(artistNames).range([0, innerHeight]);
 
-	$: if (currentStep == 0) {
+	$: yScaleLinear = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
+
+	// Update the positions according to the current step
+	$: if (currentStep === 0) {
 		setReleaseDate();
-	} else if (currentStep == 1) {
+	} else if (currentStep === 1) {
 		setDiffToDebut();
+	} else if (currentStep === 2) {
+		setYVals();
 	}
 
-	const setDiffToDebut = function () {
-		tweenedX.set(data.map((d) => d.days_since_first_release));
+	// Step functions
+	const setDiffToDebut = () => {
+		tweenedX.set(dataSorted.map((d) => d.days_since_first_release));
+		tweenedY.set(dataSorted.map((d) => d.indexByDebutDate));
 	};
 
-	const setReleaseDate = function () {
-		tweenedX.set(data.map((d) => d.days_since_min_release_date));
+	const setReleaseDate = () => {
+		tweenedX.set(dataSorted.map((d) => d.days_since_min_release_date));
+		tweenedY.set(dataSorted.map((d) => d.indexByDebutDate));
 	};
 
-	function updateYScale(newDomain) {
-		const oldDomain = previousDomain;
-		const interpolator = interpolate(oldDomain, newDomain);
+	const setYVals = () => {
+		// tweenedX.set(dataSorted.map((d) => d.days_since_min_release_date));
+		tweenedY.set(dataSorted.map((d) => d.indexByDaysActive));
+	};
 
-		const scaleTween = tweened(oldDomain, {
-			duration: 600,
-			easing: quintOut
-		});
+	const handleMouseover = function (event, d) {
+		hoveredDatapoint.set(d);
+		mouseX.set(event.clientX);
+		mouseY.set(event.clientY);
+	};
 
-		scaleTween.set(newDomain);
-
-		scaleTween.subscribe((updatedDomain) => {
-			yScale = scaleBand().domain(updatedDomain).range([0, innerHeight]).padding(0.1);
-		});
-	}
+	const handleMouseout = function () {
+		hoveredDatapoint.set(undefined);
+	};
 </script>
 
 <div class="scroller">
 	<div class="plot">
 		<svg {width} {height}>
 			<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
-				{#each data as d, i}
-					<rect x={xScale($tweenedX[i])} y={yScale(d.artist)} width="1" height="12" />
+				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+				{#each dataSorted as d, i}
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<rect
+						x={xScale($tweenedX[i])}
+						y={yScaleLinear($tweenedY[i])}
+						width="1"
+						height="12"
+						on:mouseover={function (event) {
+							handleMouseover(event, d);
+						}}
+						on:mouseout={function () {
+							handleMouseout();
+						}}
+					/>
 				{/each}
 			</g>
 		</svg>
@@ -134,6 +174,10 @@
 		</Scrolly>
 	</div>
 </div>
+
+{#if $hoveredDatapoint != undefined}
+	<Tooltip {screenWidth} {screenHeight} />
+{/if}
 
 <style>
 	.plot {
