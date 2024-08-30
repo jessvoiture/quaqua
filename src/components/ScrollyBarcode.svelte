@@ -7,16 +7,12 @@
 	import Tooltip from './Tooltip.svelte';
 	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
 
-	export let flattenedArtists;
+	export let data;
 	export let screenHeight;
 	export let screenWidth;
 
 	let tweenedY;
 	let tweenedX;
-
-	const minReleaseDate = new Date(
-		Math.min(...flattenedArtists.map((album) => new Date(album.album_release_date)))
-	);
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
@@ -28,20 +24,6 @@
 
 	let currentStep = 0;
 	let stepWidth = 300;
-
-	// Add days_since_min_release_date to the data
-	let data = flattenedArtists.map((album) => {
-		const albumReleaseDate = new Date(album.album_release_date);
-
-		const daysSinceMinReleaseDate = Math.floor(
-			(albumReleaseDate - minReleaseDate) / (1000 * 60 * 60 * 24)
-		);
-
-		return {
-			...album,
-			days_since_min_release_date: daysSinceMinReleaseDate
-		};
-	});
 
 	// Get unique artist count
 	const uniqueArtists = [...new Set(data.map((item) => item.artist))];

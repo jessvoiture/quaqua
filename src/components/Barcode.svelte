@@ -23,8 +23,6 @@
 		artist.albums.map((album) => album.days_since_first_release)
 	);
 
-	let extentDaysActive = extent(artistsDaysActive);
-
 	$: xScale = scaleLinear()
 		.domain(extentDaysActive)
 		.range([0, width - 120]);
