@@ -20,6 +20,8 @@
 		'<p>step 4: show THREE LINES</p>'
 	];
 
+	const scaleFactor = 6;
+
 	let width;
 	let height;
 
@@ -30,8 +32,8 @@
 	let thirdLine;
 
 	let viewBoxPadding = 60;
-	let viewboxStartingWidth = 30;
-	let viewboxStartingHeight = 30;
+	let viewboxStartingWidth = 20;
+	let viewboxStartingHeight = 20;
 	let viewboxWidth = tweened(viewboxStartingWidth, { easing: quintOut, duration: 600 });
 	let viewboxHeight = tweened(viewboxStartingHeight, { easing: quintOut, duration: 600 });
 	let currentStep = 0;
@@ -76,9 +78,10 @@
 	function setStep1() {
 		albumsShowing = demoArtist.albums.slice(0, 2);
 
-		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
-		const daysSinceDebut = albumsShowing[1].days_since_first_release;
-		const daysSinceLastRelease = albumsShowing[1].days_since_last_release;
+		const maxGapDays =
+			Math.max(...albumsShowing.map((album) => album.days_since_last_release)) / scaleFactor;
+		const daysSinceDebut = albumsShowing[1].days_since_first_release / scaleFactor;
+		const daysSinceLastRelease = albumsShowing[1].days_since_last_release / scaleFactor;
 
 		viewboxWidth.set(daysSinceDebut + 3);
 		viewboxHeight.set(maxGapDays);
@@ -92,22 +95,25 @@
 	function setStep2() {
 		albumsShowing = demoArtist.albums.slice(0, 3);
 
-		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
-		const daysSinceDebut = albumsShowing[2].days_since_first_release;
-		const daysSinceLastRelease = albumsShowing[2].days_since_last_release;
+		const maxGapDays =
+			Math.max(...albumsShowing.map((album) => album.days_since_last_release)) / scaleFactor;
+		const daysSinceDebut = albumsShowing[2].days_since_first_release / scaleFactor;
+		const daysSinceLastRelease = albumsShowing[2].days_since_last_release / scaleFactor;
 
 		viewboxWidth.set(daysSinceDebut + 3);
 		viewboxHeight.set(maxGapDays);
 
-		secondLLine = `M ${albumsShowing[1].days_since_first_release} 0 
-			l ${daysSinceDebut - albumsShowing[1].days_since_first_release} ${daysSinceLastRelease}`;
+		secondLLine = `M ${albumsShowing[1].days_since_first_release / scaleFactor} 0 
+			l ${daysSinceDebut - albumsShowing[1].days_since_first_release / scaleFactor} ${daysSinceLastRelease}`;
 		secondVLine = `M ${daysSinceDebut} ${daysSinceLastRelease} V 0`;
 	}
 
 	function setStep3() {
 		albumsShowing = demoArtist.albums;
-		const maxGapDays = Math.max(...albumsShowing.map((album) => album.days_since_last_release));
-		const daysSinceDebut = albumsShowing[albumsShowing.length - 1].days_since_first_release;
+		const maxGapDays =
+			Math.max(...albumsShowing.map((album) => album.days_since_last_release)) / scaleFactor;
+		const daysSinceDebut =
+			albumsShowing[albumsShowing.length - 1].days_since_first_release / scaleFactor;
 
 		viewboxWidth.set(daysSinceDebut + 3, { duration: 1200 });
 		viewboxHeight.set(maxGapDays);
@@ -118,16 +124,16 @@
 	function generatePath(albums) {
 		if (albums.length < 2) return '';
 
-		let path = `M ${albums[2].days_since_first_release} 0`;
+		let path = `M ${albums[2].days_since_first_release / scaleFactor} 0`;
 
 		for (let i = 3; i < albums.length; i++) {
 			const prevAlbum = albums[i - 1];
 			const currentAlbum = albums[i];
 
-			const x1 = prevAlbum.days_since_first_release;
-			const y1 = prevAlbum.days_since_last_release;
-			const x2 = currentAlbum.days_since_first_release;
-			const y2 = currentAlbum.days_since_last_release;
+			const x1 = prevAlbum.days_since_first_release / scaleFactor;
+			const y1 = prevAlbum.days_since_last_release / scaleFactor;
+			const x2 = currentAlbum.days_since_first_release / scaleFactor;
+			const y2 = currentAlbum.days_since_last_release / scaleFactor;
 
 			path += ` l ${x2 - x1} ${y2} V 0`;
 		}
@@ -163,19 +169,29 @@
 					{#each albumsShowing.slice(1) as a}
 						<circle
 							transition:fade={{ delay: 3000 }}
-							cx={a.days_since_first_release}
+							cx={a.days_since_first_release / scaleFactor}
 							cy="0"
 							r="5"
 							fill="red"
 						/>
 						<text
-							x={a.days_since_first_release}
+							x={a.days_since_first_release / scaleFactor}
 							y={-15}
 							fill="black"
 							text-anchor="middle"
 							font-size="12px"
 							>{a.album}
 						</text>
+
+						<!-- <foreignObject width="40" height="40" x={a.days_since_first_release / scaleFactor - 20} y={-15}>
+							<div
+								xmlns="http://www.w3.org/1999/xhtml"
+								style="width: {40}px; text-align: middle"
+								class="label"
+							>
+								{a.album}
+							</div>
+						</foreignObject> -->
 					{/each}
 				{/if}
 
@@ -222,8 +238,11 @@
 		align-items: center;
 	}
 
-	text {
-		font-size: 16px;
+	text,
+	.label {
+		font-size: 8px;
+		font-family: sans-serif;
+		color: black;
 	}
 
 	svg {

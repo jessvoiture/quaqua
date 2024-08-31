@@ -39,7 +39,7 @@
 				Debut album
 			{:else}
 				{Math.round(($hoveredDatapoint.days_since_first_release / 365.25) * 10) / 10} years since debut
-				album
+				album ({$hoveredDatapoint.days_since_first_release} days)
 				{Math.round(($hoveredDatapoint.days_since_last_release / 365.25) * 10) / 10} years since previous
 				album
 			{/if}
