@@ -157,7 +157,6 @@
 
 	const setBarYearsActive = () => {
 		tweenedBarWidth.set(statsSorted.map((d) => d.maxDaysSinceFirstRelease));
-		tweenedY.set(dataSorted.map((d) => d.indexByDaysActive));
 	};
 
 	const handleMouseover = function (event, d) {
@@ -193,25 +192,23 @@
 				{/each}
 			</g>
 
-			{#if currentStep > 2}
-				<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
+			<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+				{#each statsSorted as d, i}
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-					{#each statsSorted as d, i}
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<rect
-							class="transition-width"
-							x="0"
-							y={yScaleLinear(d.indexByDaysActive)}
-							width={xScale($tweenedBarWidth[i])}
-							height={rectHeight}
-							on:mouseover={function () {
-								console.log(d);
-							}}
-						/>
-					{/each}
-				</g>
-			{/if}
+					<rect
+						class="transition-width"
+						x="0"
+						y={yScaleLinear(d.indexByDaysActive)}
+						width={xScale($tweenedBarWidth[i])}
+						height={rectHeight}
+						on:mouseover={function () {
+							console.log(d);
+						}}
+					/>
+				{/each}
+			</g>
 		</svg>
 	</div>
 
@@ -246,7 +243,7 @@
 	}
 
 	.transition-width {
-		transition: width 0.5s ease-in-out; /* Add smooth transitions to width changes */
+		transition: width 0.5s ease-in-out;
 		-webkit-transition: width 0.5s ease-in-out;
 		-moz-transition: width 0.5s ease-in-out;
 		-o-transition: width 0.5s ease-in-out;
