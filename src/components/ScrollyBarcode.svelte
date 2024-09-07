@@ -3,7 +3,7 @@
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
 	import { extent, rollup, max } from 'd3-array';
-	import { slide } from 'svelte/transition';
+	import { slide, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
 	import Tooltip from './Tooltip.svelte';
@@ -16,15 +16,17 @@
 	let tweenedY;
 	let tweenedX;
 	let tweenedBarWidth;
-	let tweenedArtistY;
 	let rectHeight = 8;
 	let currentStep = 0;
+	let xExtent = [0, 0];
+	let opacityClass = 'full-opacity';
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
 		'<p>step 1: x is days since debut</p>',
 		'<p>step 2: y is sorted by diff to debut</p>',
-		'<p>step 3: bar for years active</p>'
+		'<p>step 3: bar for years active</p>',
+		'<p>step 4: bar for years active / album count</p>'
 	];
 
 	const padding = 15;
@@ -59,23 +61,27 @@
 		.sort((a, b) => b[1] - a[1])
 		.map(([artist]) => artist);
 
-	// Define the Y positions
+	// Define the Y positions by debut release date
+	// create map of artist with index in the sorted array
 	const yPositionsDebut = new Map(
 		artistsSortedByDebutDateArray.map((artist, index) => [artist, index + 1])
 	);
 
+	// Define the Y positions by days active
+	// create map of artist with index in the sorted array
 	const yPositionsActive = new Map(
 		artistsSortedByDaysActiveArray.map((artist, index) => [artist, index + 1])
 	);
 
 	// Merge data with yPositionsDebut and yPositionsActive
+	// get index of artist in sorted array
 	const dataSorted = data.map((album) => ({
 		...album,
 		indexByDebutDate: yPositionsDebut.get(album.artist),
 		indexByDaysActive: yPositionsActive.get(album.artist)
 	}));
 
-	// Use d3.rollup to group by artist and calculate count and max days_since_first_release
+	// Calculate the number of albums per artist and the max days_since_first_release (total days active)
 	const artistStats = rollup(
 		data,
 		(v) => ({
@@ -88,22 +94,18 @@
 	// Convert the Map to an array of objects for easier use
 	const stats = Array.from(artistStats, ([data, stats]) => ({
 		data,
-		count: stats.count,
-		maxDaysSinceFirstRelease: stats.maxDaysSinceFirstRelease
+		albumCount: stats.count,
+		maxDaysSinceFirstRelease: stats.maxDaysSinceFirstRelease,
+		eraLength: stats.maxDaysSinceFirstRelease / stats.count
 	}));
 
 	const statsSorted = stats.map((d) => {
-		// Log each artist being accessed to find mismatches
-		console.log(`Artist: ${d.artist}, Index: ${yPositionsActive.get(d.artist)}`);
-
 		return {
 			...d,
 			indexByDaysActive: yPositionsActive.get(d.data),
 			indexByDebutDate: yPositionsDebut.get(d.data)
 		};
 	});
-
-	console.log(statsSorted);
 
 	// Responsive sizing
 	$: width = 0.8 * screenWidth;
@@ -118,24 +120,32 @@
 	$: tweenedBarWidth = tweened(stats.map(() => 0));
 
 	// Define scales
-	$: xExtent = extent($tweenedX);
+	// $: xExtent = extent($tweenedX);
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
-
-	$: yScaleLinear = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
-	$: console.log(yScaleLinear(43));
+	$: yScale = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
 
 	// Update the positions according to the current step
 	$: if (currentStep === 0) {
 		setReleaseDate();
+		xExtent = extent($tweenedX);
+		opacityClass = 'full-opacity';
 	} else if (currentStep === 1) {
 		setDiffToDebut();
+		xExtent = extent($tweenedX);
+		opacityClass = 'full-opacity';
 	} else if (currentStep === 2) {
 		setYVals();
+		xExtent = extent($tweenedX);
+		opacityClass = 'full-opacity';
 	} else if (currentStep == 3) {
 		setBarYearsActive();
+		xExtent = [0, 20339];
+		opacityClass = 'full-opacity';
+	} else if (currentStep == 4) {
+		setBarDaysPerAlbum();
+		xExtent = [0, 2000];
+		opacityClass = 'transition-opacity';
 	}
-
-	$: console.log('tweenedBar', $tweenedBarWidth);
 
 	// Step functions
 	const setDiffToDebut = () => {
@@ -159,6 +169,10 @@
 		tweenedBarWidth.set(statsSorted.map((d) => d.maxDaysSinceFirstRelease));
 	};
 
+	const setBarDaysPerAlbum = () => {
+		tweenedBarWidth.set(statsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
+	};
+
 	const handleMouseover = function (event, d) {
 		hoveredDatapoint.set(d);
 		mouseX.set(event.clientX);
@@ -173,13 +187,18 @@
 <div class="scroller">
 	<div class="plot">
 		<svg {width} {height}>
-			<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
+			<g
+				width={innerWidth}
+				height={innerHeight}
+				transform={`translate(${padding}, ${padding})`}
+				class={opacityClass}
+			>
 				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 				{#each dataSorted as d, i}
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<rect
 						x={xScale($tweenedX[i])}
-						y={yScaleLinear($tweenedY[i])}
+						y={yScale($tweenedY[i])}
 						width={rectWidth}
 						height={rectHeight}
 						on:mouseover={function (event) {
@@ -200,12 +219,9 @@
 					<rect
 						class="transition-width"
 						x="0"
-						y={yScaleLinear(d.indexByDaysActive)}
+						y={yScale(d.indexByDaysActive)}
 						width={xScale($tweenedBarWidth[i])}
 						height={rectHeight}
-						on:mouseover={function () {
-							console.log(d);
-						}}
 					/>
 				{/each}
 			</g>
@@ -247,5 +263,17 @@
 		-webkit-transition: width 0.5s ease-in-out;
 		-moz-transition: width 0.5s ease-in-out;
 		-o-transition: width 0.5s ease-in-out;
+	}
+
+	.full-opacity {
+		opacity: 1;
+	}
+
+	.transition-opacity {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		-moz-transition: opacity 0.5s ease-in-out;
+		-o-transition: opacity 0.5s ease-in-out;
 	}
 </style>

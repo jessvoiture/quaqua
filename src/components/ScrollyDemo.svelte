@@ -238,8 +238,7 @@
 		align-items: center;
 	}
 
-	text,
-	.label {
+	text {
 		font-size: 8px;
 		font-family: sans-serif;
 		color: black;

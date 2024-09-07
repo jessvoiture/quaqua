@@ -1,8 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
-	import Barcode from '../components/Barcode.svelte';
 	import Triangles from '../components/Triangles.svelte';
-	import ScrollyDemo from '../components/ScrollyDemo.svelte';
 	import ScrollyBarcode from '../components/ScrollyBarcode.svelte';
 	import Scatterplot from '../components/Scatterplot.svelte';
 
@@ -10,6 +8,7 @@
 
 	const artists = data.artists;
 
+	// transform data so albums are not nested under artist
 	const flattenedArtists = artists.flatMap((artistEntry) =>
 		artistEntry.albums.map((album) => ({
 			artist: artistEntry.artist,
@@ -23,11 +22,12 @@
 		}))
 	);
 
+	// find the earliest release date of an album
 	const minReleaseDate = new Date(
 		Math.min(...flattenedArtists.map((album) => new Date(album.album_release_date)))
 	);
 
-	// Add days_since_min_release_date to the data
+	// add days_since_min_release_date to each object in the flattened data
 	let flattened = flattenedArtists.map((album) => {
 		const albumReleaseDate = new Date(album.album_release_date);
 
@@ -56,8 +56,6 @@
 
 <svelte:window on:resize={resize} />
 
-<!-- <Barcode {screenWidth} {screenHeight} {artists} /> -->
 <ScrollyBarcode {screenWidth} {screenHeight} data={flattened} />
-<ScrollyDemo {screenWidth} {screenHeight} {artists} />
 <Triangles {screenWidth} {screenHeight} {artists} />
 <Scatterplot {screenWidth} {screenHeight} data={flattened} />
