@@ -6,14 +6,16 @@
 	import { slide, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
-	import Tooltip from './Tooltip.svelte';
-	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
+	import TooltipAlbum from './TooltipAlbum.svelte';
+	import TooltipArtist from './TooltipArtist.svelte';
+	import { hoveredAlbum, hoveredArtist, mouseX, mouseY } from '../stores';
 
 	export let data;
 	export let screenHeight;
 	export let screenWidth;
 
 	let tweenedY;
+	let tweenedYBars;
 	let tweenedX;
 	let tweenedBarWidth;
 	let rectHeight = 8;
@@ -26,7 +28,8 @@
 		'<p>step 1: x is days since debut</p>',
 		'<p>step 2: y is sorted by diff to debut</p>',
 		'<p>step 3: bar for years active</p>',
-		'<p>step 4: bar for years active / album count</p>'
+		'<p>step 4: bar for years active / album count</p>',
+		'<p>step 5: y is sorted for years active / album count</p>'
 	];
 
 	const padding = 15;
@@ -49,7 +52,7 @@
 		.sort((a, b) => a[1] - b[1])
 		.map(([artist]) => artist);
 
-	// Sorting by days_since_first_release
+	// Sorting by days_since_first_release (days active)
 	const artistsSortedByDaysActiveArray = Array.from(
 		data.reduce((acc, album) => {
 			if (!acc.has(album.artist) || acc.get(album.artist) < album.days_since_first_release) {
@@ -62,26 +65,29 @@
 		.map(([artist]) => artist);
 
 	// Define the Y positions by debut release date
-	// create map of artist with index in the sorted array
+	// create map of artist with rank based on sorting (ie ranked by date of first release)
 	const yPositionsDebut = new Map(
 		artistsSortedByDebutDateArray.map((artist, index) => [artist, index + 1])
 	);
 
 	// Define the Y positions by days active
-	// create map of artist with index in the sorted array
+	// create map of artist with rank based on sorting (ie ranked by the number of days active)
 	const yPositionsActive = new Map(
 		artistsSortedByDaysActiveArray.map((artist, index) => [artist, index + 1])
 	);
 
 	// Merge data with yPositionsDebut and yPositionsActive
 	// get index of artist in sorted array
-	const dataSorted = data.map((album) => ({
+	// used to plot the albums in the bar code plot
+	const albumsSorted = data.map((album) => ({
 		...album,
 		indexByDebutDate: yPositionsDebut.get(album.artist),
 		indexByDaysActive: yPositionsActive.get(album.artist)
 	}));
 
-	// Calculate the number of albums per artist and the max days_since_first_release (total days active)
+	// aggregate data by artist
+	// calculate the number of albums per artist and the max days_since_first_release (total days active)
+	// this creates a map
 	const artistStats = rollup(
 		data,
 		(v) => ({
@@ -92,20 +98,36 @@
 	);
 
 	// Convert the Map to an array of objects for easier use
-	const stats = Array.from(artistStats, ([data, stats]) => ({
+	const artists = Array.from(artistStats, ([data, stats]) => ({
 		data,
 		albumCount: stats.count,
 		maxDaysSinceFirstRelease: stats.maxDaysSinceFirstRelease,
 		eraLength: stats.maxDaysSinceFirstRelease / stats.count
 	}));
 
-	const statsSorted = stats.map((d) => {
+	const yPositionEraLength = new Map(
+		[...artists]
+			.sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
+			.map((item, index) => [item.data, index + 1]) // Map artist to rank
+	);
+
+	const artistsSorted = artists.map((d) => {
 		return {
 			...d,
 			indexByDaysActive: yPositionsActive.get(d.data),
-			indexByDebutDate: yPositionsDebut.get(d.data)
+			indexByDebutDate: yPositionsDebut.get(d.data),
+			indexByEraLength: yPositionEraLength.get(d.data)
 		};
 	});
+
+	console.log(
+		'artistssortedby Era',
+		albumsSorted.map((d) => d.indexByEraLength)
+	);
+	console.log(
+		'artistssortedby active',
+		albumsSorted.map((d) => d.indexByDaysActive)
+	);
 
 	// Responsive sizing
 	$: width = 0.8 * screenWidth;
@@ -115,9 +137,10 @@
 	$: rectHeight = innerHeight / uniqueArtistCount - 2;
 
 	// Initialize tweened variables
-	$: tweenedX = tweened(dataSorted.map((d) => d.days_since_min_release_date));
-	$: tweenedY = tweened(dataSorted.map((d) => d.indexByDebutDate));
-	$: tweenedBarWidth = tweened(stats.map(() => 0));
+	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
+	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
+	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
+	$: tweenedYBars = tweened(artistsSorted.map((d) => d.indexByDaysActive));
 
 	// Define scales
 	// $: xExtent = extent($tweenedX);
@@ -140,47 +163,68 @@
 	} else if (currentStep == 3) {
 		setBarYearsActive();
 		xExtent = [0, 20339];
-		opacityClass = 'full-opacity';
+		opacityClass = 'transition-opacity';
 	} else if (currentStep == 4) {
 		setBarDaysPerAlbum();
+		xExtent = [0, 2000];
+		opacityClass = 'transition-opacity';
+	} else if (currentStep == 5) {
+		setBarDaysPerEraLength();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
 	}
 
 	// Step functions
 	const setDiffToDebut = () => {
-		tweenedBarWidth.set(statsSorted.map((d) => 0));
-		tweenedX.set(dataSorted.map((d) => d.days_since_first_release));
-		tweenedY.set(dataSorted.map((d) => d.indexByDebutDate));
+		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	const setReleaseDate = () => {
-		tweenedBarWidth.set(statsSorted.map((d) => 0));
-		tweenedX.set(dataSorted.map((d) => d.days_since_min_release_date));
-		tweenedY.set(dataSorted.map((d) => d.indexByDebutDate));
+		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedX.set(albumsSorted.map((d) => d.days_since_min_release_date));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	const setYVals = () => {
-		tweenedBarWidth.set(statsSorted.map((d) => 0));
-		tweenedY.set(dataSorted.map((d) => d.indexByDaysActive));
+		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDaysActive));
 	};
 
 	const setBarYearsActive = () => {
-		tweenedBarWidth.set(statsSorted.map((d) => d.maxDaysSinceFirstRelease));
+		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
+		tweenedYBars.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
 	const setBarDaysPerAlbum = () => {
-		tweenedBarWidth.set(statsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
+		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
+		tweenedYBars.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
-	const handleMouseover = function (event, d) {
-		hoveredDatapoint.set(d);
+	const setBarDaysPerEraLength = () => {
+		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
+		tweenedYBars.set(artistsSorted.map((d) => d.indexByEraLength));
+	};
+
+	const handleMouseoverAlbum = function (event, d) {
+		hoveredAlbum.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 	};
 
-	const handleMouseout = function () {
-		hoveredDatapoint.set(undefined);
+	const handleMouseoutAlbum = function () {
+		hoveredAlbum.set(undefined);
+	};
+
+	const handleMouseoverArtist = function (event, d) {
+		hoveredArtist.set(d);
+		mouseX.set(event.clientX);
+		mouseY.set(event.clientY);
+	};
+
+	const handleMouseoutArtist = function () {
+		hoveredArtist.set(undefined);
 	};
 </script>
 
@@ -194,7 +238,7 @@
 				class={opacityClass}
 			>
 				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				{#each dataSorted as d, i}
+				{#each albumsSorted as d, i}
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<rect
 						x={xScale($tweenedX[i])}
@@ -202,10 +246,10 @@
 						width={rectWidth}
 						height={rectHeight}
 						on:mouseover={function (event) {
-							handleMouseover(event, d);
+							handleMouseoverAlbum(event, d);
 						}}
 						on:mouseout={function () {
-							handleMouseout();
+							handleMouseoutAlbum();
 						}}
 					/>
 				{/each}
@@ -214,14 +258,20 @@
 			<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				{#each statsSorted as d, i}
+				{#each artistsSorted as d, i}
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<rect
 						class="transition-width"
 						x="0"
-						y={yScale(d.indexByDaysActive)}
+						y={yScale($tweenedYBars[i])}
 						width={xScale($tweenedBarWidth[i])}
 						height={rectHeight}
+						on:mouseover={function (event) {
+							handleMouseoverArtist(event, d);
+						}}
+						on:mouseout={function () {
+							handleMouseoutArtist();
+						}}
 					/>
 				{/each}
 			</g>
@@ -241,8 +291,12 @@
 	</div>
 </div>
 
-{#if $hoveredDatapoint != undefined}
-	<Tooltip {screenWidth} {screenHeight} />
+{#if $hoveredAlbum != undefined}
+	<TooltipAlbum {screenWidth} {screenHeight} />
+{/if}
+
+{#if $hoveredArtist != undefined}
+	<TooltipArtist {screenWidth} {screenHeight} />
 {/if}
 
 <style>
@@ -259,10 +313,10 @@
 	}
 
 	.transition-width {
-		transition: width 0.5s ease-in-out;
-		-webkit-transition: width 0.5s ease-in-out;
-		-moz-transition: width 0.5s ease-in-out;
-		-o-transition: width 0.5s ease-in-out;
+		transition: width 0.25s ease-in-out;
+		-webkit-transition: width 0.25s ease-in-out;
+		-moz-transition: width 0.25s ease-in-out;
+		-o-transition: width 0.25s ease-in-out;
 	}
 
 	.full-opacity {
@@ -271,9 +325,9 @@
 
 	.transition-opacity {
 		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
-		-webkit-transition: opacity 0.5s ease-in-out;
-		-moz-transition: opacity 0.5s ease-in-out;
-		-o-transition: opacity 0.5s ease-in-out;
+		transition: opacity 0.5s 1s ease-in-out;
+		-webkit-transition: opacity 0.5s 1s ease-in-out;
+		-moz-transition: opacity 0.5s 1s ease-in-out;
+		-o-transition: opacity 0.5s 1s ease-in-out;
 	}
 </style>

@@ -1,5 +1,5 @@
 <script>
-	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
+	import { hoveredArtist, mouseX, mouseY } from '../stores';
 
 	export let screenWidth;
 	export let screenHeight;
@@ -30,20 +30,7 @@
           width: {tooltipWidth}px;"
 >
 	<div class="tooltip-content body-text">
-		<p>{$hoveredDatapoint.artist}, {$hoveredDatapoint.album}</p>
-		<p>
-			{$hoveredDatapoint.album_release_date}
-		</p>
-		<p>
-			{#if $hoveredDatapoint.days_since_first_release == 0}
-				Debut album
-			{:else}
-				{Math.round(($hoveredDatapoint.days_since_first_release / 365.25) * 10) / 10} years since debut
-				album ({$hoveredDatapoint.days_since_first_release} days)
-				{Math.round(($hoveredDatapoint.days_since_last_release / 365.25) * 10) / 10} years since previous
-				album
-			{/if}
-		</p>
+		<p>{$hoveredArtist.data}</p>
 	</div>
 </div>
 

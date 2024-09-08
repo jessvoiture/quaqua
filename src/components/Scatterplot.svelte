@@ -2,8 +2,8 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 
-	import Tooltip from './Tooltip.svelte';
-	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
+	import TooltipAlbum from './TooltipAlbum.svelte';
+	import { hoveredAlbum, mouseX, mouseY } from '../stores';
 
 	export let data;
 	export let screenHeight;
@@ -26,13 +26,13 @@
 	$: yScale = scaleLinear().domain([0, 4380]).range([innerHeight, 0]);
 
 	const handleMouseover = function (event, d) {
-		hoveredDatapoint.set(d);
+		hoveredAlbum.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 	};
 
 	const handleMouseout = function () {
-		hoveredDatapoint.set(undefined);
+		hoveredAlbum.set(undefined);
 	};
 </script>
 
@@ -57,6 +57,6 @@
 	</g>
 </svg>
 
-{#if $hoveredDatapoint != undefined}
-	<Tooltip {screenWidth} {screenHeight} />
+{#if $hoveredAlbum != undefined}
+	<TooltipAlbum {screenWidth} {screenHeight} />
 {/if}

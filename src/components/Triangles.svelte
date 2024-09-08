@@ -4,8 +4,8 @@
 	import { writable } from 'svelte/store';
 
 	import Scrolly from './Scrolly.svelte';
-	import Tooltip from './Tooltip.svelte';
-	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
+	import TooltipAlbum from './TooltipAlbum.svelte';
+	import { hoveredAlbum, mouseX, mouseY } from '../stores';
 	import { scale } from 'svelte/transition';
 
 	export let artists;
@@ -58,13 +58,13 @@
 	});
 
 	const handleMouseover = function (event, d) {
-		hoveredDatapoint.set(d);
+		hoveredAlbum.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 	};
 
 	const handleMouseout = function () {
-		hoveredDatapoint.set(undefined);
+		hoveredAlbum.set(undefined);
 	};
 
 	const getYCoord = (album, yDomain) => {
@@ -138,8 +138,8 @@
 	</div>
 </div>
 
-{#if $hoveredDatapoint != undefined}
-	<Tooltip {screenWidth} {screenHeight} />
+{#if $hoveredAlbum != undefined}
+	<TooltipAlbum {screenWidth} {screenHeight} />
 {/if}
 
 <style>

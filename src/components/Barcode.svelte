@@ -3,7 +3,7 @@
 	import { extent } from 'd3-array';
 
 	import Tooltip from './Tooltip.svelte';
-	import { hoveredDatapoint, mouseX, mouseY } from '../stores';
+	import { hoveredAlbum, mouseX, mouseY } from '../stores';
 
 	export let artists;
 	export let screenHeight;
@@ -28,13 +28,13 @@
 		.range([0, width - 120]);
 
 	const handleMouseover = function (event, d) {
-		hoveredDatapoint.set(d);
+		hoveredAlbum.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 	};
 
 	const handleMouseout = function () {
-		hoveredDatapoint.set(undefined);
+		hoveredAlbum.set(undefined);
 	};
 </script>
 
@@ -68,7 +68,7 @@
 	</g>
 </svg>
 
-{#if $hoveredDatapoint != undefined}
+{#if $hoveredAlbum != undefined}
 	<Tooltip {screenWidth} {screenHeight} />
 {/if}
 
