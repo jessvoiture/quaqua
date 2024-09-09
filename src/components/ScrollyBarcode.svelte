@@ -4,9 +4,8 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 
-	import TooltipAlbum from './TooltipAlbum.svelte';
-	import TooltipArtist from './TooltipArtist.svelte';
-	import { hoveredAlbum, hoveredArtist, mouseX, mouseY } from '../stores';
+	import Tooltip from './Tooltip.svelte';
+	import { hoveredData, mouseX, mouseY } from '../stores';
 
 	export let albumsSorted;
 	export let artistsSorted;
@@ -21,6 +20,8 @@
 	let currentStep = 0;
 	let xExtent = [0, 0];
 	let opacityClass = 'full-opacity';
+	let tooltipHoveredOver = 'album';
+	let isHovering = false;
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
@@ -120,24 +121,17 @@
 		tweenedYBars.set(artistsSorted.map((d) => d.indexByEraLength));
 	};
 
-	const handleMouseoverAlbum = function (event, d) {
-		hoveredAlbum.set(d);
+	const handleMouseover = function (event, d, type) {
+		hoveredData.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
+		tooltipHoveredOver = type;
+		isHovering = true;
 	};
 
-	const handleMouseoutAlbum = function () {
-		hoveredAlbum.set(undefined);
-	};
-
-	const handleMouseoverArtist = function (event, d) {
-		hoveredArtist.set(d);
-		mouseX.set(event.clientX);
-		mouseY.set(event.clientY);
-	};
-
-	const handleMouseoutArtist = function () {
-		hoveredArtist.set(undefined);
+	const handleMouseout = function () {
+		hoveredData.set(undefined);
+		isHovering = false;
 	};
 </script>
 
@@ -159,10 +153,10 @@
 						width={rectWidth}
 						height={rectHeight}
 						on:mouseover={function (event) {
-							handleMouseoverAlbum(event, d);
+							handleMouseover(event, d, 'album');
 						}}
 						on:mouseout={function () {
-							handleMouseoutAlbum();
+							handleMouseout();
 						}}
 					/>
 				{/each}
@@ -180,10 +174,10 @@
 						width={xScale($tweenedBarWidth[i])}
 						height={rectHeight}
 						on:mouseover={function (event) {
-							handleMouseoverArtist(event, d);
+							handleMouseover(event, d, 'artist');
 						}}
 						on:mouseout={function () {
-							handleMouseoutArtist();
+							handleMouseout();
 						}}
 					/>
 				{/each}
@@ -204,12 +198,8 @@
 	</div>
 </div>
 
-{#if $hoveredAlbum != undefined}
-	<TooltipAlbum {screenWidth} {screenHeight} />
-{/if}
-
-{#if $hoveredArtist != undefined}
-	<TooltipArtist {screenWidth} {screenHeight} />
+{#if ($hoveredData != undefined) & isHovering}
+	<Tooltip {screenHeight} {screenWidth} type={tooltipHoveredOver} />
 {/if}
 
 <style>

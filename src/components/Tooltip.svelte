@@ -1,8 +1,9 @@
 <script>
-	import { hoveredAlbum, mouseX, mouseY } from '../stores';
+	import { hoveredData, mouseX, mouseY } from '../stores';
 
 	export let screenWidth;
 	export let screenHeight;
+	export let type;
 
 	let adjustedMouseX;
 	let adjustedMouseY;
@@ -30,20 +31,31 @@
           width: {tooltipWidth}px;"
 >
 	<div class="tooltip-content body-text">
-		<p>{$hoveredAlbum.artist}, {$hoveredAlbum.album}</p>
-		<p>
-			{$hoveredAlbum.album_release_date}
-		</p>
-		<p>
-			{#if $hoveredAlbum.days_since_first_release == 0}
-				Debut album
-			{:else}
-				{Math.round(($hoveredAlbum.days_since_first_release / 365.25) * 10) / 10} years since debut album
-				({$hoveredAlbum.days_since_first_release} days)
-				{Math.round(($hoveredAlbum.days_since_last_release / 365.25) * 10) / 10} years since previous
-				album
-			{/if}
-		</p>
+		{#if type == 'artist'}
+			<p>{$hoveredData.artist}</p>
+		{/if}
+
+		{#if type == 'album'}
+			<p>
+				{#if $hoveredData.artist}
+					{$hoveredData.artist},
+				{/if}
+				{$hoveredData.album}
+			</p>
+			<p>
+				{$hoveredData.album_release_date}
+			</p>
+			<p>
+				{#if $hoveredData.days_since_first_release == 0}
+					Debut album
+				{:else}
+					{Math.round(($hoveredData.days_since_first_release / 365.25) * 10) / 10} years since debut
+					album ({$hoveredData.days_since_first_release} days)
+					{Math.round(($hoveredData.days_since_last_release / 365.25) * 10) / 10} years since previous
+					album
+				{/if}
+			</p>
+		{/if}
 	</div>
 </div>
 

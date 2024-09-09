@@ -2,8 +2,8 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 
-	import TooltipAlbum from './TooltipAlbum.svelte';
-	import { hoveredAlbum, mouseX, mouseY } from '../stores';
+	import Tooltip from './Tooltip.svelte';
+	import { hoveredData, mouseX, mouseY } from '../stores';
 
 	export let data;
 	export let screenHeight;
@@ -12,6 +12,7 @@
 	const nonDebutAlbums = data.filter((d) => d.days_since_first_release != 0);
 
 	const padding = 15;
+	let isHovering = false;
 
 	let xExtent = extent(data, (d) => d.days_since_min_release_date);
 	let yExtent = extent(data, (d) => d.days_since_last_release);
@@ -26,13 +27,15 @@
 	$: yScale = scaleLinear().domain([0, 4380]).range([innerHeight, 0]);
 
 	const handleMouseover = function (event, d) {
-		hoveredAlbum.set(d);
+		hoveredData.set(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
+		isHovering = true;
 	};
 
 	const handleMouseout = function () {
-		hoveredAlbum.set(undefined);
+		hoveredData.set(undefined);
+		isHovering = false;
 	};
 </script>
 
@@ -57,6 +60,6 @@
 	</g>
 </svg>
 
-{#if $hoveredAlbum != undefined}
-	<TooltipAlbum {screenWidth} {screenHeight} />
+{#if ($hoveredData != undefined) & isHovering}
+	<Tooltip {screenWidth} {screenHeight} type="album" />
 {/if}

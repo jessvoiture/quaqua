@@ -4,8 +4,8 @@
 	import { writable } from 'svelte/store';
 
 	import Scrolly from './Scrolly.svelte';
-	import TooltipAlbum from './TooltipAlbum.svelte';
-	import { hoveredAlbum, mouseX, mouseY } from '../stores';
+	import Tooltip from './Tooltip.svelte';
+	import { hoveredData, mouseX, mouseY } from '../stores';
 	import { scale } from 'svelte/transition';
 
 	export let artists;
@@ -22,6 +22,7 @@
 	let currentStep = 0;
 	let areScalesFree = writable(false);
 	let stepWidth = 300;
+	let isHovering = false;
 
 	let artistsDaysActive = artists.flatMap((artist) =>
 		artist.albums.map((album) => album.days_since_first_release)
@@ -58,13 +59,16 @@
 	});
 
 	const handleMouseover = function (event, d) {
-		hoveredAlbum.set(d);
+		hoveredData.set(d);
+		console.log(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
+		isHovering = true;
 	};
 
 	const handleMouseout = function () {
-		hoveredAlbum.set(undefined);
+		hoveredData.set(undefined);
+		isHovering = false;
 	};
 
 	const getYCoord = (album, yDomain) => {
@@ -138,8 +142,8 @@
 	</div>
 </div>
 
-{#if $hoveredAlbum != undefined}
-	<TooltipAlbum {screenWidth} {screenHeight} />
+{#if ($hoveredData != undefined) & isHovering}
+	<Tooltip {screenWidth} {screenHeight} type="album" />
 {/if}
 
 <style>
