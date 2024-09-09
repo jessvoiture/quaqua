@@ -2,15 +2,14 @@
 	import Scrolly from './Scrolly.svelte';
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
-	import { extent, rollup, max } from 'd3-array';
-	import { slide, fade } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
+	import { extent } from 'd3-array';
 
 	import TooltipAlbum from './TooltipAlbum.svelte';
 	import TooltipArtist from './TooltipArtist.svelte';
 	import { hoveredAlbum, hoveredArtist, mouseX, mouseY } from '../stores';
 
-	export let data;
+	export let albumsSorted;
+	export let artistsSorted;
 	export let screenHeight;
 	export let screenWidth;
 
@@ -36,98 +35,9 @@
 	const stepWidth = 300;
 	const rectWidth = 1;
 
-	// Get unique artist count
-	const uniqueArtists = [...new Set(data.map((item) => item.artist))];
+	// // Get unique artist count
+	const uniqueArtists = artistsSorted.map((d) => d.artist);
 	const uniqueArtistCount = uniqueArtists.length;
-
-	// Sorting by days_since_min_release_date
-	const artistsSortedByDebutDateArray = Array.from(
-		data.reduce((acc, album) => {
-			if (!acc.has(album.artist)) {
-				acc.set(album.artist, album.days_since_min_release_date);
-			}
-			return acc;
-		}, new Map())
-	)
-		.sort((a, b) => a[1] - b[1])
-		.map(([artist]) => artist);
-
-	// Sorting by days_since_first_release (days active)
-	const artistsSortedByDaysActiveArray = Array.from(
-		data.reduce((acc, album) => {
-			if (!acc.has(album.artist) || acc.get(album.artist) < album.days_since_first_release) {
-				acc.set(album.artist, album.days_since_first_release);
-			}
-			return acc;
-		}, new Map())
-	)
-		.sort((a, b) => b[1] - a[1])
-		.map(([artist]) => artist);
-
-	// Define the Y positions by debut release date
-	// create map of artist with rank based on sorting (ie ranked by date of first release)
-	const yPositionsDebut = new Map(
-		artistsSortedByDebutDateArray.map((artist, index) => [artist, index + 1])
-	);
-
-	// Define the Y positions by days active
-	// create map of artist with rank based on sorting (ie ranked by the number of days active)
-	const yPositionsActive = new Map(
-		artistsSortedByDaysActiveArray.map((artist, index) => [artist, index + 1])
-	);
-
-	// Merge data with yPositionsDebut and yPositionsActive
-	// get index of artist in sorted array
-	// used to plot the albums in the bar code plot
-	const albumsSorted = data.map((album) => ({
-		...album,
-		indexByDebutDate: yPositionsDebut.get(album.artist),
-		indexByDaysActive: yPositionsActive.get(album.artist)
-	}));
-
-	// aggregate data by artist
-	// calculate the number of albums per artist and the max days_since_first_release (total days active)
-	// this creates a map
-	const artistStats = rollup(
-		data,
-		(v) => ({
-			count: v.length, // Count the number of albums
-			maxDaysSinceFirstRelease: max(v, (d) => d.days_since_first_release) // Find the maximum days_since_first_release
-		}),
-		(d) => d.artist // Group by artist
-	);
-
-	// Convert the Map to an array of objects for easier use
-	const artists = Array.from(artistStats, ([data, stats]) => ({
-		data,
-		albumCount: stats.count,
-		maxDaysSinceFirstRelease: stats.maxDaysSinceFirstRelease,
-		eraLength: stats.maxDaysSinceFirstRelease / stats.count
-	}));
-
-	const yPositionEraLength = new Map(
-		[...artists]
-			.sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
-			.map((item, index) => [item.data, index + 1]) // Map artist to rank
-	);
-
-	const artistsSorted = artists.map((d) => {
-		return {
-			...d,
-			indexByDaysActive: yPositionsActive.get(d.data),
-			indexByDebutDate: yPositionsDebut.get(d.data),
-			indexByEraLength: yPositionEraLength.get(d.data)
-		};
-	});
-
-	console.log(
-		'artistssortedby Era',
-		albumsSorted.map((d) => d.indexByEraLength)
-	);
-	console.log(
-		'artistssortedby active',
-		albumsSorted.map((d) => d.indexByDaysActive)
-	);
 
 	// Responsive sizing
 	$: width = 0.8 * screenWidth;
@@ -140,7 +50,10 @@
 	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
 	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
 	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
-	$: tweenedYBars = tweened(artistsSorted.map((d) => d.indexByDaysActive));
+	$: tweenedYBars = tweened(
+		artistsSorted.map((d) => d.indexByDaysActive),
+		{ duration: 800 }
+	);
 
 	// Define scales
 	// $: xExtent = extent($tweenedX);

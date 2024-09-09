@@ -30,7 +30,7 @@
           width: {tooltipWidth}px;"
 >
 	<div class="tooltip-content body-text">
-		<p>{$hoveredArtist.data}</p>
+		<p>{$hoveredArtist.artist}</p>
 	</div>
 </div>
 
