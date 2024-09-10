@@ -1,11 +1,11 @@
 <script>
-	import Scrolly from './Scrolly.svelte';
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 
 	import Tooltip from './Tooltip.svelte';
 	import AxisX from './axisX.svelte';
+	import Scrolly from './Scrolly.svelte';
 	import { hoveredData, mouseX, mouseY } from '../stores';
 
 	export let albumsSorted;
@@ -37,13 +37,18 @@
 		'<p>step 5: y is sorted for years active / album count</p>'
 	];
 
-	const padding = { left: 120, right: 15, top: 0, bottom: 40 };
+	const padding = { left: 128, right: 8, top: 0, bottom: 40 };
 	const stepWidth = 300;
 	const rectWidth = 1;
 
 	// // Get unique artist count
 	const uniqueArtists = artistsSorted.map((d) => d.artist);
 	const uniqueArtistCount = uniqueArtists.length;
+
+	// find the date of the earliest debut album
+	const minReleaseDate = new Date(
+		Math.min(...albumsSorted.map((album) => new Date(album.album_release_date)))
+	);
 
 	// Responsive sizing
 	$: if (screenWidth <= 860) {
@@ -55,7 +60,7 @@
 	}
 	$: innerWidth = width - padding.left - padding.right;
 	$: innerHeight = height - padding.top - padding.bottom;
-	$: rectHeight = innerHeight / uniqueArtistCount - 2;
+	$: rectHeight = innerHeight / uniqueArtistCount - 4;
 
 	// Initialize tweened variables
 	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
@@ -68,9 +73,6 @@
 	// $: xExtent = extent($tweenedX);
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
 	$: yScale = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
-
-	$: xTickCount = Math.floor(innerWidth / 200);
-	$: xTicks = xScale.ticks(xTickCount);
 
 	// Update the positions according to the current step
 	// 0: sorted by date of debut
@@ -178,12 +180,14 @@
 							class="artist-row"
 							x="0"
 							y={yScale($tweenedNames[i]) - 2}
-							width={innerWidth + padding.left}
-							height={rectHeight + 3}
+							{width}
+							height={rectHeight + 4}
 							fill="white"
+							rx="4"
+							ry="4"
 						/>
 
-						<text x="0" y={yScale($tweenedNames[i]) + rectHeight / 1.2} height={rectHeight}
+						<text x="8" y={yScale($tweenedNames[i]) + rectHeight / 1.1} height={rectHeight}
 							>{a.artist}</text
 						>
 					</g>
@@ -200,6 +204,7 @@
 							y={yScale($tweenedY[i])}
 							width={rectWidth}
 							height={rectHeight}
+							pointer-events="all"
 							on:mouseover={function (event) {
 								handleMouseover(event, d, 'album');
 							}}
@@ -232,7 +237,7 @@
 				</g>
 			</g>
 
-			<AxisX padding={padding.left} {xTicks} {xScale} {height} {xTickCount} />
+			<AxisX padding={padding.left} {xScale} {height} {currentStep} {innerWidth} {minReleaseDate} />
 		</svg>
 	</div>
 
@@ -289,13 +294,7 @@
 		font-size: 11px;
 	}
 
-	.highlighted-name {
-		border-radius: 8px;
-		transition: fill 0.2s ease; /* Add a smooth transition if needed */
-		fill: lightgray; /* This will change the fill color on hover */
-	}
-
 	.artist-row:hover {
-		fill: lightgray;
+		fill: #ededed;
 	}
 </style>
