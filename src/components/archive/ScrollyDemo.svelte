@@ -4,7 +4,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	import Scrolly from './Scrolly.svelte';
-	import DrawPath from './DrawPath.svelte';
+	import DrawPath from './archive/DrawPath.svelte';
 
 	export let artists;
 	export let screenHeight;

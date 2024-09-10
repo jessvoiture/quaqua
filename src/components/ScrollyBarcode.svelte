@@ -5,6 +5,7 @@
 	import { extent } from 'd3-array';
 
 	import Tooltip from './Tooltip.svelte';
+	import AxisX from './axisX.svelte';
 	import { hoveredData, mouseX, mouseY } from '../stores';
 
 	export let albumsSorted;
@@ -16,12 +17,16 @@
 	let tweenedYBars;
 	let tweenedX;
 	let tweenedBarWidth;
+	let tweenedNames;
+	let height;
+	let width;
+
 	let rectHeight = 8;
 	let currentStep = 0;
 	let xExtent = [0, 0];
 	let opacityClass = 'full-opacity';
 	let tooltipHoveredOver = 'album';
-	let isHovering = false;
+	let isDataHovered = false;
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
@@ -32,7 +37,7 @@
 		'<p>step 5: y is sorted for years active / album count</p>'
 	];
 
-	const padding = 15;
+	const padding = { left: 120, right: 15, top: 0, bottom: 40 };
 	const stepWidth = 300;
 	const rectWidth = 1;
 
@@ -41,47 +46,59 @@
 	const uniqueArtistCount = uniqueArtists.length;
 
 	// Responsive sizing
-	$: width = 0.8 * screenWidth;
-	$: height = 0.8 * screenHeight;
-	$: innerWidth = width - 2 * padding;
-	$: innerHeight = height - 2 * padding;
+	$: if (screenWidth <= 860) {
+		height = 0.9 * screenHeight;
+		width = 0.9 * screenWidth;
+	} else {
+		height = 0.8 * screenHeight;
+		width = 0.8 * screenWidth;
+	}
+	$: innerWidth = width - padding.left - padding.right;
+	$: innerHeight = height - padding.top - padding.bottom;
 	$: rectHeight = innerHeight / uniqueArtistCount - 2;
 
 	// Initialize tweened variables
 	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
 	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
 	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
-	$: tweenedYBars = tweened(
-		artistsSorted.map((d) => d.indexByDaysActive),
-		{ duration: 800 }
-	);
+	$: tweenedYBars = tweened(artistsSorted.map((d) => d.indexByDaysActive));
+	$: tweenedNames = tweened(artistsSorted.map((d) => d.indexByDebutDate));
 
 	// Define scales
 	// $: xExtent = extent($tweenedX);
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
 	$: yScale = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
 
+	$: xTickCount = Math.floor(innerWidth / 200);
+	$: xTicks = xScale.ticks(xTickCount);
+
 	// Update the positions according to the current step
+	// 0: sorted by date of debut
 	$: if (currentStep === 0) {
 		setReleaseDate();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		// 1: x axis by days since debut
 	} else if (currentStep === 1) {
 		setDiffToDebut();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		// 2: sorted by days since debut
 	} else if (currentStep === 2) {
 		setYVals();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		// 3: add bars
 	} else if (currentStep == 3) {
 		setBarYearsActive();
 		xExtent = [0, 20339];
 		opacityClass = 'transition-opacity';
+		// 4: width of bars = days / album
 	} else if (currentStep == 4) {
 		setBarDaysPerAlbum();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
+		// 5: sort bars by days / album
 	} else if (currentStep == 5) {
 		setBarDaysPerEraLength();
 		xExtent = [0, 2000];
@@ -89,36 +106,49 @@
 	}
 
 	// Step functions
-	const setDiffToDebut = () => {
-		tweenedBarWidth.set(artistsSorted.map((d) => 0));
-		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
-		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
-	};
-
+	// 0: sorted by date of debut
 	const setReleaseDate = () => {
 		tweenedBarWidth.set(artistsSorted.map((d) => 0));
 		tweenedX.set(albumsSorted.map((d) => d.days_since_min_release_date));
 		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
 	};
 
+	// 1: x axis by days since debut
+	const setDiffToDebut = () => {
+		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
+	};
+
+	// 2: sorted by days since debut
 	const setYVals = () => {
 		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
 		tweenedY.set(albumsSorted.map((d) => d.indexByDaysActive));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
+	// 3: add bars
 	const setBarYearsActive = () => {
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
 		tweenedYBars.set(artistsSorted.map((d) => d.indexByDaysActive));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
+	// 4: width of bars = days / album
 	const setBarDaysPerAlbum = () => {
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
 		tweenedYBars.set(artistsSorted.map((d) => d.indexByDaysActive));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
+	// 5: sort bars by days / album
 	const setBarDaysPerEraLength = () => {
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease / d.albumCount));
 		tweenedYBars.set(artistsSorted.map((d) => d.indexByEraLength));
+		tweenedNames.set(artistsSorted.map((d) => d.indexByEraLength));
 	};
 
 	const handleMouseover = function (event, d, type) {
@@ -126,62 +156,83 @@
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 		tooltipHoveredOver = type;
-		isHovering = true;
+		isDataHovered = true;
 	};
 
 	const handleMouseout = function () {
 		hoveredData.set(undefined);
-		isHovering = false;
+		isDataHovered = false;
 	};
 </script>
 
 <div class="scroller">
 	<div class="plot">
 		<svg {width} {height}>
-			<g
-				width={innerWidth}
-				height={innerHeight}
-				transform={`translate(${padding}, ${padding})`}
-				class={opacityClass}
-			>
-				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				{#each albumsSorted as d, i}
+			<g transform={`translate(0, ${padding.top})`} class="names">
+				{#each artistsSorted as a, i}
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<rect
-						x={xScale($tweenedX[i])}
-						y={yScale($tweenedY[i])}
-						width={rectWidth}
-						height={rectHeight}
-						on:mouseover={function (event) {
-							handleMouseover(event, d, 'album');
-						}}
-						on:mouseout={function () {
-							handleMouseout();
-						}}
-					/>
+					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+					<g class="artist-name">
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<rect
+							class="artist-row"
+							x="0"
+							y={yScale($tweenedNames[i]) - 2}
+							width={innerWidth + padding.left}
+							height={rectHeight + 3}
+							fill="white"
+						/>
+
+						<text x="0" y={yScale($tweenedNames[i]) + rectHeight / 1.2} height={rectHeight}
+							>{a.artist}</text
+						>
+					</g>
 				{/each}
 			</g>
 
-			<g width={innerWidth} height={innerHeight} transform={`translate(${padding}, ${padding})`}>
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-				{#each artistsSorted as d, i}
+			<g transform={`translate(${padding.left}, ${padding.top})`} class="charts">
+				<g class={opacityClass}>
+					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+					{#each albumsSorted as d, i}
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<rect
+							x={xScale($tweenedX[i])}
+							y={yScale($tweenedY[i])}
+							width={rectWidth}
+							height={rectHeight}
+							on:mouseover={function (event) {
+								handleMouseover(event, d, 'album');
+							}}
+							on:mouseout={function () {
+								handleMouseout();
+							}}
+						/>
+					{/each}
+				</g>
+
+				<g>
 					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<rect
-						class="transition-width"
-						x="0"
-						y={yScale($tweenedYBars[i])}
-						width={xScale($tweenedBarWidth[i])}
-						height={rectHeight}
-						on:mouseover={function (event) {
-							handleMouseover(event, d, 'artist');
-						}}
-						on:mouseout={function () {
-							handleMouseout();
-						}}
-					/>
-				{/each}
+					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+					{#each artistsSorted as d, i}
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<rect
+							class="transition-width"
+							x="0"
+							y={yScale($tweenedNames[i])}
+							width={xScale($tweenedBarWidth[i])}
+							height={rectHeight}
+							on:mouseover={function (event) {
+								handleMouseover(event, d, 'artist');
+							}}
+							on:mouseout={function () {
+								handleMouseout();
+							}}
+						/>
+					{/each}
+				</g>
 			</g>
+
+			<AxisX padding={padding.left} {xTicks} {xScale} {height} {xTickCount} />
 		</svg>
 	</div>
 
@@ -198,7 +249,7 @@
 	</div>
 </div>
 
-{#if ($hoveredData != undefined) & isHovering}
+{#if ($hoveredData != undefined) & isDataHovered}
 	<Tooltip {screenHeight} {screenWidth} type={tooltipHoveredOver} />
 {/if}
 
@@ -216,10 +267,10 @@
 	}
 
 	.transition-width {
-		transition: width 0.25s ease-in-out;
-		-webkit-transition: width 0.25s ease-in-out;
-		-moz-transition: width 0.25s ease-in-out;
-		-o-transition: width 0.25s ease-in-out;
+		transition: width 0.1s ease-in-out;
+		-webkit-transition: width 0.1s ease-in-out;
+		-moz-transition: width 0.1s ease-in-out;
+		-o-transition: width 0.1s ease-in-out;
 	}
 
 	.full-opacity {
@@ -232,5 +283,19 @@
 		-webkit-transition: opacity 0.5s 1s ease-in-out;
 		-moz-transition: opacity 0.5s 1s ease-in-out;
 		-o-transition: opacity 0.5s 1s ease-in-out;
+	}
+
+	text {
+		font-size: 11px;
+	}
+
+	.highlighted-name {
+		border-radius: 8px;
+		transition: fill 0.2s ease; /* Add a smooth transition if needed */
+		fill: lightgray; /* This will change the fill color on hover */
+	}
+
+	.artist-row:hover {
+		fill: lightgray;
 	}
 </style>
