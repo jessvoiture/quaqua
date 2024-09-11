@@ -37,7 +37,7 @@
 		'<p>step 5: y is sorted for years active / album count</p>'
 	];
 
-	const padding = { left: 128, right: 8, top: 0, bottom: 40 };
+	const padding = { left: 128, right: 8, top: 8, bottom: 64 };
 	const stepWidth = 300;
 	const rectWidth = 1;
 
@@ -49,6 +49,8 @@
 	const minReleaseDate = new Date(
 		Math.min(...albumsSorted.map((album) => new Date(album.album_release_date)))
 	);
+
+	const yExtent = extent(artistsSorted.map((d) => d.indexByDebutDate));
 
 	// Responsive sizing
 	$: if (screenWidth <= 860) {
@@ -70,9 +72,8 @@
 	$: tweenedNames = tweened(artistsSorted.map((d) => d.indexByDebutDate));
 
 	// Define scales
-	// $: xExtent = extent($tweenedX);
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
-	$: yScale = scaleLinear().domain([0, uniqueArtistCount]).range([0, innerHeight]);
+	$: yScale = scaleLinear().domain(yExtent).range([0, innerHeight]);
 
 	// Update the positions according to the current step
 	// 0: sorted by date of debut
@@ -170,77 +171,88 @@
 <div class="scroller">
 	<div class="plot">
 		<svg {width} {height}>
-			<g transform={`translate(0, ${padding.top})`} class="names">
-				{#each artistsSorted as a, i}
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-					<g class="artist-name">
+			<g class="chart-wrapper" transform={`translate(0, ${padding.top})`}>
+				<!-- Y Axis Label -->
+				<g class="artist-labels axis yaxis">
+					{#each artistsSorted as a, i}
 						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<rect
-							class="artist-row"
-							x="0"
-							y={yScale($tweenedNames[i]) - 2}
-							{width}
-							height={rectHeight + 4}
-							fill="white"
-							rx="4"
-							ry="4"
-						/>
+						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+						<g>
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<rect
+								class="label-background"
+								x="0"
+								y={yScale($tweenedNames[i]) - 2}
+								{width}
+								height={rectHeight + 4}
+								fill="#ededed"
+								opacity="0"
+								rx="4"
+								ry="4"
+							/>
 
-						<text x="8" y={yScale($tweenedNames[i]) + rectHeight / 1.1} height={rectHeight}
-							>{a.artist}</text
-						>
+							<text
+								x="8"
+								y={yScale($tweenedNames[i]) + rectHeight / 1.1}
+								height={rectHeight}
+								class="label">{a.artist}</text
+							>
+						</g>
+					{/each}
+				</g>
+
+				<!-- The Charts -->
+				<g transform={`translate(${padding.left}, 0)`} class="chart-and-axis">
+					<AxisX {xScale} {currentStep} {innerWidth} {innerHeight} {minReleaseDate} />
+
+					<!-- Barcode -->
+					<g class={opacityClass}>
+						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+						{#each albumsSorted as d, i}
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<rect
+								x={xScale($tweenedX[i])}
+								y={yScale($tweenedY[i])}
+								width={rectWidth}
+								height={rectHeight}
+								pointer-events="all"
+								on:mouseover={function (event) {
+									handleMouseover(event, d, 'album');
+								}}
+								on:mouseout={function () {
+									handleMouseout();
+								}}
+							/>
+						{/each}
 					</g>
-				{/each}
-			</g>
 
-			<g transform={`translate(${padding.left}, ${padding.top})`} class="charts">
-				<g class={opacityClass}>
-					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-					{#each albumsSorted as d, i}
+					<!-- Bars -->
+					<g>
 						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<rect
-							x={xScale($tweenedX[i])}
-							y={yScale($tweenedY[i])}
-							width={rectWidth}
-							height={rectHeight}
-							pointer-events="all"
-							on:mouseover={function (event) {
-								handleMouseover(event, d, 'album');
-							}}
-							on:mouseout={function () {
-								handleMouseout();
-							}}
-						/>
-					{/each}
-				</g>
-
-				<g>
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-					{#each artistsSorted as d, i}
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<rect
-							class="transition-width"
-							x="0"
-							y={yScale($tweenedNames[i])}
-							width={xScale($tweenedBarWidth[i])}
-							height={rectHeight}
-							on:mouseover={function (event) {
-								handleMouseover(event, d, 'artist');
-							}}
-							on:mouseout={function () {
-								handleMouseout();
-							}}
-						/>
-					{/each}
+						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+						{#each artistsSorted as d, i}
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<rect
+								class="transition-width"
+								x="0"
+								y={yScale($tweenedNames[i])}
+								width={xScale($tweenedBarWidth[i])}
+								height={rectHeight}
+								on:mouseover={function (event) {
+									handleMouseover(event, d, 'artist');
+								}}
+								on:mouseout={function () {
+									handleMouseout();
+								}}
+							/>
+						{/each}
+					</g>
 				</g>
 			</g>
-
-			<AxisX padding={padding.left} {xScale} {height} {currentStep} {innerWidth} {minReleaseDate} />
 		</svg>
 	</div>
 
+	<!-- Scrolly -->
 	<div class="steps-wrapper">
 		<Scrolly bind:value={currentStep}>
 			{#each steps as text, i}
@@ -254,6 +266,7 @@
 	</div>
 </div>
 
+<!-- Tooltip -->
 {#if ($hoveredData != undefined) & isDataHovered}
 	<Tooltip {screenHeight} {screenWidth} type={tooltipHoveredOver} />
 {/if}
@@ -294,7 +307,7 @@
 		font-size: 11px;
 	}
 
-	.artist-row:hover {
-		fill: #ededed;
+	.label-background:hover {
+		opacity: 100%;
 	}
 </style>

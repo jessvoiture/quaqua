@@ -1,4 +1,4 @@
-import { rollup, max } from 'd3-array';
+import { rollup, max, mean } from 'd3-array';
 
 export function sortAlbums(data) {
 	// Sorting by days_since_min_release_date
@@ -85,7 +85,11 @@ export function sortArtists(data) {
 		data,
 		(v) => ({
 			count: v.length, // Count the number of albums
-			maxDaysSinceFirstRelease: max(v, (d) => d.days_since_first_release) // Max days active
+			maxDaysSinceFirstRelease: max(v, (d) => d.days_since_first_release), // Max days active
+			avgDaysSinceLastRelease: mean(
+				v.filter((d) => d.days_since_last_release !== 0),
+				(d) => d.days_since_last_release
+			) // Exclude 0 values
 		}),
 		(d) => d.artist
 	);
@@ -95,12 +99,14 @@ export function sortArtists(data) {
 		artist,
 		albumCount: stats.count,
 		maxDaysSinceFirstRelease: stats.maxDaysSinceFirstRelease,
+		avgDaysSinceLastRelease: stats.avgDaysSinceLastRelease,
 		eraLength: stats.maxDaysSinceFirstRelease / stats.count
 	}));
 
 	const yPositionEraLength = new Map(
 		[...artists]
-			.sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
+			// .sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
+			.sort((a, b) => b.avgDaysSinceLastRelease - a.avgDaysSinceLastRelease) // Sort by eraLength descending
 			.map((item, index) => [item.artist, index + 1]) // Map artist to rank
 	);
 
