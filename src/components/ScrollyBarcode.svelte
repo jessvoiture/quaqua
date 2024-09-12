@@ -27,6 +27,7 @@
 	let opacityClass = 'full-opacity';
 	let tooltipHoveredOver = 'album';
 	let isDataHovered = false;
+	let svgAltDesc = '';
 
 	const steps = [
 		`<p>step 0: x is album release date</p>`,
@@ -81,31 +82,43 @@
 		setReleaseDate();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		svgAltDesc =
+			'Step 1: A barcode plot with the date on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
 		// 1: x axis by days since debut
 	} else if (currentStep === 1) {
 		setDiffToDebut();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		svgAltDesc =
+			'Step 2: The plot has updated. It still displays a barcode plot with the artists on the y axis but the x axis reflects the with time difference between the release date of an artists debut album and of their most recent album on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
 		// 2: sorted by days since debut
 	} else if (currentStep === 2) {
 		setYVals();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		svgAltDesc =
+			'Step 3: The plot displays the same data as in step 2, but the artists y position has been changed so that the artists are sorted from largest to smallest days active (ie the time in between their debut album and most recent album)';
 		// 3: add bars
 	} else if (currentStep == 3) {
 		setBarYearsActive();
 		xExtent = [0, 20339];
 		opacityClass = 'transition-opacity';
+		svgAltDesc =
+			'Step 4: The plot is now a bar chart, still with the same x and y axes. The bars are plotted to represent the time active (ie days between debut album and last album) for each artists.';
 		// 4: width of bars = days / album
 	} else if (currentStep == 4) {
 		setBarDaysPerAlbum();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
+		svgAltDesc =
+			'Step 5: The x axis measurement changes to reflect the average time in years between album releases (ie the average album era length). The bars for each artists are redrawn to reflect this measurement';
 		// 5: sort bars by days / album
 	} else if (currentStep == 5) {
 		setBarDaysPerEraLength();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
+		svgAltDesc =
+			'Step 6 (last step): The y position of the artist and their respective bar changes so the artists are sorted by average time between album releases in descending order.';
 	}
 
 	// Step functions
@@ -169,8 +182,25 @@
 </script>
 
 <div class="scroller">
+	<div aria-live="polite" id={svgAltDesc} class="visually-hidden">
+		<!-- Dynamic description will be updated here -->
+	</div>
+
 	<div class="plot">
-		<svg {width} {height}>
+		<svg {width} {height} aria-labelledby="chartTitle">
+			<h2 id="chartTitle" class="visually-hidden">
+				Chart comparing album release dates for best-selling artists
+			</h2>
+			<desc
+				>A scrollytelling graphic that looks at album releases by best selling artists. Each chart
+				has the artists on the Y axis. The first chart shows each artist's albums plotted by release
+				date, which is on the x axis. The x axis then changes to show the time difference between
+				the album and the artist's debut album. Then, a bar chart will appear (still with the
+				artists on the y axis) to first show the total years active (defined as the time difference
+				between their first and last studio album) and then by the average gap between albums (ie
+				the average album era length).
+			</desc>
+
 			<g class="chart-wrapper" transform={`translate(0, ${padding.top})`}>
 				<!-- Y Axis Label -->
 				<g class="artist-labels axis yaxis">
@@ -189,13 +219,15 @@
 								opacity="0"
 								rx="4"
 								ry="4"
+								aria-label="Row for {artistsSorted[i]}"
 							/>
 
 							<text
 								x="8"
 								y={yScale($tweenedNames[i]) + rectHeight / 1.1}
 								height={rectHeight}
-								class="label">{a.artist}</text
+								class="label"
+								aria-label={artistsSorted[i]}>{a.artist}</text
 							>
 						</g>
 					{/each}
@@ -216,6 +248,7 @@
 								width={rectWidth}
 								height={rectHeight}
 								pointer-events="all"
+								aria-label="Data point for the album, {albumsSorted[i]}."
 								on:mouseover={function (event) {
 									handleMouseover(event, d, 'album');
 								}}
@@ -238,6 +271,7 @@
 								y={yScale($tweenedNames[i])}
 								width={xScale($tweenedBarWidth[i])}
 								height={rectHeight}
+								aria-label="Data point for the {artistsSorted[i]}"
 								on:mouseover={function (event) {
 									handleMouseover(event, d, 'artist');
 								}}
@@ -253,7 +287,7 @@
 	</div>
 
 	<!-- Scrolly -->
-	<div class="steps-wrapper">
+	<div class="steps-wrapper" role="navigation" aria-label="Scrollytelling Steps">
 		<Scrolly bind:value={currentStep}>
 			{#each steps as text, i}
 				<div class="step" class:active={currentStep === i}>
@@ -304,7 +338,7 @@
 	}
 
 	text {
-		font-size: 11px;
+		font-size: 0.6rem;
 	}
 
 	.label-background:hover {

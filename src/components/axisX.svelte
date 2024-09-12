@@ -9,12 +9,12 @@
 
 	let label;
 
-	const textWidth = 200;
-
-	$: if ((currentStep >= 1) & (currentStep < 4)) {
-		label = 'Years Since Debut Album Released';
+	$: if (currentStep == 0) {
+		label = 'Album Release Date';
+	} else if ((currentStep >= 1) & (currentStep < 4)) {
+		label = 'Years Since Debut Album Was Released';
 	} else if (currentStep >= 4) {
-		label = 'Average Gap Between Albums (Years)';
+		label = 'Average Time Between Albums In Years';
 	}
 
 	$: xTickCount = Math.floor(innerWidth / 200);
@@ -57,17 +57,17 @@
 			{/each}
 		</g>
 
-		{#if currentStep > 0}
-			<text
-				class="axis-label"
-				transform={`translate(${innerWidth}, 48)`}
-				text-anchor="end"
-				alignment-baseline="middle"
-				transition:fade
-			>
-				{label}
-			</text>
-		{/if}
+		<!-- {#if currentStep > 0} -->
+		<text
+			class="axis-label"
+			transform={`translate(${innerWidth}, 48)`}
+			text-anchor="end"
+			alignment-baseline="middle"
+			transition:fade
+		>
+			{label}
+		</text>
+		<!-- {/if} -->
 	</g>
 
 	<!-- Axis Lines -->
