@@ -264,7 +264,7 @@
 									width="16"
 									height="16"
 									fill="transparent"
-									pointer-events="all"
+									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									on:mouseover={function (event) {
 										handleMouseover(event, d, 'album');
 									}}
@@ -282,7 +282,7 @@
 									height={isDataHovered && $hoveredData.album == d.album
 										? rectHeight * 1.5
 										: rectHeight}
-									pointer-events="all"
+									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									aria-label="Data point for the album, {d.album} by {d.artist}."
 								/>
 							</g>
