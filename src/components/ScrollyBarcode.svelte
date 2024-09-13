@@ -2,6 +2,7 @@
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
+	import { writable } from 'svelte/store';
 
 	import Tooltip from './Tooltip.svelte';
 	import AxisX from './axisX.svelte';
@@ -53,12 +54,14 @@
 
 	const yExtent = extent(artistsSorted.map((d) => d.indexByDebutDate));
 
+	const hoveredLabelRow = writable(undefined);
+
 	// Responsive sizing
 	$: if (screenWidth <= 860) {
 		height = 0.9 * screenHeight;
 		width = 0.95 * screenWidth;
 	} else {
-		height = 0.8 * screenHeight;
+		height = 0.85 * screenHeight;
 		width = 0.8 * screenWidth;
 	}
 	$: innerWidth = width - padding.left - padding.right;
@@ -174,11 +177,20 @@
 		mouseY.set(event.clientY);
 		tooltipHoveredOver = type;
 		isDataHovered = true;
+		console.log('hovered data', $hoveredData);
 	};
 
 	const handleMouseout = function () {
 		hoveredData.set(undefined);
 		isDataHovered = false;
+	};
+
+	const handleMouseoverLabel = function (d) {
+		hoveredLabelRow.set(d);
+	};
+
+	const handleMouseoutLabel = function (d) {
+		hoveredLabelRow.set(undefined);
 	};
 </script>
 
@@ -192,15 +204,6 @@
 			<h2 id="chartTitle" class="visually-hidden">
 				Chart comparing album release dates for best-selling artists
 			</h2>
-			<desc
-				>A scrollytelling graphic that looks at album releases by best selling artists. Each chart
-				has the artists on the Y axis. The first chart shows each artist's albums plotted by release
-				date, which is on the x axis. The x axis then changes to show the time difference between
-				the album and the artist's debut album. Then, a bar chart will appear (still with the
-				artists on the y axis) to first show the total years active (defined as the time difference
-				between their first and last studio album) and then by the average gap between albums (ie
-				the average album era length).
-			</desc>
 
 			<g class="chart-wrapper" transform={`translate(0, ${padding.top})`}>
 				<!-- Y Axis Label -->
@@ -211,16 +214,27 @@
 						<g>
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<rect
-								class="label-background"
 								x="0"
 								y={yScale($tweenedNames[i]) - 2}
 								{width}
 								height={rectHeight + 4}
 								fill="#ededed"
-								opacity="0"
+								opacity={a == $hoveredLabelRow
+									? 100
+									: isDataHovered
+										? a.artist == $hoveredData.artist
+											? 100
+											: 0
+										: 0}
 								rx="4"
 								ry="4"
 								aria-label="Row for {artistsSorted[i]}"
+								on:mouseover={function () {
+									handleMouseoverLabel(a);
+								}}
+								on:mouseout={function () {
+									handleMouseoutLabel();
+								}}
 							/>
 
 							<text
@@ -346,7 +360,7 @@
 	}
 
 	text {
-		font-size: 0.6rem;
+		font-size: 0.65rem;
 	}
 
 	.label-background:hover {
