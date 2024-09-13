@@ -73,7 +73,14 @@
 	<!-- Axis Lines -->
 	<g class="lines">
 		{#each xTicks as tick}
-			<line x1={xScale(tick)} y1="0" x2={xScale(tick)} y2={innerHeight} stroke="#e3e3e3" />
+			<line
+				x1={xScale(tick)}
+				y1="0"
+				x2={xScale(tick)}
+				y2={innerHeight}
+				stroke="#e3e3e3"
+				pointer-events="none"
+			/>
 		{/each}
 	</g>
 </g>

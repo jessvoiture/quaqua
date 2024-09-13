@@ -177,7 +177,6 @@
 		mouseY.set(event.clientY);
 		tooltipHoveredOver = type;
 		isDataHovered = true;
-		console.log('hovered data', $hoveredData);
 	};
 
 	const handleMouseout = function () {
@@ -214,6 +213,7 @@
 						<g>
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<rect
+								class={a.artist}
 								x="0"
 								y={yScale($tweenedNames[i]) - 2}
 								{width}
@@ -256,21 +256,36 @@
 					<g class={opacityClass}>
 						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 						{#each albumsSorted as d, i}
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
-							<rect
-								x={xScale($tweenedX[i])}
-								y={yScale($tweenedY[i])}
-								width={rectWidth}
-								height={rectHeight}
-								pointer-events="all"
-								aria-label="Data point for the album, {albumsSorted[i]}."
-								on:mouseover={function (event) {
-									handleMouseover(event, d, 'album');
-								}}
-								on:mouseout={function () {
-									handleMouseout();
-								}}
-							/>
+							<g class={d.album}>
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<rect
+									x={xScale($tweenedX[i]) - 8}
+									y={yScale($tweenedY[i]) - 4}
+									width="16"
+									height="16"
+									fill="transparent"
+									pointer-events="all"
+									on:mouseover={function (event) {
+										handleMouseover(event, d, 'album');
+									}}
+									on:mouseout={function () {
+										handleMouseout();
+									}}
+								/>
+
+								<rect
+									x={xScale($tweenedX[i])}
+									y={isDataHovered && $hoveredData.album == d.album
+										? yScale($tweenedY[i]) - 0.25 * rectHeight
+										: yScale($tweenedY[i])}
+									width={isDataHovered && $hoveredData.album == d.album ? rectWidth * 2 : rectWidth}
+									height={isDataHovered && $hoveredData.album == d.album
+										? rectHeight * 1.5
+										: rectHeight}
+									pointer-events="all"
+									aria-label="Data point for the album, {d.album} by {d.artist}."
+								/>
+							</g>
 						{/each}
 					</g>
 
