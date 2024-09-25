@@ -39,9 +39,10 @@
 		'<p>step 5: y is sorted for years active / album count</p>'
 	];
 
-	const padding = { left: 128, right: 8, top: 8, bottom: 56 };
+	const padding = { left: 128, right: 8, top: 0, bottom: 56 };
 	const stepWidth = 300;
 	const rectWidth = 1;
+	const rectTouchAreaSize = 16;
 
 	// // Get unique artist count
 	const uniqueArtists = artistsSorted.map((d) => d.artist);
@@ -72,7 +73,6 @@
 	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
 	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
 	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
-	// $: tweenedYBars = tweened(artistsSorted.map((d) => d.indexByDaysActive));
 	$: tweenedNames = tweened(artistsSorted.map((d) => d.indexByDebutDate));
 
 	// Define scales
@@ -250,7 +250,15 @@
 
 				<!-- The Charts -->
 				<g transform={`translate(${padding.left}, 0)`} class="chart-and-axis">
-					<AxisX {xScale} {currentStep} {innerWidth} {innerHeight} {minReleaseDate} />
+					<AxisX
+						{xScale}
+						{currentStep}
+						{innerWidth}
+						{innerHeight}
+						{minReleaseDate}
+						{screenWidth}
+						{rectHeight}
+					/>
 
 					<!-- Barcode -->
 					<g class={opacityClass}>
@@ -258,11 +266,12 @@
 						{#each albumsSorted as d, i}
 							<g class={d.album}>
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<!-- invisible rectangles fo touch area -->
 								<rect
-									x={xScale($tweenedX[i]) - 8}
-									y={yScale($tweenedY[i]) - 4}
-									width="16"
-									height="16"
+									x={xScale($tweenedX[i]) - rectTouchAreaSize / 2}
+									y={yScale($tweenedY[i]) - rectTouchAreaSize / 4}
+									width={rectTouchAreaSize}
+									height={rectTouchAreaSize}
 									fill="transparent"
 									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									on:mouseover={function (event) {
@@ -273,6 +282,7 @@
 									}}
 								/>
 
+								<!-- visilbe rectangles plotting albums -->
 								<rect
 									x={xScale($tweenedX[i])}
 									y={isDataHovered && $hoveredData.album == d.album
