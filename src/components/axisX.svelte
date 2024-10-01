@@ -1,7 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { tweened } from 'svelte/motion';
-	import { writable } from 'svelte/store';
 
 	export let xScale;
 	export let currentStep;
@@ -13,11 +12,11 @@
 	const daysInYear = 365.25;
 
 	const axisTicks = [
-		{ releaseDate: 5051, daysActive: 10 * daysInYear, eraLength: 1 * daysInYear },
+		{ releaseDate: 5051, daysActive: 20 * daysInYear, eraLength: 1 * daysInYear },
 		{ releaseDate: 12356, daysActive: 20 * daysInYear, eraLength: 2 * daysInYear },
-		{ releaseDate: 19661, daysActive: 30 * daysInYear, eraLength: 3 * daysInYear },
+		{ releaseDate: 19661, daysActive: 40 * daysInYear, eraLength: 3 * daysInYear },
 		{ releaseDate: 26966, daysActive: 40 * daysInYear, eraLength: 4 * daysInYear },
-		{ releaseDate: 26966, daysActive: 50 * daysInYear, eraLength: 5 * daysInYear }
+		{ releaseDate: 26966, daysActive: 60 * daysInYear, eraLength: 5 * daysInYear }
 	];
 
 	let axisLabel;
@@ -25,11 +24,11 @@
 
 	$: tweenedTicks = tweened(axisTicks.map((d) => d.releaseDate));
 
-	$: if (currentStep == 0) {
+	$: if ((currentStep == 0) | (currentStep == 1)) {
 		axisLabel = 'Album Release Date';
 		setTicksToReleaseDate();
-	} else if ((currentStep >= 1) & (currentStep < 4)) {
-		axisLabel = 'Years Since Debut Album Was Released';
+	} else if ((currentStep >= 2) & (currentStep < 4)) {
+		axisLabel = 'Years Between First and Last Album';
 		setTicksToDaysActive();
 	} else if (currentStep >= 4) {
 		axisLabel = 'Average Time Between Albums In Years';
@@ -73,11 +72,11 @@
 			{#each axisTicks as tick, i}
 				<g transform={`translate(${xScale($tweenedTicks[i])}, 28)`}>
 					<text text-anchor="middle">
-						{#if currentStep == 0 || currentStep == undefined}
+						{#if currentStep <= 1 || currentStep == undefined}
 							{getFormattedDate($tweenedTicks[i])}
 						{/if}
 
-						{#if currentStep > 0}
+						{#if currentStep > 1}
 							{getFormattedYears($tweenedTicks[i])}
 						{/if}
 					</text>

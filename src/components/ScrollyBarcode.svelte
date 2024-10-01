@@ -1,13 +1,14 @@
 <script>
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
-	import { extent } from 'd3-array';
+	import { extent, max } from 'd3-array';
 	import { writable } from 'svelte/store';
 
 	import Tooltip from './Tooltip.svelte';
 	import AxisX from './axisX.svelte';
 	import Scrolly from './Scrolly.svelte';
 	import { hoveredData, mouseX, mouseY } from '../stores';
+	import { fly } from 'svelte/transition';
 
 	export let albumsSorted;
 	export let artistsSorted;
@@ -17,6 +18,7 @@
 	let tweenedY;
 	let tweenedX;
 	let tweenedBarWidth;
+	let tweenedBarX;
 	let tweenedNames;
 	let height;
 	let width;
@@ -73,6 +75,7 @@
 	$: tweenedX = tweened(albumsSorted.map((d) => d.days_since_min_release_date));
 	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
 	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
+	$: tweenedBarX = tweened(artistsSorted.map(() => 0));
 	$: tweenedNames = tweened(artistsSorted.map((d) => d.indexByDebutDate));
 
 	// Define scales
@@ -83,51 +86,39 @@
 	// 0: sorted by date of debut
 	$: if (currentStep === 0) {
 		setReleaseDate();
-		xExtent = extent($tweenedX);
+		xExtent = extent(albumsSorted.map((d) => d.days_since_min_release_date));
 		opacityClass = 'full-opacity';
 		widthClass = 'first-width-transition';
-		svgAltDesc =
-			'Step 1: A barcode plot with the date on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
-		// 1: x axis by days since debut
+		// 1: add bars
 	} else if (currentStep === 1) {
 		setDiffToDebut();
-		xExtent = extent($tweenedX);
-		opacityClass = 'full-opacity';
-		widthClass = 'first-width-transition';
-		svgAltDesc =
-			'Step 2: The plot has updated. It still displays a barcode plot with the artists on the y axis but the x axis reflects the with time difference between the release date of an artists debut album and of their most recent album on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
-		// 2: add bars
-	} else if (currentStep === 2) {
-		setBarYearsActive();
-		xExtent = extent($tweenedX);
+		xExtent = extent(albumsSorted.map((d) => d.days_since_min_release_date));
 		opacityClass = 'transition-opacity';
 		widthClass = 'first-width-transition';
-		svgAltDesc =
-			'Step 3: The plot displays the same data as in step 2, but the artists y position has been changed so that the artists are sorted from largest to smallest days active (ie the time in between their debut album and most recent album)';
+	} else if (currentStep === 2) {
+		setBarYearsActive();
+		xExtent = extent(albumsSorted.map((d) => d.days_since_min_release_date));
+		console.log(xExtent);
+		opacityClass = 'transition-opacity';
+		widthClass = 'first-width-transition';
 		// 3: sort by time active
 	} else if (currentStep == 3) {
 		setYVals();
-		xExtent = [0, 20339];
+		xExtent = [0, max(artistsSorted.map((d) => d.maxDaysSinceFirstRelease))];
 		opacityClass = 'transition-opacity';
 		widthClass = 'first-width-transition';
-		svgAltDesc =
-			'Step 4: The plot is now a bar chart, still with the same x and y axes. The bars are plotted to represent the time active (ie days between debut album and last album) for each artists.';
 		// 4: width of bars = days / album
 	} else if (currentStep == 4) {
+		xExtent = [0, max(artistsSorted.map((d) => d.eraLength))];
 		setBarDaysPerAlbum();
-		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
 		widthClass = 'second-width-transition';
-		svgAltDesc =
-			'Step 5: The x axis measurement changes to reflect the average time in years between album releases (ie the average album era length). The bars for each artists are redrawn to reflect this measurement';
 		// 5: sort bars by days / album
 	} else if (currentStep == 5) {
 		setBarDaysPerEraLength();
-		xExtent = [0, 2000];
+		xExtent = [0, max(artistsSorted.map((d) => d.eraLength))];
 		opacityClass = 'transition-opacity';
 		widthClass = 'second-width-transition';
-		svgAltDesc =
-			'Step 6 (last step): The y position of the artist and their respective bar changes so the artists are sorted by average time between album releases in descending order.';
 	}
 
 	// Step functions
@@ -135,38 +126,44 @@
 	const setReleaseDate = () => {
 		tweenedX.set(albumsSorted.map((d) => d.days_since_min_release_date));
 		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
-		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedBarWidth.set(artistsSorted.map(() => 0));
+		tweenedBarX.set(artistsSorted.map((d) => d.minDaysSinceMinReleaseDate));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	// 1: x axis by days since debut
 	const setDiffToDebut = () => {
-		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
+		tweenedX.set(albumsSorted.map((d) => d.days_since_min_release_date));
 		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
-		tweenedBarWidth.set(artistsSorted.map((d) => 0));
+		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceMinReleaseDate));
+		tweenedBarX.set(artistsSorted.map((d) => d.minDaysSinceMinReleaseDate));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	// 2: add bars
 	const setBarYearsActive = () => {
+		tweenedBarX.set(artistsSorted.map(() => 0));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	// 3: sorted by days since debut
 	const setYVals = () => {
+		tweenedBarX.set(artistsSorted.map(() => 0));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
 	// 4: width of bars = days / album
 	const setBarDaysPerAlbum = () => {
+		tweenedBarX.set(artistsSorted.map(() => 0));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.avgDaysSinceLastRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
 
 	// 5: sort bars by days / album
 	const setBarDaysPerEraLength = () => {
+		tweenedBarX.set(artistsSorted.map(() => 0));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.avgDaysSinceLastRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByEraLength));
 	};
@@ -177,6 +174,7 @@
 		mouseY.set(event.clientY);
 		tooltipHoveredOver = type;
 		isDataHovered = true;
+		console.log(d.days_since_min_release_date);
 	};
 
 	const handleMouseout = function () {
@@ -261,7 +259,7 @@
 					/>
 
 					<!-- Barcode -->
-					<g class={opacityClass}>
+					<g class={`barcode ${opacityClass}`}>
 						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 						{#each albumsSorted as d, i}
 							<g class={d.album}>
@@ -300,18 +298,18 @@
 					</g>
 
 					<!-- Bars -->
-					<g>
+					<g id="bar-chart">
 						<!-- svelte-ignore a11y-no-static-element-interactions -->
 						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 						{#each artistsSorted as d, i}
 							<!-- svelte-ignore a11y-no-static-element-interactions -->
 							<rect
 								class={widthClass}
-								x="0"
+								x={xScale($tweenedBarX[i])}
 								y={yScale($tweenedNames[i])}
-								width={xScale($tweenedBarWidth[i])}
+								width={xScale($tweenedBarWidth[i]) - xScale($tweenedBarX[i])}
 								height={rectHeight}
-								aria-label="Data point for the {artistsSorted[i]}"
+								aria-label="Data point for {d.artist}"
 								on:mouseover={function (event) {
 									handleMouseover(event, d, 'artist');
 								}}
