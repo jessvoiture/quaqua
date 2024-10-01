@@ -69,7 +69,7 @@
 <g class="grid">
 	<g class="xaxis axis" transform={`translate(0, ${innerHeight})`}>
 		<!-- Axis numbers -->
-		<g class="axis-numbers">
+		<g class="axis-ticks">
 			{#each axisTicks as tick, i}
 				<g transform={`translate(${xScale($tweenedTicks[i])}, 28)`}>
 					<text text-anchor="middle">
