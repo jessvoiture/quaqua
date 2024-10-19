@@ -6,6 +6,7 @@
 	let songIndex = 0;
 	let songUris = ['1zHlj4dQ8ZAtrayhuDDmkY', '1DqdF42leyFIzqNDv9CjId']; // List of song URIs
 
+	// TODO: skipping song while paused messes things up
 	// Increment the song index and load the next song
 	function incrementCount() {
 		if (songIndex < songUris.length - 1) {
@@ -17,6 +18,11 @@
 		if (EmbedController) {
 			EmbedController.loadUri(`spotify:track:${songUris[songIndex]}`);
 			EmbedController.togglePlay(); // Toggles between play and pause
+
+			// if the music is paused, turn it on
+			if (!$isPlaying) {
+				isPlaying.set(true);
+			}
 		}
 	}
 
@@ -97,7 +103,7 @@
 
 	button {
 		padding: 8px;
-		border: none;
+		border: 1px solid #202020;
 		color: #202020;
 		background-color: #dad3c1;
 		cursor: pointer;

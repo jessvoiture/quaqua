@@ -1,9 +1,24 @@
 <script>
 	import { isPlaying } from '../stores';
+
+	export let screenHeight;
+	export let screenWidth;
+
+	let vinylSize = 1000;
+
+	$: if (screenHeight > screenWidth) {
+		vinylSize = 1.2 * screenWidth;
+	} else {
+		vinylSize = 1.2 * screenHeight;
+	}
 </script>
 
 <div class="hero">
-	<div class="vinyl rotating" class:paused={!$isPlaying}>
+	<div
+		class="vinyl rotating"
+		class:paused={!$isPlaying}
+		style="width: {vinylSize}px; height: {vinylSize}px; "
+	>
 		<div class="header">
 			<!-- svelte-ignore a11y-missing-content -->
 			<h1 aria-label="Album Drops" sr-only></h1>
@@ -38,11 +53,7 @@
 	.vinyl {
 		border-radius: 50%;
 		background-color: #dad3c1;
-		width: 120vh;
-		height: 120vh;
 		position: absolute;
-		top: -25%;
-		left: -3%;
 	}
 
 	.rotating {
@@ -69,7 +80,7 @@
 	}
 
 	h2 {
-		font-size: 16px;
+		font-size: 1rem;
 		font-weight: normal;
 		color: #dad3c1;
 		position: absolute;
@@ -82,7 +93,7 @@
 
 	.detail {
 		transform: rotate(180deg);
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: #dad3c1;
 		font-weight: normal;
 		position: absolute;
@@ -100,7 +111,7 @@
 	text {
 		font-family: Arial, sans-serif;
 		font-stretch: 200%;
-		font-size: 64px;
+		font-size: 4rem;
 		margin: 0;
 		fill: #dad3c1;
 		text-transform: uppercase;
@@ -123,6 +134,30 @@
 		}
 		100% {
 			transform: rotate(510deg);
+		}
+	}
+
+	/* Minimum aspect ratio */
+	@media (min-aspect-ratio: 1/1) {
+		.vinyl {
+			top: calc(-25%); /* 10% of the vinyl is off the top */
+			left: calc(-5%); /* 5% of the vinyl is off the left */
+		}
+	}
+
+	/* Maximum aspect ratio */
+	@media (max-aspect-ratio: 1/1) {
+		.vinyl {
+			top: calc(1%); /* 10% of the vinyl is off the top */
+			left: calc(-25%); /* 5% of the vinyl is off the left */
+		}
+	}
+
+	/* Exact aspect ratio, put it at the bottom to avoid override*/
+	@media (aspect-ratio: 1/1) {
+		.vinyl {
+			top: calc(-10%); /* 10% of the vinyl is off the top */
+			left: calc(-5%); /* 5% of the vinyl is off the left */
 		}
 	}
 </style>

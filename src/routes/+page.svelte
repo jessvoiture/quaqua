@@ -29,7 +29,7 @@
 <svelte:window on:resize={resize} />
 
 <div class="content">
-	<Hero />
+	<Hero {screenWidth} {screenHeight} />
 	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
 	<Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} />

@@ -1,4 +1,4 @@
-# QUA(NITY) QUA(LITY)
+# Album Drop
 
 A comparison of the album drops of the [best selling artists](https://en.wikipedia.org/wiki/List_of_best-selling_music_artists) (>120 million records).
 
@@ -6,6 +6,6 @@ A comparison of the album drops of the [best selling artists](https://en.wikiped
 
 - [ ] styling (colour)
 - [ ] side by side scrolly for large screens
-- [ ] hover state rows
+- [x] hover state rows
 - [ ] chart desc for accessibility
-- [ ]
+- [ ] skip song when paused messes things up
