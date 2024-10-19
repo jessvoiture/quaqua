@@ -80,7 +80,6 @@ export function sortArtists(data) {
 		artistsSortedByDaysActiveArray.map((artist, index) => [artist, index + 1])
 	);
 
-	console.log(data);
 	// Aggregate data by artist
 	const artistStats = rollup(
 		data,
@@ -107,8 +106,6 @@ export function sortArtists(data) {
 		avgDaysSinceLastRelease: stats.avgDaysSinceLastRelease,
 		eraLength: stats.maxDaysSinceFirstRelease / stats.count
 	}));
-
-	console.log(artists);
 
 	const yPositionEraLength = new Map(
 		[...artists]

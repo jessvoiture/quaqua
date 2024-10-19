@@ -60,7 +60,6 @@
 
 	const handleMouseover = function (event, d) {
 		hoveredData.set(d);
-		console.log(d);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 		isHovering = true;

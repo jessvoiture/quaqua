@@ -3,6 +3,8 @@
 	import Triangles from '../components/Triangles.svelte';
 	import ScrollyBarcode from '../components/ScrollyBarcode.svelte';
 	import Scatterplot from '../components/Scatterplot.svelte';
+	import Hero from '../components/Hero.svelte';
+	import SpotifyPlayer from '../components/SpotifyPlayer.svelte';
 
 	export let data;
 
@@ -26,6 +28,25 @@
 
 <svelte:window on:resize={resize} />
 
-<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
-<Triangles {screenWidth} {screenHeight} {artists} />
-<Scatterplot {screenWidth} {screenHeight} data={flattened} />
+<div class="content">
+	<Hero />
+	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
+	<Triangles {screenWidth} {screenHeight} {artists} />
+	<Scatterplot {screenWidth} {screenHeight} data={flattened} />
+
+	<div class="music-player">
+		<SpotifyPlayer />
+	</div>
+</div>
+
+<style>
+	.music-player {
+		width: auto;
+		position: sticky;
+		margin-right: 24px;
+		bottom: 24px;
+		margin-left: auto;
+		justify-content: end;
+		display: flex;
+	}
+</style>
