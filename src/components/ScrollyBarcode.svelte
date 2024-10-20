@@ -194,10 +194,6 @@
 </script>
 
 <div class="scroller">
-	<div aria-live="polite" id={svgAltDesc} class="visually-hidden">
-		<!-- Dynamic description will be updated here -->
-	</div>
-
 	<div class="plot">
 		<svg {width} {height} aria-labelledby="chartTitle">
 			<h2 id="chartTitle" class="visually-hidden">
@@ -218,7 +214,7 @@
 								y={yScale($tweenedNames[i]) - 2}
 								{width}
 								height={rectHeight + 4}
-								fill="#ededed"
+								fill="#323232"
 								opacity={a == $hoveredLabelRow
 									? 100
 									: isDataHovered
@@ -292,6 +288,7 @@
 									height={isDataHovered && $hoveredData.album == d.album
 										? rectHeight * 1.5
 										: rectHeight}
+									fill="#dad3c1"
 									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									aria-label="Data point for the album, {d.album} by {d.artist}."
 								/>
@@ -311,6 +308,7 @@
 								y={yScale($tweenedNames[i])}
 								width={xScale($tweenedBarWidth[i])}
 								height={rectHeight}
+								fill="#dad3c1"
 								aria-label="Data point for the {artistsSorted[i]}"
 								on:mouseover={function (event) {
 									handleMouseover(event, d, 'artist');
@@ -382,10 +380,6 @@
 		-webkit-transition: opacity 0.5s 1s ease-in-out;
 		-moz-transition: opacity 0.5s 1s ease-in-out;
 		-o-transition: opacity 0.5s 1s ease-in-out;
-	}
-
-	text {
-		font-size: 0.65rem;
 	}
 
 	.label-background:hover {

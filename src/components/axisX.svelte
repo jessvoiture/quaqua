@@ -104,7 +104,7 @@
 				y1="0"
 				x2={xScale($tweenedTicks[i])}
 				y2={innerHeight + rectHeight}
-				stroke="#e3e3e3"
+				stroke="#323232"
 				pointer-events="none"
 			/>
 		{/each}
@@ -112,11 +112,11 @@
 </g>
 
 <style>
-	text {
-		font-size: 12px;
-	}
-
 	.axis-label {
 		font-size: 14px;
+	}
+
+	text {
+		font-size: 0.8rem;
 	}
 </style>

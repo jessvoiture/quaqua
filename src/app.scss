@@ -1,9 +1,8 @@
-$color-background: #ffffff;
-$color-light_grey: #8a8a8a;
-$color-dark_grey: #6b5b6a;
-$color-white: #ffffff;
-$color-text: #000000;
-$color-accent: #f7a4f6;
+$color-black: #202020;
+$color-dark_grey: #323232;
+$color-light_grey: #cac7be;
+$color-white: #dad3c1;
+$color-accent: #d63e30;
 $type-size-small: 14pt;
 $type-size-very_small: 10pt;
 $type-line_height-small: 22pt;
@@ -17,6 +16,13 @@ body,
 article {
 	margin: 0;
 	padding: 0;
+	background-color: $color-black;
+}
+
+text {
+	font-size: 0.65rem;
+	color: $color-light_grey;
+	fill: $color-light_grey;
 }
 
 .steps-wrapper {
@@ -37,10 +43,12 @@ article {
 }
 
 .step-content {
-	background: $color-white;
+	background: $color-dark_grey;
 	font-size: $type-size-small;
 	line-height: $type-line_height-small;
-	color: $color-text;
+	color: $color-light_grey;
+	opacity: 95%;
+	backdrop-filter: blur(10px);
 	border-radius: 5px;
 	padding: 0.5rem 1rem;
 	display: flex;

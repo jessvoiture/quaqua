@@ -1,12 +1,11 @@
 <script>
 	import { isPlaying } from '../stores';
+	import { songUris } from '../lib/songs.js';
 	import { onMount } from 'svelte';
 
 	let EmbedController;
 	let songIndex = 0;
-	let songUris = ['1zHlj4dQ8ZAtrayhuDDmkY', '1DqdF42leyFIzqNDv9CjId']; // List of song URIs
 
-	// TODO: skipping song while paused messes things up
 	// Increment the song index and load the next song
 	function incrementCount() {
 		if (songIndex < songUris.length - 1) {
@@ -16,17 +15,16 @@
 		}
 
 		if (EmbedController) {
-			EmbedController.loadUri(`spotify:track:${songUris[songIndex]}`);
-			EmbedController.togglePlay(); // Toggles between play and pause
+			EmbedController.loadUri(`spotify:track:${songUris[songIndex].uri}`);
+			EmbedController.togglePlay();
 
-			// if the music is paused, turn it on
 			if (!$isPlaying) {
 				isPlaying.set(true);
 			}
 		}
 	}
 
-	// Load the Spotify IFrame API dynamically (but only once)
+	// Load the Spotify IFrame API dynamically
 	function loadSpotifyIframeApi() {
 		if (window.onSpotifyIframeApiReady) {
 			return; // Prevent loading the API again
@@ -43,7 +41,7 @@
 				const options = {
 					width: '100%',
 					height: '0', // Hidden iframe
-					uri: `spotify:track:${songUris[songIndex]}` // Load the first song
+					uri: `spotify:track:${songUris[songIndex].uri}` // Load the first song
 				};
 
 				iframeApi.createController(element, options, (controller) => {
@@ -98,7 +96,7 @@
 	.music-controls {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: 8px;
 	}
 
 	button {
@@ -108,8 +106,8 @@
 		background-color: #dad3c1;
 		cursor: pointer;
 		border-radius: 100px;
-		width: 40px;
-		height: 40px;
+		width: 44px;
+		height: 44px;
 	}
 
 	button:hover {
@@ -118,12 +116,12 @@
 
 	.material-icons {
 		vertical-align: middle;
-		font-size: 24px;
+		font-size: 28px;
 	}
 
 	button img {
-		width: 20px;
-		height: 20px;
+		width: 24px;
+		height: 24px;
 		vertical-align: middle;
 	}
 </style>
