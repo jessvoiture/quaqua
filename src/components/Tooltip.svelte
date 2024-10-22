@@ -5,10 +5,14 @@
 	export let screenHeight;
 	export let type;
 
+	const imgWidth = 100;
+	const contentWidth = 200;
+	const padding = 12;
+
 	let adjustedMouseX;
 	let adjustedMouseY;
 
-	let tooltipWidth = 200;
+	let tooltipWidth = imgWidth + contentWidth + 2 * padding;
 	let tooltipHeight = 150;
 
 	if ($mouseX + tooltipWidth + 50 < screenWidth) {
@@ -27,9 +31,12 @@
 <div
 	class="tooltip"
 	style="left: {adjustedMouseX}px; 
-          top: {adjustedMouseY}px;
-          width: {tooltipWidth}px;"
+          top: {adjustedMouseY}px;"
 >
+	<div class="tooltip-image">
+		<img src={$hoveredData.album_image} alt="album cover of {$hoveredData.album}" loading="lazy" />
+	</div>
+
 	<div class="tooltip-content body-text">
 		{#if type == 'artist'}
 			<p>{$hoveredData.artist}</p>
@@ -62,15 +69,27 @@
 <style lang="scss" scoped>
 	.tooltip {
 		position: fixed;
-		background-color: white;
-		border: 1px solid #ccc;
+		background-color: #404040;
+		border: 1px solid #646464;
 		border-radius: 8px;
-		padding: 16px;
+		padding: 12px;
+		display: flex;
+		flex-direction: row;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+	}
+
+	img {
+		width: 100px;
+		height: auto;
 	}
 
 	.tooltip-content p {
 		margin: 0;
 		padding: 0;
-		color: #6b5b6a;
+		color: #cac7be;
+		width: 200px;
 	}
 </style>
