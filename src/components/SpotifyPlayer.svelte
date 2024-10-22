@@ -40,8 +40,8 @@
 				const element = document.getElementById('embed-iframe');
 				const options = {
 					width: '100%',
-					height: '0', // Hidden iframe
-					uri: `spotify:track:${songUris[songIndex].uri}` // Load the first song
+					height: '0',
+					uri: `spotify:track:${songUris[songIndex].uri}`
 				};
 
 				iframeApi.createController(element, options, (controller) => {
@@ -54,8 +54,8 @@
 	// Play/Pause functionality
 	function handlePlayPause() {
 		if (EmbedController) {
-			EmbedController.togglePlay(); // Toggles between play and pause
-			isPlaying.set(!$isPlaying); // Update the state
+			EmbedController.togglePlay();
+			isPlaying.set(!$isPlaying);
 		}
 	}
 
