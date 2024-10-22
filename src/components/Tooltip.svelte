@@ -33,9 +33,15 @@
 	style="left: {adjustedMouseX}px; 
           top: {adjustedMouseY}px;"
 >
-	<div class="tooltip-image">
-		<img src={$hoveredData.album_image} alt="album cover of {$hoveredData.album}" loading="lazy" />
-	</div>
+	{#if type == 'album'}
+		<div class="tooltip-image">
+			<img
+				src={$hoveredData.album_image}
+				alt="album cover of {$hoveredData.album}"
+				loading="lazy"
+			/>
+		</div>
+	{/if}
 
 	<div class="tooltip-content body-text">
 		{#if type == 'artist'}
