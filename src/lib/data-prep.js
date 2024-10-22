@@ -47,7 +47,6 @@ export function sortAlbums(data) {
 
 export function sortArtists(data) {
 	// Calculate Y positions directly in this function
-
 	// Sorting by days_since_min_release_date for debut date positioning
 	const artistsSortedByDebutDateArray = Array.from(
 		data.reduce((acc, album) => {
@@ -109,8 +108,8 @@ export function sortArtists(data) {
 
 	const yPositionEraLength = new Map(
 		[...artists]
-			// .sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
-			.sort((a, b) => b.avgDaysSinceLastRelease - a.avgDaysSinceLastRelease) // Sort by eraLength descending
+			.sort((a, b) => b.eraLength - a.eraLength) // Sort by eraLength descending
+			// .sort((a, b) => b.avgDaysSinceLastRelease - a.avgDaysSinceLastRelease) // Sort by eraLength descending
 			.map((item, index) => [item.artist, index + 1]) // Map artist to rank
 	);
 
@@ -125,11 +124,13 @@ export function sortArtists(data) {
 }
 
 export function flattenData(data) {
+	console.log(data);
 	// Transform data so albums are not nested under artist
 	const flattenedArtists = data.flatMap((artistEntry) =>
 		artistEntry.albums.map((album) => ({
 			artist: artistEntry.artist,
 			album: album.album,
+			album_image: album.album_image,
 			album_release_date: album.album_release_date,
 			type: album.type,
 			first_album_release_date: album.first_album_release_date,
