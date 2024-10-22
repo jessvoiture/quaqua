@@ -26,19 +26,11 @@
 	let currentStep = 0;
 	let xExtent = [0, 0];
 	let opacityClass = 'full-opacity';
+	let colourClass = 'white';
 	let widthClass = 'first-width-transition';
 	let tooltipHoveredOver = 'album';
 	let isDataHovered = false;
 	let svgAltDesc = '';
-
-	// const steps = [
-	// 	`<p>To begin, let's look at when each artist released their albums. The artists are sorted by the date of their debut album, from Frank Sinatra, with his debut album 'The Voice of Frank Sinatra' released on March 4, 1946, to  </p>`,
-	// 	'<p>step 1: x is days since debut</p>',
-	// 	'<p>step 2: y is sorted by diff to debut</p>',
-	// 	'<p>step 3: bar for years active</p>',
-	// 	'<p>step 4: bar for years active / album count</p>',
-	// 	'<p>step 5: y is sorted for years active / album count</p>'
-	// ];
 
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
@@ -86,6 +78,7 @@
 		setReleaseDate();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		colourClass = 'white';
 		widthClass = 'first-width-transition';
 		svgAltDesc =
 			'Step 1: A barcode plot with the date on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
@@ -94,6 +87,7 @@
 		setDiffToDebut();
 		xExtent = extent($tweenedX);
 		opacityClass = 'full-opacity';
+		colourClass = 'white';
 		widthClass = 'first-width-transition';
 		svgAltDesc =
 			'Step 2: The plot has updated. It still displays a barcode plot with the artists on the y axis but the x axis reflects the with time difference between the release date of an artists debut album and of their most recent album on the x axis and the artist on the y axis. Each studio album released by the artist is plotted by the release date. The artists are sorted by the date of their debut album in descending order.';
@@ -101,7 +95,8 @@
 	} else if (currentStep === 2) {
 		setBarYearsActive();
 		xExtent = extent($tweenedX);
-		opacityClass = 'transition-opacity';
+		opacityClass = 'full-opacity';
+		colourClass = 'black';
 		widthClass = 'first-width-transition';
 		svgAltDesc =
 			'Step 3: The plot displays the same data as in step 2, but the artists y position has been changed so that the artists are sorted from largest to smallest days active (ie the time in between their debut album and most recent album)';
@@ -109,7 +104,8 @@
 	} else if (currentStep == 3) {
 		setYVals();
 		xExtent = [0, 20339];
-		opacityClass = 'transition-opacity';
+		opacityClass = 'full-opacity';
+		colourClass = 'black';
 		widthClass = 'first-width-transition';
 		svgAltDesc =
 			'Step 4: The plot is now a bar chart, still with the same x and y axes. The bars are plotted to represent the time active (ie days between debut album and last album) for each artists.';
@@ -118,6 +114,7 @@
 		setBarDaysPerAlbum();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
+		colourClass = 'black';
 		widthClass = 'second-width-transition';
 		svgAltDesc =
 			'Step 5: The x axis measurement changes to reflect the average time in years between album releases (ie the average album era length). The bars for each artists are redrawn to reflect this measurement';
@@ -126,6 +123,7 @@
 		setBarDaysPerEraLength();
 		xExtent = [0, 2000];
 		opacityClass = 'transition-opacity';
+		colourClass = 'black';
 		widthClass = 'second-width-transition';
 		svgAltDesc =
 			'Step 6 (last step): The y position of the artist and their respective bar changes so the artists are sorted by average time between album releases in descending order.';
@@ -150,12 +148,16 @@
 
 	// 2: add bars
 	const setBarYearsActive = () => {
+		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDebutDate));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDebutDate));
 	};
 
 	// 3: sorted by days since debut
 	const setYVals = () => {
+		tweenedX.set(albumsSorted.map((d) => d.days_since_first_release));
+		tweenedY.set(albumsSorted.map((d) => d.indexByDaysActive));
 		tweenedBarWidth.set(artistsSorted.map((d) => d.maxDaysSinceFirstRelease));
 		tweenedNames.set(artistsSorted.map((d) => d.indexByDaysActive));
 	};
@@ -314,7 +316,7 @@
 									height={isDataHovered && $hoveredData.album == d.album
 										? rectHeight * 1.5
 										: rectHeight}
-									fill={'#dad3c1'}
+									class={colourClass}
 									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									aria-label="Data point for the album, {d.album} by {d.artist}."
 								/>
@@ -378,10 +380,22 @@
 
 	.transition-opacity {
 		opacity: 0;
-		transition: opacity 0.5s 1s ease-in-out;
-		-webkit-transition: opacity 0.5s 1s ease-in-out;
-		-moz-transition: opacity 0.5s 1s ease-in-out;
-		-o-transition: opacity 0.5s 1s ease-in-out;
+		/* transition: opacity 0.1s 1s ease-in-out;
+		-webkit-transition: opacity 0.1s 1s ease-in-out;
+		-moz-transition: opacity 0.1s 1s ease-in-out;
+		-o-transition: opacity 0.1s 1s ease-in-out; */
+	}
+
+	.white {
+		fill: #dad3c1;
+	}
+
+	.black {
+		fill: #202020;
+		transition: fill 0.5s ease;
+		-webkit-transition: fill 0.5s 1s ease-in-out;
+		-moz-transition: fill 0.5s 1s ease-in-out;
+		-o-transition: fill 0.5s 1s ease-in-out;
 	}
 
 	.label-background:hover {
