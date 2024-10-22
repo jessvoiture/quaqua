@@ -3,6 +3,7 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 	import { writable } from 'svelte/store';
+	import { steps } from '../lib/steps.js';
 
 	import Tooltip from './Tooltip.svelte';
 	import AxisX from './axisX.svelte';
@@ -30,16 +31,16 @@
 	let isDataHovered = false;
 	let svgAltDesc = '';
 
-	const steps = [
-		`<p>step 0: x is album release date</p>`,
-		'<p>step 1: x is days since debut</p>',
-		'<p>step 2: y is sorted by diff to debut</p>',
-		'<p>step 3: bar for years active</p>',
-		'<p>step 4: bar for years active / album count</p>',
-		'<p>step 5: y is sorted for years active / album count</p>'
-	];
+	// const steps = [
+	// 	`<p>To begin, let's look at when each artist released their albums. The artists are sorted by the date of their debut album, from Frank Sinatra, with his debut album 'The Voice of Frank Sinatra' released on March 4, 1946, to  </p>`,
+	// 	'<p>step 1: x is days since debut</p>',
+	// 	'<p>step 2: y is sorted by diff to debut</p>',
+	// 	'<p>step 3: bar for years active</p>',
+	// 	'<p>step 4: bar for years active / album count</p>',
+	// 	'<p>step 5: y is sorted for years active / album count</p>'
+	// ];
 
-	const padding = { left: 128, right: 8, top: 0, bottom: 56 };
+	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
 	const rectWidth = 1;
 	const rectTouchAreaSize = 16;
@@ -58,12 +59,12 @@
 	const hoveredLabelRow = writable(undefined);
 
 	// Responsive sizing
-	$: if (screenWidth <= 860) {
+	$: if (screenWidth < 960) {
 		height = 0.9 * screenHeight;
 		width = 0.95 * screenWidth;
 	} else {
-		height = 0.85 * screenHeight;
-		width = 0.8 * screenWidth;
+		height = 0.9 * screenHeight;
+		width = 0.6 * screenWidth;
 	}
 	$: innerWidth = width - padding.left - padding.right;
 	$: innerHeight = height - padding.top - padding.bottom;
@@ -256,8 +257,33 @@
 						{rectHeight}
 					/>
 
+					<!-- Bars -->
+					<g>
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+						{#each artistsSorted as d, i}
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<rect
+								class={widthClass}
+								x="0"
+								y={yScale($tweenedNames[i])}
+								width={xScale($tweenedBarWidth[i])}
+								height={rectHeight}
+								fill="#dad3c1"
+								aria-label="Data point for the {artistsSorted[i]}"
+								on:mouseover={function (event) {
+									handleMouseover(event, d, 'artist');
+								}}
+								on:mouseout={function () {
+									handleMouseout();
+								}}
+							/>
+						{/each}
+					</g>
+
 					<!-- Barcode -->
 					<g class={opacityClass}>
+						<!-- <g> -->
 						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 						{#each albumsSorted as d, i}
 							<g class={d.album}>
@@ -288,35 +314,11 @@
 									height={isDataHovered && $hoveredData.album == d.album
 										? rectHeight * 1.5
 										: rectHeight}
-									fill="#dad3c1"
+									fill={'#dad3c1'}
 									pointer-events={opacityClass == 'transition-opacity' ? 'none' : 'all'}
 									aria-label="Data point for the album, {d.album} by {d.artist}."
 								/>
 							</g>
-						{/each}
-					</g>
-
-					<!-- Bars -->
-					<g>
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
-						<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-						{#each artistsSorted as d, i}
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
-							<rect
-								class={widthClass}
-								x="0"
-								y={yScale($tweenedNames[i])}
-								width={xScale($tweenedBarWidth[i])}
-								height={rectHeight}
-								fill="#dad3c1"
-								aria-label="Data point for the {artistsSorted[i]}"
-								on:mouseover={function (event) {
-									handleMouseover(event, d, 'artist');
-								}}
-								on:mouseout={function () {
-									handleMouseout();
-								}}
-							/>
 						{/each}
 					</g>
 				</g>

@@ -13,6 +13,9 @@
 	const albumsSorted = data.albumsSorted;
 	const artistsSorted = data.artistsSorted;
 
+	console.log('albumsSorted', albumsSorted);
+	console.log('artistsSorted', artistsSorted);
+
 	let screenWidth;
 	let screenHeight;
 
@@ -31,8 +34,8 @@
 <div class="content">
 	<Hero {screenWidth} {screenHeight} />
 	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
-	<Triangles {screenWidth} {screenHeight} {artists} />
-	<Scatterplot {screenWidth} {screenHeight} data={flattened} />
+	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
+	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
 
 	<div class="music-player">
 		<SpotifyPlayer />
@@ -43,7 +46,7 @@
 	.music-player {
 		width: auto;
 		position: sticky;
-		margin-right: 24px;
+		padding: 24px;
 		bottom: 24px;
 		margin-left: auto;
 		justify-content: end;

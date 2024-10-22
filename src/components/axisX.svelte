@@ -1,7 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { tweened } from 'svelte/motion';
-	import { writable } from 'svelte/store';
 
 	export let xScale;
 	export let currentStep;
@@ -104,7 +103,7 @@
 				y1="0"
 				x2={xScale($tweenedTicks[i])}
 				y2={innerHeight + rectHeight}
-				stroke="#323232"
+				stroke="#404040"
 				pointer-events="none"
 			/>
 		{/each}
@@ -113,7 +112,7 @@
 
 <style>
 	.axis-label {
-		font-size: 14px;
+		font-size: 1rem;
 	}
 
 	text {
