@@ -7,7 +7,9 @@ export const load = async ({ fetch }) => {
 		return data;
 	};
 
-	const artists = await fetchArtistData();
+	const artists_all = await fetchArtistData();
+	const artists = artists_all.filter((obj) => Number(obj.rank) <= 40);
+
 	const flattenedData = flattenData(artists);
 	const albumsSorted = sortAlbums(flattenedData);
 	const artistsSorted = sortArtists(flattenedData);

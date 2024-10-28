@@ -4,6 +4,5 @@ export const steps = [
 	`<p>To get a sense the total time an artist was active, let's add bars</p>`,
 	'<p>Sorting by the total time active allows us to see</p>',
 	'<p>step 3: bar for years active</p>',
-	'<p>step 4: bar for years active / album count</p>',
-	'<p>step 5: y is sorted for years active / album count</p>'
+	'<p>step 4: bar for years active / album count</p>'
 ];

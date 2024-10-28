@@ -2,6 +2,7 @@
   {
     "artist": "The Beatles",
     "artist_decade_debut": 1960,
+    "rank": 1,
     "albums": [
       {
         "album": "Please Please Me",
@@ -138,6 +139,7 @@
   {
     "artist": "Rihanna",
     "artist_decade_debut": 2000,
+    "rank": 8,
     "albums": [
       {
         "album": "Music of the Sun",
@@ -224,6 +226,7 @@
   {
     "artist": "Led Zeppelin",
     "artist_decade_debut": 1960,
+    "rank": 7,
     "albums": [
       {
         "album": "Led Zeppelin",
@@ -310,6 +313,7 @@
   {
     "artist": "Justin Bieber",
     "artist_decade_debut": 2010,
+    "rank": 23,
     "albums": [
       {
         "album": "My World 2.0",
@@ -376,6 +380,7 @@
   {
     "artist": "Bruno Mars",
     "artist_decade_debut": 2010,
+    "rank": 25,
     "albums": [
       {
         "album": "Doo-Wops & Hooligans",
@@ -422,6 +427,7 @@
   {
     "artist": "Lady Gaga",
     "artist_decade_debut": 2000,
+    "rank": 39,
     "albums": [
       {
         "album": "The Fame",
@@ -478,6 +484,7 @@
   {
     "artist": "Ed Sheeran",
     "artist_decade_debut": 2010,
+    "rank": 24,
     "albums": [
       {
         "album": "+",
@@ -554,6 +561,7 @@
   {
     "artist": "Drake",
     "artist_decade_debut": 2010,
+    "rank": 19,
     "albums": [
       {
         "album": "Thank Me Later",
@@ -650,6 +658,7 @@
   {
     "artist": "Adele",
     "artist_decade_debut": 2000,
+    "rank": 42,
     "albums": [
       {
         "album": "19",
@@ -696,6 +705,7 @@
   {
     "artist": "Taylor Swift",
     "artist_decade_debut": 2000,
+    "rank": 12,
     "albums": [
       {
         "album": "Taylor Swift",
@@ -852,6 +862,7 @@
   {
     "artist": "Britney Spears",
     "artist_decade_debut": 1990,
+    "rank": 26,
     "albums": [
       {
         "album": "...Baby One More Time",
@@ -948,6 +959,7 @@
   {
     "artist": "Chris Brown",
     "artist_decade_debut": 2000,
+    "rank": 36,
     "albums": [
       {
         "album": "Chris Brown",
@@ -1074,6 +1086,7 @@
   {
     "artist": "Katy Perry",
     "artist_decade_debut": 2000,
+    "rank": 35,
     "albums": [
       {
         "album": "Katy Hudson",
@@ -1140,6 +1153,7 @@
   {
     "artist": "Kanye West",
     "artist_decade_debut": 2000,
+    "rank": 22,
     "albums": [
       {
         "album": "The College Dropout",
@@ -1296,6 +1310,7 @@
   {
     "artist": "Lil Wayne",
     "artist_decade_debut": 1990,
+    "rank": 40,
     "albums": [
       {
         "album": "Tha Block Is Hot",
@@ -1442,6 +1457,7 @@
   {
     "artist": "Beyoncé",
     "artist_decade_debut": 2000,
+    "rank": 13,
     "albums": [
       {
         "album": "Dangerously in Love",
@@ -1548,6 +1564,7 @@
   {
     "artist": "Elvis Presley",
     "artist_decade_debut": 1950,
+    "rank": 2,
     "albums": [
       {
         "album": "Elvis Presley",
@@ -1944,6 +1961,7 @@
   {
     "artist": "Jay-Z",
     "artist_decade_debut": 1990,
+    "rank": 37,
     "albums": [
       {
         "album": "Reasonable Doubt",
@@ -2130,6 +2148,7 @@
   {
     "artist": "Queen",
     "artist_decade_debut": 1970,
+    "rank": 5,
     "albums": [
       {
         "album": "Queen",
@@ -2286,6 +2305,7 @@
   {
     "artist": "Mariah Carey",
     "artist_decade_debut": 1990,
+    "rank": 11,
     "albums": [
       {
         "album": "Mariah Carey",
@@ -2432,6 +2452,7 @@
   {
     "artist": "Frank Sinatra",
     "artist_decade_debut": 1940,
+    "rank": 34,
     "albums": [
       {
         "album": "The Voice of Frank Sinatra",
@@ -2948,6 +2969,7 @@
   {
     "artist": "Whitney Houston",
     "artist_decade_debut": 1980,
+    "rank": 14,
     "albums": [
       {
         "album": "Whitney Houston",
@@ -3044,6 +3066,7 @@
   {
     "artist": "Maroon 5",
     "artist_decade_debut": 1990,
+    "rank": 41,
     "albums": [
       {
         "album": "We Like Digging?",
@@ -3140,6 +3163,7 @@
   {
     "artist": "Eminem",
     "artist_decade_debut": 1990,
+    "rank": 10,
     "albums": [
       {
         "album": "Infinite",
@@ -3286,6 +3310,7 @@
   {
     "artist": "Phil Collins",
     "artist_decade_debut": 1980,
+    "rank": 30,
     "albums": [
       {
         "album": "Face Value",
@@ -3372,6 +3397,7 @@
   {
     "artist": "Michael Jackson",
     "artist_decade_debut": 1970,
+    "rank": 3,
     "albums": [
       {
         "album": "Got to Be There",
@@ -3478,6 +3504,7 @@
   {
     "artist": "Billy Joel",
     "artist_decade_debut": 1970,
+    "rank": 21,
     "albums": [
       {
         "album": "Cold Spring Harbor",
@@ -3614,6 +3641,7 @@
   {
     "artist": "Garth Brooks",
     "artist_decade_debut": 1980,
+    "rank": 20,
     "albums": [
       {
         "album": "Garth Brooks",
@@ -3790,6 +3818,7 @@
   {
     "artist": "Fleetwood Mac",
     "artist_decade_debut": 1960,
+    "rank": 44,
     "albums": [
       {
         "album": "7936 South Rhodes",
@@ -3986,6 +4015,7 @@
   {
     "artist": "Eagles",
     "artist_decade_debut": 1970,
+    "rank": 15,
     "albums": [
       {
         "album": "Eagles",
@@ -4062,6 +4092,7 @@
   {
     "artist": "Bee Gees",
     "artist_decade_debut": 1960,
+    "rank": 46,
     "albums": [
       {
         "album": "The Bee Gees Sing and Play 14 Barry Gibb Songs",
@@ -4288,6 +4319,7 @@
   {
     "artist": "Madonna",
     "artist_decade_debut": 1980,
+    "rank": 6,
     "albums": [
       {
         "album": "Madonna",
@@ -4464,6 +4496,7 @@
   {
     "artist": "Bon Jovi",
     "artist_decade_debut": 1980,
+    "rank": 45,
     "albums": [
       {
         "album": "Bon Jovi",
@@ -4620,6 +4653,7 @@
   {
     "artist": "Red Hot Chili Peppers",
     "artist_decade_debut": 1980,
+    "rank": 43,
     "albums": [
       {
         "album": "The Red Hot Chili Peppers",
@@ -4756,6 +4790,7 @@
   {
     "artist": "Metallica",
     "artist_decade_debut": 1980,
+    "rank": 38,
     "albums": [
       {
         "album": "Kill 'Em All",
@@ -4882,6 +4917,7 @@
   {
     "artist": "Aerosmith",
     "artist_decade_debut": 1970,
+    "rank": 29,
     "albums": [
       {
         "album": "Aerosmith",
@@ -5038,6 +5074,7 @@
   {
     "artist": "Celine Dion",
     "artist_decade_debut": 1980,
+    "rank": 16,
     "albums": [
       {
         "album": "La voix du bon Dieu",
@@ -5324,6 +5361,7 @@
   {
     "artist": "U2",
     "artist_decade_debut": 1980,
+    "rank": 28,
     "albums": [
       {
         "album": "Boy",
@@ -5480,6 +5518,7 @@
   {
     "artist": "AC/DC",
     "artist_decade_debut": 1970,
+    "rank": 17,
     "albums": [
       {
         "album": "High Voltage",
@@ -5676,6 +5715,7 @@
   {
     "artist": "Pink Floyd",
     "artist_decade_debut": 1960,
+    "rank": 9,
     "albums": [
       {
         "album": "The Piper at the Gates of Dawn",
@@ -5832,6 +5872,7 @@
   {
     "artist": "Julio Iglesias",
     "artist_decade_debut": 1960,
+    "rank": 33,
     "albums": [
       {
         "album": "Yo canto",
@@ -6348,6 +6389,7 @@
   {
     "artist": "ABBA",
     "artist_decade_debut": 1970,
+    "rank": 32,
     "albums": [
       {
         "album": "Ring Ring",
@@ -6444,6 +6486,7 @@
   {
     "artist": "Bruce Springsteen",
     "artist_decade_debut": 1970,
+    "rank": 27,
     "albums": [
       {
         "album": "Greetings from Asbury Park, N.J.",
@@ -6660,6 +6703,7 @@
   {
     "artist": "Elton John",
     "artist_decade_debut": 1960,
+    "rank": 4,
     "albums": [
       {
         "album": "Empty Sky",
@@ -6996,6 +7040,7 @@
   {
     "artist": "The Rolling Stones",
     "artist_decade_debut": 1960,
+    "rank": 18,
     "albums": [
       {
         "album": "The Rolling Stones (England's Newest Hit Makers)",
@@ -7292,6 +7337,7 @@
   {
     "artist": "Barbra Streisand",
     "artist_decade_debut": 1960,
+    "rank": 31,
     "albums": [
       {
         "album": "The Barbra Streisand Album",

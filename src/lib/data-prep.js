@@ -124,7 +124,6 @@ export function sortArtists(data) {
 }
 
 export function flattenData(data) {
-	console.log(data);
 	// Transform data so albums are not nested under artist
 	const flattenedArtists = data.flatMap((artistEntry) =>
 		artistEntry.albums.map((album) => ({

@@ -13,9 +13,6 @@
 	const albumsSorted = data.albumsSorted;
 	const artistsSorted = data.artistsSorted;
 
-	console.log('albumsSorted', albumsSorted);
-	console.log('artistsSorted', artistsSorted);
-
 	let screenWidth;
 	let screenHeight;
 
