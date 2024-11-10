@@ -5,10 +5,19 @@
 	export let screenWidth;
 
 	let vinylSize = 1000;
+	let screenHWRatio = screenHeight / screenWidth;
 
-	$: if (screenHeight > screenWidth) {
+	$: if (screenHWRatio >= 1.5) {
+		// height is more than width: h / w = [1.5 ,]
 		vinylSize = 1.2 * screenWidth;
-	} else {
+	} else if ((screenHWRatio < 1.2) & (screenHWRatio >= 1)) {
+		// height is more than width: h / w = [1, 1.2]
+		vinylSize = 1.05 * screenHeight;
+	} else if ((screenHWRatio > 0.7) & (screenHWRatio <= 1)) {
+		// width is more than height: h / w = [0.7, 1]
+		vinylSize = 1.05 * screenHeight;
+	} else if (screenHWRatio <= 0.7) {
+		// width is more than height: h / w = [, 0.7]
 		vinylSize = 1.2 * screenHeight;
 	}
 </script>
@@ -148,7 +157,7 @@
 	/* Maximum aspect ratio */
 	@media (max-aspect-ratio: 1/1) {
 		.vinyl {
-			top: calc(1%); /* 10% of the vinyl is off the top */
+			top: calc(-10%); /* 10% of the vinyl is off the top */
 			left: calc(-25%); /* 5% of the vinyl is off the left */
 		}
 	}
