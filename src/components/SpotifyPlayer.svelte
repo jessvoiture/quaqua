@@ -69,22 +69,20 @@
 
 <div class="music">
 	<div class="playing-bar">
-		<div class="title-and-album">
-			<img
-				class="album-art"
-				src={songUris[songIndex].image}
-				alt="album cover art for {songUris[songIndex].song} by {songUris[songIndex].artist}"
-			/>
+		<img
+			class="album-art"
+			src={songUris[songIndex].image}
+			alt="album cover art for {songUris[songIndex].song} by {songUris[songIndex].artist}"
+		/>
 
-			<div class="title-details">
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="title-details-title">
-					{songUris[songIndex].song}
-				</div>
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="title-details-artist">
-					{songUris[songIndex].artist}
-				</div>
+		<div class="title-details">
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="title-details-title">
+				{songUris[songIndex].song}
+			</div>
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="title-details-artist">
+				{songUris[songIndex].artist}
 			</div>
 		</div>
 
@@ -129,11 +127,10 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		/* position: sticky; */
 		padding: 6px;
-		/* bottom: 0px; */
 		border-top: 1px #404040 solid;
 		min-width: 0;
+		gap: 8px;
 	}
 
 	.music-controls {
@@ -172,21 +169,13 @@
 		height: 40px;
 	}
 
-	.title-and-album {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 16px;
-		min-width: 0;
-		flex: 1;
-	}
-
 	.title-details {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
 		overflow: hidden;
 		min-width: 0;
+		flex: 1;
 	}
 
 	.title-details-title {
