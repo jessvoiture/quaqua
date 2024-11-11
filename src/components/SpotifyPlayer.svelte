@@ -157,6 +157,9 @@
 		border-radius: 100px;
 		width: 40px;
 		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	button:hover {
