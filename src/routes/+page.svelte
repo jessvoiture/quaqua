@@ -29,24 +29,10 @@
 <svelte:window on:resize={resize} />
 
 <div class="content">
-	<Hero {screenWidth} {screenHeight} />
+	<!-- <Hero {screenWidth} {screenHeight} /> -->
 	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
 	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
 
-	<!-- <div class="music-player"> -->
 	<SpotifyPlayer />
-	<!-- </div> -->
 </div>
-
-<style>
-	.music-player {
-		/* width: auto; */
-		position: sticky;
-		padding: 24px;
-		bottom: 24px;
-		/* margin-left: auto; */
-		/* justify-content: end; */
-		display: flex;
-	}
-</style>
