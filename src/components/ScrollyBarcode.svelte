@@ -52,12 +52,13 @@
 
 	// Responsive sizing
 	$: if (screenWidth < 960) {
-		height = 0.9 * screenHeight;
-		width = 0.95 * screenWidth;
+		height = 0.8 * screenHeight;
+		width = 0.9 * screenWidth;
 	} else {
-		height = 0.9 * screenHeight;
+		height = 0.8 * screenHeight;
 		width = 0.6 * screenWidth;
 	}
+
 	$: innerWidth = width - padding.left - padding.right;
 	$: innerHeight = height - padding.top - padding.bottom;
 	$: rectHeight = innerHeight / uniqueArtistCount - 4;
@@ -353,7 +354,7 @@
 		margin: auto;
 		flex: 1 1 60%;
 		top: 0vh;
-		height: 100vh;
+		height: calc(100vh - 56px);
 		z-index: 0 !important;
 		display: flex;
 		justify-content: center;

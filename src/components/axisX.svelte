@@ -112,10 +112,10 @@
 
 <style>
 	.axis-label {
-		font-size: 1rem;
+		font-size: 12px;
 	}
 
 	text {
-		font-size: 0.8rem;
+		font-size: 10px;
 	}
 </style>

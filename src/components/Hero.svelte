@@ -5,12 +5,13 @@
 	export let screenWidth;
 
 	let vinylSize = 1000;
-	let screenHWRatio = screenHeight / screenWidth;
 
-	$: if (screenHeight > screenWidth) {
-		vinylSize = 1.2 * screenWidth;
-	} else {
+	$: isScreenLandscape = screenWidth > screenHeight;
+
+	$: if (isScreenLandscape) {
 		vinylSize = 1.2 * screenHeight;
+	} else {
+		vinylSize = 1.2 * screenWidth;
 	}
 </script>
 

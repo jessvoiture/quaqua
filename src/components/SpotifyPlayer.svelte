@@ -132,7 +132,7 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		padding: 6px;
+		padding: 8px 12px 8px 12px;
 		border-top: 1px #404040 solid;
 		min-width: 0;
 		gap: 8px;
@@ -164,6 +164,11 @@
 
 	button:hover {
 		background-color: #2b2b2b;
+	}
+
+	button:focus {
+		background-color: #2b2b2b;
+		border: 1px solid #a7a294;
 	}
 
 	button img {
