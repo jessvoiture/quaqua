@@ -68,6 +68,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
 <div class="music">
+	<!-- Spotify Embed -->
+	<div id="embed-iframe" style="display: none; visibility: hidden;"></div>
+
 	<div class="playing-bar">
 		<img
 			class="album-art"
@@ -87,9 +90,6 @@
 		</div>
 
 		<div class="music-controls">
-			<!-- Spotify Embed -->
-			<div id="embed-iframe" style="display: none; visibility: hidden;"></div>
-
 			<!-- pause and play -->
 			<button on:click={handlePlayPause}>
 				<i class="material-icons">
@@ -119,15 +119,15 @@
 	.music {
 		position: sticky;
 		bottom: 0px;
-		width: 100%; /* Ensure it stays within the viewport width */
-		max-width: 100%; /* Prevent it from extending past the screen */
-		overflow-x: hidden; /* Hide any horizontal overflow */
-		overflow-y: hidden; /* Hide any vertical overflow */
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 	.playing-bar {
 		background-color: #202020;
-		box-sizing: border-box; /* Include padding and border in width calculation */
-		width: 100%; /* Full width of the parent container */
+		box-sizing: border-box;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -141,7 +141,8 @@
 	.music-controls {
 		display: flex;
 		flex-direction: row;
-		gap: 0px;
+		gap: 2px;
+		max-width: 126px;
 	}
 
 	.material-icons {
@@ -149,7 +150,6 @@
 		font-size: 24px;
 	}
 	button {
-		/* padding: 8px; */
 		border: 1px solid #202020;
 		color: #a7a294;
 		background-color: #202020;
@@ -179,7 +179,7 @@
 		flex-direction: column;
 		gap: 4px;
 		overflow: hidden;
-		flex: 1 1 auto;
+		flex: 1 1 auto !important;
 	}
 
 	.title-details-title {
