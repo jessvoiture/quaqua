@@ -7,17 +7,9 @@
 	let vinylSize = 1000;
 	let screenHWRatio = screenHeight / screenWidth;
 
-	$: if (screenHWRatio >= 1.5) {
-		// height is more than width: h / w = [1.5 ,]
+	$: if (screenHeight > screenWidth) {
 		vinylSize = 1.2 * screenWidth;
-	} else if ((screenHWRatio < 1.2) & (screenHWRatio >= 1)) {
-		// height is more than width: h / w = [1, 1.2]
-		vinylSize = 1.05 * screenHeight;
-	} else if ((screenHWRatio > 0.7) & (screenHWRatio <= 1)) {
-		// width is more than height: h / w = [0.7, 1]
-		vinylSize = 1.05 * screenHeight;
-	} else if (screenHWRatio <= 0.7) {
-		// width is more than height: h / w = [, 0.7]
+	} else {
 		vinylSize = 1.2 * screenHeight;
 	}
 </script>
