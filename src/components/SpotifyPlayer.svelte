@@ -174,8 +174,7 @@
 		flex-direction: column;
 		gap: 4px;
 		overflow: hidden;
-		min-width: 0;
-		flex: 1;
+		flex: 1 1 auto;
 	}
 
 	.title-details-title {
