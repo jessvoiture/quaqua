@@ -5,6 +5,7 @@
 	export let screenWidth;
 
 	let vinylSize = 1000;
+	let screenHWRatio = screenHeight / screenWidth;
 
 	$: if (screenHeight > screenWidth) {
 		vinylSize = 1.2 * screenWidth;
@@ -148,7 +149,7 @@
 	/* Maximum aspect ratio */
 	@media (max-aspect-ratio: 1/1) {
 		.vinyl {
-			top: calc(1%); /* 10% of the vinyl is off the top */
+			top: calc(-10%); /* 10% of the vinyl is off the top */
 			left: calc(-25%); /* 5% of the vinyl is off the left */
 		}
 	}
