@@ -119,10 +119,15 @@
 	.music {
 		position: sticky;
 		bottom: 0px;
+		width: 100%; /* Ensure it stays within the viewport width */
+		max-width: 100%; /* Prevent it from extending past the screen */
+		overflow-x: hidden; /* Hide any horizontal overflow */
+		overflow-y: hidden; /* Hide any vertical overflow */
 	}
 	.playing-bar {
 		background-color: #202020;
-		width: auto;
+		box-sizing: border-box; /* Include padding and border in width calculation */
+		width: 100%; /* Full width of the parent container */
 		display: flex;
 		flex-direction: row;
 		align-items: center;
