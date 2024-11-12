@@ -34,5 +34,5 @@
 	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
 
-	<SpotifyPlayer />
+	<SpotifyPlayer {screenWidth} />
 </div>

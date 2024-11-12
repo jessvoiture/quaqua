@@ -2,11 +2,28 @@
 	import { isPlaying } from '../stores';
 	import { songUris } from '../lib/songs.js';
 	import { onMount } from 'svelte';
+	import { scaleLinear } from 'd3-scale';
+	import { tweened } from 'svelte/motion';
+
+	export let screenWidth;
 
 	let EmbedController;
 	let songIndex = 0;
+	let timerTime = 10;
+	let timerInterval;
 
-	// Increment the song index and load the next song
+	const timer = tweened(timerTime, { duration: 1000 });
+
+	$: progressScale = scaleLinear().domain([0, timerTime]).range([0, screenWidth]);
+
+	$: {
+		if ($timer <= 0 && $isPlaying) {
+			stopTimer();
+			incrementCount();
+			resetTimer();
+		}
+	}
+
 	function incrementCount() {
 		if (songIndex < songUris.length - 1) {
 			songIndex++;
@@ -17,11 +34,65 @@
 		if (EmbedController) {
 			EmbedController.loadUri(`spotify:track:${songUris[songIndex].uri}`);
 			EmbedController.togglePlay();
+			resetTimer();
+			isPlaying.set(true);
+		}
+	}
 
-			if (!$isPlaying) {
+	function startTimer() {
+		if (timerInterval) {
+			stopTimer();
+		}
+
+		timerInterval = setInterval(() => {
+			timer.update((n) => {
+				const newTime = Math.max(n - 1, 0);
+				return newTime;
+			});
+
+			if ($timer <= 0) {
+				stopTimer();
+				incrementCount();
+				resetTimer();
+			}
+		}, 1000);
+	}
+
+	function stopTimer() {
+		if (timerInterval) {
+			clearInterval(timerInterval);
+			timerInterval = null;
+		}
+	}
+
+	function resetTimer() {
+		stopTimer();
+		timer.set(timerTime, { duration: 0 });
+		if ($isPlaying) {
+			startTimer();
+		}
+	}
+
+	// Handle play/pause toggle
+	function handlePlayPause() {
+		if (EmbedController) {
+			EmbedController.togglePlay();
+			if ($isPlaying) {
+				stopTimer(); // Stop the timer when pausing
+				isPlaying.set(false);
+			} else {
 				isPlaying.set(true);
+				startTimer(); // Restart the timer when playing
 			}
 		}
+	}
+
+	// Handle skip button (to move to the next song)
+	function handleSkip() {
+		incrementCount(); // Go to next song
+		resetTimer(); // Reset the timer
+		isPlaying.set(true); // Ensure playback continues
+		startTimer(); // Start the timer again after skip
 	}
 
 	// Load the Spotify IFrame API dynamically
@@ -51,14 +122,6 @@
 		};
 	}
 
-	// Play/Pause functionality
-	function handlePlayPause() {
-		if (EmbedController) {
-			EmbedController.togglePlay();
-			isPlaying.set(!$isPlaying);
-		}
-	}
-
 	// Load the API on component mount
 	onMount(() => {
 		loadSpotifyIframeApi();
@@ -72,45 +135,54 @@
 	<div id="embed-iframe" style="display: none; visibility: hidden;"></div>
 
 	<div class="playing-bar">
-		<img
-			class="album-art"
-			src={songUris[songIndex].image}
-			alt="album cover art for {songUris[songIndex].song} by {songUris[songIndex].artist}"
-		/>
+		<svg width={screenWidth} height={1}>
+			<g class="time-elapsed">
+				<rect x="0" y="0" width={progressScale(timerTime - $timer)} height="1" fill="#dad3c1" />
+			</g>
+		</svg>
 
-		<div class="title-details">
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="title-details-title">
-				{songUris[songIndex].song}
+		<div class="content">
+			<img
+				class="album-art"
+				src={songUris[songIndex].image}
+				alt="album cover art for {songUris[songIndex].song} by {songUris[songIndex].artist}"
+			/>
+
+			<div class="title-details">
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<div class="title-details-title">
+					{songUris[songIndex].song}
+					{$timer}
+				</div>
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<div class="title-details-artist">
+					{songUris[songIndex].artist}
+				</div>
 			</div>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="title-details-artist">
-				{songUris[songIndex].artist}
-			</div>
-		</div>
 
-		<div class="music-controls">
-			<!-- pause and play -->
-			<button on:click={handlePlayPause}>
-				<i class="material-icons">
-					{$isPlaying ? 'pause' : 'play_arrow'}
-				</i>
-			</button>
-
-			<!-- skip song -->
-			<button on:click={incrementCount}>
-				<i class="material-icons">skip_next</i>
-			</button>
-
-			<!-- spotify link -->
-			<a
-				href="https://open.spotify.com/playlist/2c4NBWpM0AX96R6uB5YEmg?si=3882570dedd04fd2"
-				target="_blank"
-			>
-				<button>
-					<img id="spotify-logo-svg" src="/spotify.svg" alt="Open playlist in spotify" />
+			<div class="music-controls">
+				<!-- pause and play -->
+				<button on:click={handlePlayPause}>
+					<i class="material-icons">
+						{$isPlaying ? 'pause' : 'play_arrow'}
+					</i>
 				</button>
-			</a>
+
+				<!-- skip song -->
+				<button on:click={handleSkip}>
+					<i class="material-icons">skip_next</i>
+				</button>
+
+				<!-- spotify link -->
+				<a
+					href="https://open.spotify.com/playlist/2c4NBWpM0AX96R6uB5YEmg?si=3882570dedd04fd2"
+					target="_blank"
+				>
+					<button>
+						<img id="spotify-logo-svg" src="/spotify.svg" alt="Open playlist in spotify" />
+					</button>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -124,16 +196,25 @@
 		overflow-x: hidden;
 		overflow-y: hidden;
 	}
+
 	.playing-bar {
+		border-top: 1px #404040 solid;
+		box-sizing: border-box;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		padding: 0;
+	}
+	.content {
 		background-color: #202020;
 		box-sizing: border-box;
+		padding: 8px 12px 8px 12px;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		padding: 8px 12px 8px 12px;
-		border-top: 1px #404040 solid;
 		min-width: 0;
 		gap: 8px;
 	}
