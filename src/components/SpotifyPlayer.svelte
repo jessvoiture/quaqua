@@ -152,7 +152,6 @@
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="title-details-title">
 					{songUris[songIndex].song}
-					{$timer}
 				</div>
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="title-details-artist">
