@@ -4,8 +4,10 @@ A comparison of the album drops of the [best selling artists](https://en.wikiped
 
 ### To Do For Barcode
 
-- [ ] styling (colour)
-- [ ] side by side scrolly for large screens
+- [x] styling (colour)
+- [ ] ~~side by side scrolly for large~~ screens
 - [x] hover state rows
 - [ ] chart desc for accessibility
-- [ ] skip song when paused messes things up
+- [x] skip song when paused messes things up
+- [ ] skip song on mobile is a bit funky
+- [ ] need to set timer on song playing
