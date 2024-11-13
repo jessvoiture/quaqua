@@ -9,7 +9,7 @@
 
 	let EmbedController;
 	let songIndex = 0;
-	let timerTime = 10;
+	let timerTime = 30;
 	let timerInterval;
 
 	const timer = tweened(timerTime, { duration: 1000 });
@@ -178,7 +178,12 @@
 					target="_blank"
 				>
 					<button>
-						<img id="spotify-logo-svg" src="/spotify.svg" alt="Open playlist in spotify" />
+						<img
+							id="spotify-logo-svg"
+							src="/spotify.svg"
+							alt="Open playlist in spotify"
+							draggable="false"
+						/>
 					</button>
 				</a>
 			</div>

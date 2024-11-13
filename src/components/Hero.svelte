@@ -5,13 +5,21 @@
 	export let screenWidth;
 
 	let vinylSize = 1000;
+	let topTranslate = 5;
+	let leftTranslate = 5;
 
-	$: isScreenLandscape = screenWidth > screenHeight;
-
-	$: if (isScreenLandscape) {
+	$: if (screenWidth > 768) {
 		vinylSize = 1.2 * screenHeight;
-	} else {
-		vinylSize = 1.2 * screenWidth;
+		topTranslate = -25;
+		leftTranslate = -5;
+	} else if ((screenWidth <= 768) & (screenWidth > 500)) {
+		vinylSize = 1.3 * screenWidth;
+		topTranslate = -10;
+		leftTranslate = -30;
+	} else if (screenWidth <= 500) {
+		vinylSize = 1.8 * screenWidth;
+		topTranslate = -20;
+		leftTranslate = -45;
 	}
 </script>
 
@@ -19,19 +27,13 @@
 	<div
 		class="vinyl rotating"
 		class:paused={!$isPlaying}
-		style="width: {vinylSize}px; height: {vinylSize}px; "
+		style="width: {vinylSize}px; height: {vinylSize}px; top: calc({topTranslate}%); left: calc({leftTranslate}%);"
 	>
 		<div class="header">
 			<!-- svelte-ignore a11y-missing-content -->
 			<h1 aria-label="Album Drops" sr-only></h1>
-			<svg viewBox="0 0 600 600">
-				<path id="curve" d="M300,100 A200,200 0 1,1 299.9,100" fill="none" stroke="none" />
-				<text width="500" font-size="64">
-					<textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
-						Album Drops
-					</textPath>
-				</text>
-			</svg>
+			<img id="album-drops-title" src="/title.svg" alt="Album Drops" draggable="false" />
+
 			<h2>An analysis of top selling artists' album drops</h2>
 			<a href="https://jessvoiture.github.io/home/" target="_blank" class="detail" id="name"
 				>by Jess Carr</a
@@ -81,13 +83,18 @@
 		text-align: center;
 	}
 
+	#album-drops-title {
+		width: 80%;
+		height: 80%;
+		transform: rotate(180deg);
+	}
+
 	h2 {
-		font-size: 1rem;
 		font-weight: normal;
 		color: #dad3c1;
 		position: absolute;
 		width: 50%;
-		font-size: 14px;
+		font-size: 12px;
 		bottom: 70%;
 		transform: rotate(180deg);
 		line-height: 125%;
@@ -95,7 +102,7 @@
 
 	.detail {
 		transform: rotate(180deg);
-		font-size: 0.75rem;
+		font-size: 10px;
 		color: #dad3c1;
 		font-weight: normal;
 		position: absolute;
@@ -139,27 +146,27 @@
 		}
 	}
 
-	/* Minimum aspect ratio */
-	@media (min-aspect-ratio: 1/1) {
+	/* landscape */
+	/* @media (min-aspect-ratio: 1/1) {
 		.vinyl {
-			top: calc(-25%); /* 10% of the vinyl is off the top */
-			left: calc(-5%); /* 5% of the vinyl is off the left */
+			top: calc(-25%); 
+			left: calc(-5%); 
 		}
-	}
+	} */
 
-	/* Maximum aspect ratio */
-	@media (max-aspect-ratio: 1/1) {
+	/* portrait*/
+	/* @media (max-aspect-ratio: 1/1) {
 		.vinyl {
-			top: calc(-10%); /* 10% of the vinyl is off the top */
-			left: calc(-25%); /* 5% of the vinyl is off the left */
+			top: calc(-20%);
+			left: calc(-45%);
 		}
-	}
+	} */
 
-	/* Exact aspect ratio, put it at the bottom to avoid override*/
-	@media (aspect-ratio: 1/1) {
+	/* Exact aspect ratio*/
+	/* @media (aspect-ratio: 1/1) {
 		.vinyl {
-			top: calc(-10%); /* 10% of the vinyl is off the top */
-			left: calc(-5%); /* 5% of the vinyl is off the left */
+			top: calc(-25%); 
+			left: calc(-5%); 
 		}
-	}
+	} */
 </style>
