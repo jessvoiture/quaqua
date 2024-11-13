@@ -45,7 +45,7 @@ export let songUris = [
 	{
 		artist: 'Elton John',
 		song: `Your Song`,
-		uri: '7rglLriMNBPAyuJOMGwi39',
+		uri: '38zsOOcu31XbbYj9BIPUF1',
 		image: 'https://upload.wikimedia.org/wikipedia/en/b/bd/Elton_John_-_Elton_John.jpg'
 	},
 	{
