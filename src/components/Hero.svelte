@@ -4,22 +4,22 @@
 	export let screenHeight;
 	export let screenWidth;
 
-	let vinylSize = 1000;
+	let vinylSize = 500;
 	let topTranslate = 5;
 	let leftTranslate = 5;
 
-	$: if (screenWidth > 768) {
-		vinylSize = 1.2 * screenHeight;
-		topTranslate = -25;
-		leftTranslate = -5;
-	} else if ((screenWidth <= 768) & (screenWidth > 500)) {
-		vinylSize = 1.3 * screenWidth;
-		topTranslate = -10;
-		leftTranslate = -30;
-	} else if (screenWidth <= 500) {
-		vinylSize = 1.8 * screenWidth;
+	$: if (screenWidth > 800) {
+		vinylSize = 1.1 * screenHeight;
 		topTranslate = -20;
-		leftTranslate = -45;
+		leftTranslate = -3;
+	} else if ((screenWidth <= 800) & (screenWidth > 500)) {
+		vinylSize = 1.1 * screenWidth;
+		topTranslate = -10;
+		leftTranslate = -20;
+	} else if (screenWidth <= 500) {
+		vinylSize = 1.4 * screenWidth;
+		topTranslate = -10;
+		leftTranslate = -35;
 	}
 </script>
 
@@ -75,8 +75,8 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 50%;
-		height: 50%;
+		width: 45%;
+		height: 45%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
