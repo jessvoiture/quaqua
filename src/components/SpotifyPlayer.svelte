@@ -76,11 +76,12 @@
 	// Handle play/pause toggle
 	function handlePlayPause() {
 		if (EmbedController) {
-			EmbedController.togglePlay();
 			if ($isPlaying) {
+				EmbedController.pause();
 				stopTimer(); // Stop the timer when pausing
 				isPlaying.set(false);
 			} else {
+				EmbedController.resume();
 				isPlaying.set(true);
 				startTimer(); // Restart the timer when playing
 			}
