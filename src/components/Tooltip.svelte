@@ -21,7 +21,7 @@
 		adjustedMouseX = $mouseX - tooltipWidth - 50;
 	}
 
-	if ($mouseY + tooltipHeight + 50 < screenHeight) {
+	if ($mouseY + tooltipHeight + 150 < screenHeight) {
 		adjustedMouseY = $mouseY + 10;
 	} else {
 		adjustedMouseY = $mouseY - tooltipHeight;
@@ -29,7 +29,13 @@
 
 	function formatDaysToYears(days) {
 		const years = Math.round((days / 365.25) * 10) / 10;
-		return years;
+
+		if (years < 1) {
+			const months = Math.round(days / 30.44); // Average month length in days
+			return `${months} month${months !== 1 ? 's' : ''}`;
+		}
+
+		return `${years} year${years !== 1 ? 's' : ''}`;
 	}
 
 	function formatDate(dateString) {
@@ -76,10 +82,10 @@
 					</div>
 					<div class="tooltip-calcs">
 						<div class="tooltip-body-text">
-							{formatDaysToYears($hoveredData.days_since_first_release)} years since debut album
+							{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
 						</div>
 						<div class="tooltip-body-text">
-							{formatDaysToYears($hoveredData.days_since_last_release)} years since previous album
+							{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
 						</div>
 					</div>
 				{/if}
