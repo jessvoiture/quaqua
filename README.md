@@ -5,9 +5,12 @@ A comparison of the album drops of the [best selling artists](https://en.wikiped
 ### To Do For Barcode
 
 - [x] styling (colour)
-- [ ] ~~side by side scrolly for large~~ screens
+- [x] ~~side by side scrolly for large screens~~ won't do
 - [x] hover state rows
 - [ ] chart desc for accessibility
 - [x] skip song when paused messes things up
-- [ ] skip song on mobile is a bit funky
-- [ ] need to set timer on song playing
+- [ ] on mobile skip song doesn't togglePlay but isPlaying is updated
+- [x] need to set timer on song playing
+- [ ] scrollytelling steps
+- [ ] make tooltip look better
+- [ ] highlight bars
