@@ -75,8 +75,8 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 40%;
-		height: 40%;
+		width: 50%;
+		height: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -115,15 +115,6 @@
 
 	#date {
 		left: 5%;
-	}
-
-	text {
-		font-family: Arial, sans-serif;
-		font-stretch: 200%;
-		font-size: 4rem;
-		margin: 0;
-		fill: #dad3c1;
-		text-transform: uppercase;
 	}
 
 	.center-hole {
