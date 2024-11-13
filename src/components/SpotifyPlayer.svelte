@@ -33,7 +33,7 @@
 
 		if (EmbedController) {
 			EmbedController.loadUri(`spotify:track:${songUris[songIndex].uri}`);
-			EmbedController.togglePlay();
+			EmbedController.play();
 			resetTimer();
 			isPlaying.set(true);
 		}
