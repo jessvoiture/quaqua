@@ -15,6 +15,9 @@
 	export let screenHeight;
 	export let screenWidth;
 
+	console.log('albumssorted', albumsSorted);
+	console.log('artistssorted', artistsSorted);
+
 	let tweenedY;
 	let tweenedX;
 	let tweenedBarWidth;
@@ -31,6 +34,7 @@
 	let tooltipHoveredOver = 'album';
 	let isDataHovered = false;
 	let svgAltDesc = '';
+	let highlightedArtists = [];
 
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
