@@ -94,7 +94,7 @@
 		color: #dad3c1;
 		position: absolute;
 		width: 50%;
-		font-size: 12px;
+		font-size: 14px;
 		bottom: 70%;
 		transform: rotate(180deg);
 		line-height: 125%;
@@ -138,26 +138,10 @@
 	}
 
 	/* landscape */
-	/* @media (min-aspect-ratio: 1/1) {
-		.vinyl {
-			top: calc(-25%); 
-			left: calc(-5%); 
+	@media (max-width: 800px) {
+		h2 {
+			font-size: 12px;
+			bottom: 60%;
 		}
-	} */
-
-	/* portrait*/
-	/* @media (max-aspect-ratio: 1/1) {
-		.vinyl {
-			top: calc(-20%);
-			left: calc(-45%);
-		}
-	} */
-
-	/* Exact aspect ratio*/
-	/* @media (aspect-ratio: 1/1) {
-		.vinyl {
-			top: calc(-25%); 
-			left: calc(-5%); 
-		}
-	} */
+	}
 </style>
