@@ -49,11 +49,11 @@
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<rect
 				x={xScale($tweenedX[i])}
-				y={isDataHovered && $hoveredData?.album == d.album
+				y={$isDataHovered && $hoveredData?.album == d.album
 					? yScale($tweenedY[i]) - 0.25 * rectHeight
 					: yScale($tweenedY[i])}
-				width={isDataHovered && $hoveredData?.album == d.album ? rectWidth * 2 : rectWidth}
-				height={isDataHovered && $hoveredData?.album == d.album ? rectHeight * 1.5 : rectHeight}
+				width={$isDataHovered && $hoveredData?.album == d.album ? rectWidth * 2 : rectWidth}
+				height={$isDataHovered && $hoveredData?.album == d.album ? rectHeight * 1.5 : rectHeight}
 				class={colourClass}
 				pointer-events="all"
 				aria-label="Data point for the album, {d.album} by {d.artist}."
