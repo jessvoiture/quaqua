@@ -8,6 +8,8 @@
 
 	export let data;
 
+	let y = 0;
+
 	const artists = data.artists;
 	const flattened = data.flattenedData;
 	const albumsSorted = data.albumsSorted;
@@ -26,10 +28,10 @@
 	}
 </script>
 
-<svelte:window on:resize={resize} />
+<svelte:window on:resize={resize} bind:scrollY={y} />
 
 <div class="content">
-	<Hero {screenWidth} {screenHeight} />
+	<Hero {screenWidth} {screenHeight} {y} />
 	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
 	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->

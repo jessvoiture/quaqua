@@ -162,14 +162,14 @@
 
 			<div class="music-controls">
 				<!-- pause and play -->
-				<button on:click={handlePlayPause}>
+				<button on:click={handlePlayPause} class="button-icon">
 					<i class="material-icons">
 						{$isPlaying ? 'pause' : 'play_arrow'}
 					</i>
 				</button>
 
 				<!-- skip song -->
-				<button on:click={handleSkip}>
+				<button on:click={handleSkip} class="button-icon">
 					<i class="material-icons">skip_next</i>
 				</button>
 
@@ -178,7 +178,7 @@
 					href="https://open.spotify.com/playlist/2c4NBWpM0AX96R6uB5YEmg?si=3882570dedd04fd2"
 					target="_blank"
 				>
-					<button>
+					<button class="button-icon">
 						<img
 							id="spotify-logo-svg"
 							src="/spotify.svg"
@@ -229,32 +229,6 @@
 		flex-direction: row;
 		gap: 2px;
 		max-width: 126px;
-	}
-
-	.material-icons {
-		vertical-align: middle;
-		font-size: 24px;
-	}
-	button {
-		border: 1px solid #202020;
-		color: #a7a294;
-		background-color: #202020;
-		cursor: pointer;
-		border-radius: 100px;
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	button:hover {
-		background-color: #2b2b2b;
-	}
-
-	button:focus {
-		background-color: #2b2b2b;
-		border: 1px solid #a7a294;
 	}
 
 	button img {

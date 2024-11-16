@@ -3,6 +3,7 @@
 
 	export let screenHeight;
 	export let screenWidth;
+	export let y;
 
 	let vinylSize = 500;
 	let topTranslate = 5;
@@ -32,7 +33,7 @@
 		<div class="header">
 			<!-- svelte-ignore a11y-missing-content -->
 			<h1 aria-label="Album Drops" sr-only></h1>
-			<img id="album-drops-title" src="/title.svg" alt="Album Drops" draggable="false" />
+			<img id="album-drops-title" src="/new_title.svg" alt="Album Drops" draggable="false" />
 
 			<h2>An analysis of top selling artists' album drops</h2>
 			<a href="https://jessvoiture.github.io/home/" target="_blank" class="detail" id="name"
@@ -41,6 +42,13 @@
 			<div class="detail" id="date">Oct 2024</div>
 		</div>
 		<div class="center-hole"></div>
+	</div>
+
+	<div class="scroll-reminder {y > 0 ? 'hidden' : ''}">
+		<button>
+			Scroll
+			<i class="material-icons"> arrow_downward </i>
+		</button>
 	</div>
 </div>
 
@@ -52,6 +60,20 @@
 		overflow: hidden;
 		display: flex;
 		background-color: #202020;
+	}
+
+	.scroll-reminder {
+		position: absolute;
+		bottom: 104px;
+		right: 48px;
+	}
+
+	.hidden {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		-moz-transition: opacity 0.5s ease-in-out;
+		-o-transition: opacity 0.5s ease-in-out;
 	}
 
 	.vinyl {
@@ -142,6 +164,11 @@
 		h2 {
 			font-size: 12px;
 			bottom: 60%;
+		}
+
+		.scroll-reminder {
+			right: 16px;
+			bottom: 88px;
 		}
 	}
 </style>
