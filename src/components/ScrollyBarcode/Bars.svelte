@@ -5,6 +5,7 @@
 	export let tweenedNames;
 	export let tweenedBarWidth;
 	export let rectHeight;
+	export let highlightedGroup;
 </script>
 
 <g class="bars">
@@ -18,7 +19,7 @@
 			y={yScale($tweenedNames[i])}
 			width={xScale($tweenedBarWidth[i])}
 			height={rectHeight}
-			fill="#dad3c1"
+			fill={highlightedGroup.includes(d.artist) ? '#d63e30' : '#dad3c1'}
 			aria-label="Data point for the {artistsSorted[i]}"
 		/>
 	{/each}

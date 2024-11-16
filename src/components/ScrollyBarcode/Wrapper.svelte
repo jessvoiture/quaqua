@@ -3,6 +3,7 @@
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
 	import { steps } from '../../lib/steps.js';
+	import { highlightArtists } from '../../lib/highlightArtists.js';
 
 	import Tooltip from '../Tooltip.svelte';
 	import AxisX from './axisX.svelte';
@@ -28,7 +29,7 @@
 	let currentStep = 0;
 	let xExtent = [0, 0];
 	let colourClass = 'white';
-	let highlightedArtists = [];
+	let highlightedGroup = [];
 
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
@@ -92,6 +93,18 @@
 		colourClass = 'black';
 	}
 
+	$: if (currentStep === 4) {
+		highlightedGroup = highlightArtists.find((x) => x.type === 'beatles')?.artists;
+	} else if (currentStep === 5) {
+		highlightedGroup = highlightArtists.find((x) => x.type === 'legacies')?.artists;
+	} else if (currentStep === 6) {
+		highlightedGroup = highlightArtists.find((x) => x.type === 'hiatuses')?.artists;
+	} else if (currentStep === 7) {
+		highlightedGroup = highlightArtists.find((x) => x.type === 'newbies')?.artists;
+	} else if (currentStep < 4) {
+		highlightedGroup = [];
+	}
+
 	// Step functions
 	// 0: sorted by date of debut
 	const setReleaseDate = () => {
@@ -150,7 +163,15 @@
 					/>
 
 					<!-- Bars -->
-					<Bars {artistsSorted} {yScale} {xScale} {tweenedNames} {tweenedBarWidth} {rectHeight} />
+					<Bars
+						{artistsSorted}
+						{yScale}
+						{xScale}
+						{tweenedNames}
+						{tweenedBarWidth}
+						{rectHeight}
+						{highlightedGroup}
+					/>
 
 					<!-- Barcode -->
 					<Barcode
