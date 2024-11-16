@@ -3,7 +3,6 @@
 
 	export let screenWidth;
 	export let screenHeight;
-	export let type;
 
 	const imgWidth = 100;
 	const contentWidth = 200;
@@ -50,47 +49,35 @@
 	style="left: {adjustedMouseX}px; 
           top: {adjustedMouseY}px;"
 >
-	{#if type == 'album'}
-		<div class="tooltip-image">
-			<img
-				src={$hoveredData.album_image}
-				alt="album cover of {$hoveredData.album}"
-				loading="lazy"
-			/>
-		</div>
-	{/if}
+	<div class="tooltip-image">
+		<img src={$hoveredData.album_image} alt="album cover of {$hoveredData.album}" loading="lazy" />
+	</div>
 
 	<div class="tooltip-content">
-		{#if type == 'artist'}
-			<div class="header-main-title">{$hoveredData.artist}</div>
-		{/if}
+		<div class="header">
+			<div class="header-main-title">{$hoveredData.album}</div>
+			<div class="header-artist">by {$hoveredData.artist}</div>
+		</div>
 
-		{#if type == 'album'}
-			<div class="header">
-				<div class="header-main-title">{$hoveredData.album}</div>
-				<div class="header-artist">by {$hoveredData.artist}</div>
-			</div>
-
-			<div class="tooltip-body">
-				{#if $hoveredData.days_since_first_release == 0}
-					<div class="tooltip-body-date">
-						Debut album, released {formatDate($hoveredData.album_release_date)}
+		<div class="tooltip-body">
+			{#if $hoveredData.days_since_first_release == 0}
+				<div class="tooltip-body-date">
+					Debut album, released {formatDate($hoveredData.album_release_date)}
+				</div>
+			{:else}
+				<div class="tooltip-body-date">
+					Released {formatDate($hoveredData.album_release_date)}
+				</div>
+				<div class="tooltip-calcs">
+					<div class="tooltip-body-text">
+						{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
 					</div>
-				{:else}
-					<div class="tooltip-body-date">
-						Released {formatDate($hoveredData.album_release_date)}
+					<div class="tooltip-body-text">
+						{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
 					</div>
-					<div class="tooltip-calcs">
-						<div class="tooltip-body-text">
-							{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
-						</div>
-						<div class="tooltip-body-text">
-							{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
-						</div>
-					</div>
-				{/if}
-			</div>
-		{/if}
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
 

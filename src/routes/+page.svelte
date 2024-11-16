@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 	import Triangles from '../components/Triangles.svelte';
-	import ScrollyBarcode from '../components/ScrollyBarcode.svelte';
+	import Wrapper from '../components/ScrollyBarcode/Wrapper.svelte';
 	import Scatterplot from '../components/Scatterplot.svelte';
 	import Hero from '../components/Hero.svelte';
 	import SpotifyPlayer from '../components/SpotifyPlayer.svelte';
@@ -32,7 +32,7 @@
 
 <div class="content">
 	<Hero {screenWidth} {screenHeight} {y} />
-	<ScrollyBarcode {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
+	<Wrapper {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
 	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
 

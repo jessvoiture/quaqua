@@ -45,10 +45,10 @@
 	</div>
 
 	<div class="scroll-reminder {y > 0 ? 'hidden' : ''}">
-		<button>
-			Scroll
-			<i class="material-icons"> arrow_downward </i>
-		</button>
+		<!-- <button> -->
+		Play some music and/or scroll
+		<i class="material-icons"> arrow_downward </i>
+		<!-- </button> -->
 	</div>
 </div>
 
@@ -66,6 +66,10 @@
 		position: absolute;
 		bottom: 104px;
 		right: 48px;
+		max-width: 200px;
+		text-align: left;
+		font-size: 16px;
+		color: #a7a294;
 	}
 
 	.hidden {
