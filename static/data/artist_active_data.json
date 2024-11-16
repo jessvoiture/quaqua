@@ -425,63 +425,6 @@
     ]
   },
   {
-    "artist": "Lady Gaga",
-    "artist_decade_debut": 2000,
-    "rank": 39,
-    "albums": [
-      {
-        "album": "The Fame",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Lady_Gaga_%E2%80%93_The_Fame_album_cover.png/220px-Lady_Gaga_%E2%80%93_The_Fame_album_cover.png",
-        "album_release_date": "2008-08-19",
-        "type": "Studio",
-        "first_album_release_date": "2008-08-19",
-        "days_since_first_release": 0,
-        "days_since_last_release": 0,
-        "notes": ""
-      },
-      {
-        "album": "Born This Way",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Born_This_Way_album_cover.png/220px-Born_This_Way_album_cover.png",
-        "album_release_date": "2011-05-23",
-        "type": "Studio",
-        "first_album_release_date": "2008-08-19",
-        "days_since_first_release": 1007,
-        "days_since_last_release": 1007,
-        "notes": ""
-      },
-      {
-        "album": "Artpop",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Artpop_cover.png/220px-Artpop_cover.png",
-        "album_release_date": "2013-11-06",
-        "type": "Studio",
-        "first_album_release_date": "2008-08-19",
-        "days_since_first_release": 1905,
-        "days_since_last_release": 898,
-        "notes": ""
-      },
-      {
-        "album": "Joanne",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png",
-        "album_release_date": "2016-10-21",
-        "type": "Studio",
-        "first_album_release_date": "2008-08-19",
-        "days_since_first_release": 2985,
-        "days_since_last_release": 1080,
-        "notes": ""
-      },
-      {
-        "album": "Chromatica",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png",
-        "album_release_date": "2020-05-29",
-        "type": "Studio",
-        "first_album_release_date": "2008-08-19",
-        "days_since_first_release": 4301,
-        "days_since_last_release": 1316,
-        "notes": ""
-      }
-    ]
-  },
-  {
     "artist": "Ed Sheeran",
     "artist_decade_debut": 2010,
     "rank": 24,
@@ -559,103 +502,6 @@
     ]
   },
   {
-    "artist": "Drake",
-    "artist_decade_debut": 2010,
-    "rank": 19,
-    "albums": [
-      {
-        "album": "Thank Me Later",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Drake_-_Thank_Me_Later_cover.jpg/220px-Drake_-_Thank_Me_Later_cover.jpg",
-        "album_release_date": "2010-06-15",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 0,
-        "days_since_last_release": 0,
-        "notes": ""
-      },
-      {
-        "album": "Take Care",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg",
-        "album_release_date": "2011-11-15",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 518,
-        "days_since_last_release": 518,
-        "notes": ""
-      },
-      {
-        "album": "Nothing Was the Same",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Drake_-_Nothing_Was_the_Same_cover.png/220px-Drake_-_Nothing_Was_the_Same_cover.png",
-        "album_release_date": "2013-09-24",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 1197,
-        "days_since_last_release": 679,
-        "notes": ""
-      },
-      {
-        "album": "Views",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Drake_-_Views_cover.jpg/220px-Drake_-_Views_cover.jpg",
-        "album_release_date": "2016-04-29",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 2145,
-        "days_since_last_release": 948,
-        "notes": ""
-      },
-      {
-        "album": "Scorpion",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Scorpion_by_Drake.jpg/220px-Scorpion_by_Drake.jpg",
-        "album_release_date": "2018-06-29",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 2936,
-        "days_since_last_release": 791,
-        "notes": ""
-      },
-      {
-        "album": "Certified Lover Boy",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/Drake_-_Certified_Lover_Boy.png/220px-Drake_-_Certified_Lover_Boy.png",
-        "album_release_date": "2021-09-03",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 4098,
-        "days_since_last_release": 1162,
-        "notes": ""
-      },
-      {
-        "album": "Honestly, Nevermind",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Honestly%2C_Nevermind_-_Drake.png/220px-Honestly%2C_Nevermind_-_Drake.png",
-        "album_release_date": "2022-06-17",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 4385,
-        "days_since_last_release": 287,
-        "notes": ""
-      },
-      {
-        "album": "Her Loss",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Drake_and_21_Savage_-_Her_Loss.png/220px-Drake_and_21_Savage_-_Her_Loss.png",
-        "album_release_date": "2022-11-04",
-        "type": "Collaborative",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 4525,
-        "days_since_last_release": 140,
-        "notes": ""
-      },
-      {
-        "album": "For All the Dogs",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png",
-        "album_release_date": "2023-10-06",
-        "type": "Studio",
-        "first_album_release_date": "2010-06-15",
-        "days_since_first_release": 4861,
-        "days_since_last_release": 336,
-        "notes": ""
-      }
-    ]
-  },
-  {
     "artist": "Adele",
     "artist_decade_debut": 2000,
     "rank": 42,
@@ -698,6 +544,73 @@
         "first_album_release_date": "2008-01-28",
         "days_since_first_release": 5044,
         "days_since_last_release": 2191,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Lady Gaga",
+    "artist_decade_debut": 2000,
+    "rank": 39,
+    "albums": [
+      {
+        "album": "The Fame",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Lady_Gaga_%E2%80%93_The_Fame_album_cover.png/220px-Lady_Gaga_%E2%80%93_The_Fame_album_cover.png",
+        "album_release_date": "2008-08-19",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 0,
+        "days_since_last_release": 0,
+        "notes": ""
+      },
+      {
+        "album": "Born This Way",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Born_This_Way_album_cover.png/220px-Born_This_Way_album_cover.png",
+        "album_release_date": "2011-05-23",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 1007,
+        "days_since_last_release": 1007,
+        "notes": ""
+      },
+      {
+        "album": "Artpop",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Artpop_cover.png/220px-Artpop_cover.png",
+        "album_release_date": "2013-11-06",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 1905,
+        "days_since_last_release": 898,
+        "notes": ""
+      },
+      {
+        "album": "Joanne",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png",
+        "album_release_date": "2016-10-21",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 2985,
+        "days_since_last_release": 1080,
+        "notes": ""
+      },
+      {
+        "album": "Chromatica",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png",
+        "album_release_date": "2020-05-29",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 4301,
+        "days_since_last_release": 1316,
+        "notes": ""
+      },
+      {
+        "album": "Harlequin",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/a/ab/Harlequin_Lady_Gaga_cover_art.png",
+        "album_release_date": "2024-09-27",
+        "type": "Studio",
+        "first_album_release_date": "2008-08-19",
+        "days_since_first_release": 5883,
+        "days_since_last_release": 1582,
         "notes": ""
       }
     ]
@@ -957,6 +870,194 @@
     ]
   },
   {
+    "artist": "Drake",
+    "artist_decade_debut": 2010,
+    "rank": 19,
+    "albums": [
+      {
+        "album": "Room for Improvement",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/0/06/Drake_-_Room_for_Improvement_cover.jpg",
+        "album_release_date": "2006-02-14",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 0,
+        "days_since_last_release": 0,
+        "notes": ""
+      },
+      {
+        "album": "Comeback Season",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/d/dc/Drake_Comeback_Season.jpg",
+        "album_release_date": "2007-09-01",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 564,
+        "days_since_last_release": 564,
+        "notes": ""
+      },
+      {
+        "album": "So Far Gone",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/1/1d/Drake_-_So_Far_Gone_cover.png",
+        "album_release_date": "2009-02-13",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 1095,
+        "days_since_last_release": 531,
+        "notes": ""
+      },
+      {
+        "album": "Thank Me Later",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Drake_-_Thank_Me_Later_cover.jpg/220px-Drake_-_Thank_Me_Later_cover.jpg",
+        "album_release_date": "2010-06-15",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 1582,
+        "days_since_last_release": 487,
+        "notes": ""
+      },
+      {
+        "album": "Take Care",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Drake_-_Take_Care_cover.jpg/220px-Drake_-_Take_Care_cover.jpg",
+        "album_release_date": "2011-11-15",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 2100,
+        "days_since_last_release": 518,
+        "notes": ""
+      },
+      {
+        "album": "Nothing Was the Same",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Drake_-_Nothing_Was_the_Same_cover.png/220px-Drake_-_Nothing_Was_the_Same_cover.png",
+        "album_release_date": "2013-09-24",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 2779,
+        "days_since_last_release": 679,
+        "notes": ""
+      },
+      {
+        "album": "If You're Reading This It's Too Late",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/1/11/Drake_-_If_You%27re_Reading_This_It%27s_Too_Late.png",
+        "album_release_date": "2015-02-13",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 3286,
+        "days_since_last_release": 507,
+        "notes": ""
+      },
+      {
+        "album": "Views",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Drake_-_Views_cover.jpg/220px-Drake_-_Views_cover.jpg",
+        "album_release_date": "2016-04-29",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 3727,
+        "days_since_last_release": 222,
+        "notes": ""
+      },
+      {
+        "album": "Scorpion",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Scorpion_by_Drake.jpg/220px-Scorpion_by_Drake.jpg",
+        "album_release_date": "2018-06-29",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 4518,
+        "days_since_last_release": 468,
+        "notes": ""
+      },
+      {
+        "album": "Certified Lover Boy",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/Drake_-_Certified_Lover_Boy.png/220px-Drake_-_Certified_Lover_Boy.png",
+        "album_release_date": "2021-09-03",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 5680,
+        "days_since_last_release": 490,
+        "notes": ""
+      },
+      {
+        "album": "Honestly, Nevermind",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Honestly%2C_Nevermind_-_Drake.png/220px-Honestly%2C_Nevermind_-_Drake.png",
+        "album_release_date": "2022-06-17",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 5967,
+        "days_since_last_release": 287,
+        "notes": ""
+      },
+      {
+        "album": "Her Loss",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Drake_and_21_Savage_-_Her_Loss.png/220px-Drake_and_21_Savage_-_Her_Loss.png",
+        "album_release_date": "2022-11-04",
+        "type": "Collaborative",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 6107,
+        "days_since_last_release": 140,
+        "notes": ""
+      },
+      {
+        "album": "For All the Dogs",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Drake_-_For_All_The_Dogs.png/220px-Drake_-_For_All_The_Dogs.png",
+        "album_release_date": "2023-10-06",
+        "type": "Studio",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 6443,
+        "days_since_last_release": 336,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Drake",
+    "artist_decade_debut": 2011,
+    "rank": 19,
+    "albums": [
+      {
+        "album": "What a Time to Be Alive (with Future)",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/9/94/Drake_and_Future_-_What_a_Time_to_Be_Alive_cover.jpg",
+        "album_release_date": "2015-09-20",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 3505,
+        "days_since_last_release": 219,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Drake",
+    "artist_decade_debut": 2012,
+    "rank": 19,
+    "albums": [
+      {
+        "album": "More Life",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/7/70/Drake_-_More_Life_cover.jpg",
+        "album_release_date": "2017-03-18",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 4050,
+        "days_since_last_release": 323,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Drake",
+    "artist_decade_debut": 2013,
+    "rank": 19,
+    "albums": [
+      {
+        "album": "Dark Lane Demo Tapes",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/6/6b/Drake_-_Dark_Lane_Demo_Tapes.png",
+        "album_release_date": "2020-05-01",
+        "type": "Mixtape",
+        "first_album_release_date": "2006-02-14",
+        "days_since_first_release": 5190,
+        "days_since_last_release": 672,
+        "notes": ""
+      }
+    ]
+  },
+  {
     "artist": "Chris Brown",
     "artist_decade_debut": 2000,
     "rank": 36,
@@ -1079,73 +1180,6 @@
         "first_album_release_date": "2005-11-29",
         "days_since_first_release": 6555,
         "days_since_last_release": 504,
-        "notes": ""
-      }
-    ]
-  },
-  {
-    "artist": "Katy Perry",
-    "artist_decade_debut": 2000,
-    "rank": 35,
-    "albums": [
-      {
-        "album": "Katy Hudson",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Katy_Hudson_album.jpg/220px-Katy_Hudson_album.jpg",
-        "album_release_date": "2001-03-06",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 0,
-        "days_since_last_release": 0,
-        "notes": ""
-      },
-      {
-        "album": "One of the Boys",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Katy_Perry_-_One_of_the_Boys.png/220px-Katy_Perry_-_One_of_the_Boys.png",
-        "album_release_date": "2008-06-17",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 2660,
-        "days_since_last_release": 2660,
-        "notes": ""
-      },
-      {
-        "album": "Teenage Dream",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Katy_Perry_-_Teenage_Dream_%28album%29.png/220px-Katy_Perry_-_Teenage_Dream_%28album%29.png",
-        "album_release_date": "2010-08-24",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 3458,
-        "days_since_last_release": 798,
-        "notes": ""
-      },
-      {
-        "album": "Prism",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Katy_Perry_-_Prism_cover.png/220px-Katy_Perry_-_Prism_cover.png",
-        "album_release_date": "2013-10-18",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 4609,
-        "days_since_last_release": 1151,
-        "notes": ""
-      },
-      {
-        "album": "Witness",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Katy_Perry_-_Witness_%28Official_Album_Cover%29.png/220px-Katy_Perry_-_Witness_%28Official_Album_Cover%29.png",
-        "album_release_date": "2017-06-09",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 5939,
-        "days_since_last_release": 1330,
-        "notes": ""
-      },
-      {
-        "album": "Smile",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Katy_Perry_-_Smile.png/220px-Katy_Perry_-_Smile.png",
-        "album_release_date": "2020-08-28",
-        "type": "Studio",
-        "first_album_release_date": "2001-03-06",
-        "days_since_first_release": 7115,
-        "days_since_last_release": 1176,
         "notes": ""
       }
     ]
@@ -2303,149 +2337,79 @@
     ]
   },
   {
-    "artist": "Mariah Carey",
-    "artist_decade_debut": 1990,
-    "rank": 11,
+    "artist": "Katy Perry",
+    "artist_decade_debut": 2000,
+    "rank": 35,
     "albums": [
       {
-        "album": "Mariah Carey",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Mariah_Carey_-_album.png/220px-Mariah_Carey_-_album.png",
-        "album_release_date": "1990-06-12",
+        "album": "Katy Hudson",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Katy_Hudson_album.jpg/220px-Katy_Hudson_album.jpg",
+        "album_release_date": "2001-03-06",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
+        "first_album_release_date": "2001-03-06",
         "days_since_first_release": 0,
         "days_since_last_release": 0,
-        "notes": "Excludes Soundtrack Albums"
+        "notes": ""
       },
       {
-        "album": "Emotions",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Emotions_Mariah_Carey.png/220px-Emotions_Mariah_Carey.png",
-        "album_release_date": "1991-09-13",
+        "album": "One of the Boys",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Katy_Perry_-_One_of_the_Boys.png/220px-Katy_Perry_-_One_of_the_Boys.png",
+        "album_release_date": "2008-06-17",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 458,
-        "days_since_last_release": 458,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 2660,
+        "days_since_last_release": 2660,
+        "notes": ""
       },
       {
-        "album": "Music Box",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Music_Box_Mariah_Carey.png/220px-Music_Box_Mariah_Carey.png",
-        "album_release_date": "1993-08-31",
+        "album": "Teenage Dream",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Katy_Perry_-_Teenage_Dream_%28album%29.png/220px-Katy_Perry_-_Teenage_Dream_%28album%29.png",
+        "album_release_date": "2010-08-24",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 1176,
-        "days_since_last_release": 718,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 3458,
+        "days_since_last_release": 798,
+        "notes": ""
       },
       {
-        "album": "Merry Christmas",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Merry_Christmas_Mariah_Carey.png/220px-Merry_Christmas_Mariah_Carey.png",
-        "album_release_date": "1994-10-28",
+        "album": "Prism",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Katy_Perry_-_Prism_cover.png/220px-Katy_Perry_-_Prism_cover.png",
+        "album_release_date": "2013-10-18",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 1599,
-        "days_since_last_release": 423,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 4609,
+        "days_since_last_release": 1151,
+        "notes": ""
       },
       {
-        "album": "Daydream",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Mariah_Carey_-_Daydream.png/220px-Mariah_Carey_-_Daydream.png",
-        "album_release_date": "1995-09-26",
+        "album": "Witness",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Katy_Perry_-_Witness_%28Official_Album_Cover%29.png/220px-Katy_Perry_-_Witness_%28Official_Album_Cover%29.png",
+        "album_release_date": "2017-06-09",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 1932,
-        "days_since_last_release": 333,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 5939,
+        "days_since_last_release": 1330,
+        "notes": ""
       },
       {
-        "album": "Butterfly",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Mariah_Carey_Butterfly_1997_album_cover.png/220px-Mariah_Carey_Butterfly_1997_album_cover.png",
-        "album_release_date": "1997-09-10",
+        "album": "Smile",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Katy_Perry_-_Smile.png/220px-Katy_Perry_-_Smile.png",
+        "album_release_date": "2020-08-28",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 2647,
-        "days_since_last_release": 715,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 7115,
+        "days_since_last_release": 1176,
+        "notes": ""
       },
       {
-        "album": "Rainbow",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Mariah_Carey_Rainbow.png/220px-Mariah_Carey_Rainbow.png",
-        "album_release_date": "1999-10-27",
+        "album": "143",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/e/ea/Katy_Perry_-_143.png",
+        "album_release_date": "2024-09-20",
         "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 3424,
-        "days_since_last_release": 777,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "Glitter",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Glitter_Mariah_Carey.png/220px-Glitter_Mariah_Carey.png",
-        "album_release_date": "2001-08-18",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 4085,
-        "days_since_last_release": 661,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "Charmbracelet",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Charmbracelet_Mariah_Carey.png/220px-Charmbracelet_Mariah_Carey.png",
-        "album_release_date": "2002-11-20",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 4544,
-        "days_since_last_release": 459,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "The Emancipation of Mimi",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Mariah_Carey_The_Emancipation_of_Mimi.png/220px-Mariah_Carey_The_Emancipation_of_Mimi.png",
-        "album_release_date": "2005-03-30",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 5405,
-        "days_since_last_release": 861,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "E=MC²",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/E%3DMC2_Mariah_Carey.png/220px-E%3DMC2_Mariah_Carey.png",
-        "album_release_date": "2008-04-14",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 6516,
-        "days_since_last_release": 1111,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "Memoirs of an Imperfect Angel",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Mariahcarey_memoirsofanimperfectangel.png/220px-Mariahcarey_memoirsofanimperfectangel.png",
-        "album_release_date": "2009-09-22",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 7042,
-        "days_since_last_release": 526,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "Merry Christmas II You",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Merry_Christmas_II_You_Mariah_Carey.png/220px-Merry_Christmas_II_You_Mariah_Carey.png",
-        "album_release_date": "2010-11-02",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 7448,
-        "days_since_last_release": 406,
-        "notes": "Excludes Soundtrack Albums"
-      },
-      {
-        "album": "Me. I Am Mariah... The Elusive Chanteuse",
-        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png",
-        "album_release_date": "2014-05-06",
-        "type": "Studio",
-        "first_album_release_date": "1990-06-12",
-        "days_since_first_release": 8729,
-        "days_since_last_release": 1281,
-        "notes": "Excludes Soundtrack Albums"
+        "first_album_release_date": "2001-03-06",
+        "days_since_first_release": 8599,
+        "days_since_last_release": 1484,
+        "notes": ""
       }
     ]
   },
@@ -3634,6 +3598,180 @@
         "first_album_release_date": "1971-11-01",
         "days_since_first_release": 10928,
         "days_since_last_release": 2975,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Mariah Carey",
+    "artist_decade_debut": 1990,
+    "rank": 11,
+    "albums": [
+      {
+        "album": "Mariah Carey",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Mariah_Carey_-_album.png/220px-Mariah_Carey_-_album.png",
+        "album_release_date": "1990-06-12",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 0,
+        "days_since_last_release": 0,
+        "notes": ""
+      },
+      {
+        "album": "Emotions",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Emotions_Mariah_Carey.png/220px-Emotions_Mariah_Carey.png",
+        "album_release_date": "1991-09-13",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 458,
+        "days_since_last_release": 458,
+        "notes": ""
+      },
+      {
+        "album": "Music Box",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Music_Box_Mariah_Carey.png/220px-Music_Box_Mariah_Carey.png",
+        "album_release_date": "1993-08-31",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 1176,
+        "days_since_last_release": 718,
+        "notes": ""
+      },
+      {
+        "album": "Merry Christmas",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Merry_Christmas_Mariah_Carey.png/220px-Merry_Christmas_Mariah_Carey.png",
+        "album_release_date": "1994-10-28",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 1599,
+        "days_since_last_release": 423,
+        "notes": ""
+      },
+      {
+        "album": "Daydream",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Mariah_Carey_-_Daydream.png/220px-Mariah_Carey_-_Daydream.png",
+        "album_release_date": "1995-09-26",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 1932,
+        "days_since_last_release": 333,
+        "notes": ""
+      },
+      {
+        "album": "Butterfly",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Mariah_Carey_Butterfly_1997_album_cover.png/220px-Mariah_Carey_Butterfly_1997_album_cover.png",
+        "album_release_date": "1997-09-10",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 2647,
+        "days_since_last_release": 715,
+        "notes": ""
+      },
+      {
+        "album": "Rainbow",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Mariah_Carey_Rainbow.png/220px-Mariah_Carey_Rainbow.png",
+        "album_release_date": "1999-10-27",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 3424,
+        "days_since_last_release": 777,
+        "notes": ""
+      },
+      {
+        "album": "Glitter",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Glitter_Mariah_Carey.png/220px-Glitter_Mariah_Carey.png",
+        "album_release_date": "2001-08-18",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 4085,
+        "days_since_last_release": 661,
+        "notes": ""
+      },
+      {
+        "album": "Charmbracelet",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Charmbracelet_Mariah_Carey.png/220px-Charmbracelet_Mariah_Carey.png",
+        "album_release_date": "2002-11-20",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 4544,
+        "days_since_last_release": 459,
+        "notes": ""
+      },
+      {
+        "album": "The Emancipation of Mimi",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Mariah_Carey_The_Emancipation_of_Mimi.png/220px-Mariah_Carey_The_Emancipation_of_Mimi.png",
+        "album_release_date": "2005-03-30",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 5405,
+        "days_since_last_release": 861,
+        "notes": ""
+      },
+      {
+        "album": "E=MC²",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/E%3DMC2_Mariah_Carey.png/220px-E%3DMC2_Mariah_Carey.png",
+        "album_release_date": "2008-04-14",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 6516,
+        "days_since_last_release": 1111,
+        "notes": ""
+      },
+      {
+        "album": "Memoirs of an Imperfect Angel",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Mariahcarey_memoirsofanimperfectangel.png/220px-Mariahcarey_memoirsofanimperfectangel.png",
+        "album_release_date": "2009-09-22",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 7042,
+        "days_since_last_release": 526,
+        "notes": ""
+      },
+      {
+        "album": "Merry Christmas II You",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Merry_Christmas_II_You_Mariah_Carey.png/220px-Merry_Christmas_II_You_Mariah_Carey.png",
+        "album_release_date": "2010-11-02",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 7448,
+        "days_since_last_release": 406,
+        "notes": ""
+      },
+      {
+        "album": "Me. I Am Mariah... The Elusive Chanteuse",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png",
+        "album_release_date": "2014-05-06",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 8729,
+        "days_since_last_release": 1281,
+        "notes": ""
+      },
+      {
+        "album": "Caution",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png",
+        "album_release_date": "2018-11-16",
+        "type": "Studio",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 10384,
+        "days_since_last_release": 1655,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "artist": "Mariah Carey",
+    "artist_decade_debut": 1991,
+    "rank": 11,
+    "albums": [
+      {
+        "album": "Mariah Carey's Magical Christmas Special",
+        "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png",
+        "album_release_date": "2020-12-04",
+        "type": "Soundtrack",
+        "first_album_release_date": "1990-06-12",
+        "days_since_first_release": 11133,
+        "days_since_last_release": 749,
         "notes": ""
       }
     ]
