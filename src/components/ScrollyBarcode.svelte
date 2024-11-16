@@ -278,12 +278,6 @@
 								height={rectHeight}
 								fill="#dad3c1"
 								aria-label="Data point for the {artistsSorted[i]}"
-								on:mouseover={function (event) {
-									handleMouseover(event, d, 'artist');
-								}}
-								on:mouseout={function () {
-									handleMouseout();
-								}}
 							/>
 						{/each}
 					</g>
