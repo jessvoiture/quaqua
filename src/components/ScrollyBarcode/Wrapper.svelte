@@ -152,15 +152,7 @@
 
 				<!-- The Charts -->
 				<g transform={`translate(${padding.left}, 0)`} class="chart-and-axis">
-					<AxisX
-						{xScale}
-						{currentStep}
-						{innerWidth}
-						{innerHeight}
-						{minReleaseDate}
-						{screenWidth}
-						{rectHeight}
-					/>
+					<AxisX {xScale} {currentStep} {innerWidth} {innerHeight} {minReleaseDate} {rectHeight} />
 
 					<!-- Bars -->
 					<Bars

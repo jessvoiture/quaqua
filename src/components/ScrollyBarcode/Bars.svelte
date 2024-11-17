@@ -15,11 +15,12 @@
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<rect
 			class={'first-width-transition'}
+			class:highlightedBar={highlightedGroup.includes(d.artist)}
 			x="0"
 			y={yScale($tweenedNames[i])}
 			width={xScale($tweenedBarWidth[i])}
 			height={rectHeight}
-			fill={highlightedGroup.includes(d.artist) ? '#d63e30' : '#dad3c1'}
+			fill={'#dad3c1'}
 			aria-label="Data point for the {artistsSorted[i]}"
 		/>
 	{/each}
@@ -31,5 +32,13 @@
 		-webkit-transition: width 0.1s ease-out;
 		-moz-transition: width 0.1s ease-out;
 		-o-transition: width 0.1s ease-out;
+	}
+
+	.highlightedBar {
+		fill: #d63e30;
+		transition: fill 0.5s ease-in-out;
+		-webkit-transition: fill 0.5s ease-out;
+		-moz-transition: fill 0.5s ease-out;
+		-o-transition: fill 0.5s ease-out;
 	}
 </style>
