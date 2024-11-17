@@ -192,7 +192,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
 	.music {
 		position: sticky;
 		bottom: 0px;
@@ -203,7 +203,7 @@
 	}
 
 	.playing-bar {
-		border-top: 1px #404040 solid;
+		border-top: 1px $color-dark_grey solid;
 		box-sizing: border-box;
 		width: 100%;
 		display: flex;
@@ -251,8 +251,8 @@
 	}
 
 	.title-details-title {
-		font-size: 12px;
-		color: #dad3c1;
+		font-size: $type-size-12;
+		color: $color-white;
 		display: block;
 		flex: 1;
 		overflow: hidden;
@@ -261,7 +261,7 @@
 	}
 
 	.title-details-artist {
-		font-size: 10px;
+		font-size: $type-size-10;
 		color: #a7a294;
 		overflow: hidden;
 		text-overflow: ellipsis;

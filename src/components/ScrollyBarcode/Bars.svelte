@@ -20,13 +20,13 @@
 			y={yScale($tweenedNames[i])}
 			width={xScale($tweenedBarWidth[i])}
 			height={rectHeight}
-			fill={'#dad3c1'}
+			fill="#dad3c1"
 			aria-label="Data point for the {artistsSorted[i]}"
 		/>
 	{/each}
 </g>
 
-<style>
+<style lang="scss">
 	.first-width-transition {
 		transition: width 0.1s ease-out;
 		-webkit-transition: width 0.1s ease-out;
@@ -35,10 +35,7 @@
 	}
 
 	.highlightedBar {
-		fill: #d63e30;
-		transition: fill 0.5s ease-in-out;
-		-webkit-transition: fill 0.5s ease-out;
-		-moz-transition: fill 0.5s ease-out;
-		-o-transition: fill 0.5s ease-out;
+		fill: $color-accent;
+		@include transition-fill;
 	}
 </style>

@@ -81,7 +81,7 @@
 	</div>
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.tooltip {
 		position: fixed;
 		background-color: #404040;
@@ -108,7 +108,7 @@
 		margin: 0;
 		padding: 0;
 		width: 200px;
-		font-size: 14px;
+		font-size: $type-size-14;
 	}
 
 	.header {
@@ -118,9 +118,8 @@
 	}
 
 	.header-main-title {
-		font-size: 18px;
-		color: #dad3c1;
-		font-weight: bold;
+		font-size: $type-size-16;
+		color: $color-white;
 		text-transform: capitalize;
 	}
 
@@ -131,14 +130,14 @@
 	}
 
 	.tooltip-body-date {
-		color: #dad3c1;
-		font-size: 14px;
+		color: $color-white;
+		font-size: $type-size-14;
 		font-weight: bold;
 	}
 
 	.tooltip-body-text,
 	.header-artist {
-		color: #cac7be;
+		color: $color-light_grey;
 	}
 
 	.tooltip-calcs {

@@ -103,12 +103,12 @@
 	</g>
 </g>
 
-<style>
+<style lang="scss">
 	.axis-label {
-		font-size: 14px;
+		font-size: $type-size-14;
 	}
 
 	text {
-		font-size: 10px;
+		font-size: $type-size-10;
 	}
 </style>

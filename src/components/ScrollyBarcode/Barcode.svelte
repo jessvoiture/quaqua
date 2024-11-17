@@ -68,20 +68,17 @@
 	{/each}
 </g>
 
-<style>
+<style lang="scss">
 	.full-opacity {
 		opacity: 1;
 	}
 
 	.white {
-		fill: #dad3c1;
+		fill: $color-white;
 	}
 
 	.black {
-		fill: #202020;
-		transition: fill 0.5s ease;
-		-webkit-transition: fill 0.5s 1s ease-in-out;
-		-moz-transition: fill 0.5s 1s ease-in-out;
-		-o-transition: fill 0.5s 1s ease-in-out;
+		fill: $color-black;
+		@include transition-fill;
 	}
 </style>

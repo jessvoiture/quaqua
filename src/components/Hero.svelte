@@ -53,7 +53,6 @@
 </div>
 
 <style lang="scss">
-	// @import '../styles/variables.scss';
 	.hero {
 		min-height: 100vh;
 		width: 100vw;
@@ -67,18 +66,14 @@
 		position: absolute;
 		bottom: 104px;
 		right: 48px;
-		max-width: 200px;
+		max-width: 150px;
 		text-align: left;
-		font-size: $type-size-xs;
+		font-size: $type-size-16;
 		color: #a7a294;
 	}
 
 	.hidden {
-		opacity: 0;
-		transition: opacity 0.5s ease-in-out;
-		-webkit-transition: opacity 0.5s ease-in-out;
-		-moz-transition: opacity 0.5s ease-in-out;
-		-o-transition: opacity 0.5s ease-in-out;
+		@include transition-opacity-to-zero;
 	}
 
 	.vinyl {
@@ -96,18 +91,12 @@
 	}
 
 	.header {
+		@include center-flex-vertically-and-horizontally;
+		@include center-div-vertically-and-horizontally;
 		background-color: $color-accent;
-		position: absolute;
 		border-radius: 50%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
 		width: 45%;
 		height: 45%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
 	}
 
 	#album-drops-title {
@@ -121,7 +110,7 @@
 		color: $color-white;
 		position: absolute;
 		width: 50%;
-		font-size: $type-size-xs;
+		font-size: $type-size-14;
 		bottom: 70%;
 		transform: rotate(180deg);
 		line-height: 125%;
@@ -129,7 +118,7 @@
 
 	.detail {
 		transform: rotate(180deg);
-		font-size: $type-size-xxs;
+		font-size: $type-size-12;
 		color: $color-white;
 		font-weight: normal;
 		position: absolute;
@@ -145,10 +134,7 @@
 	}
 
 	.center-hole {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		@include center-div-vertically-and-horizontally;
 		width: 3%;
 		height: 3%;
 		border-radius: 50%;
@@ -164,10 +150,9 @@
 		}
 	}
 
-	/* landscape */
 	@media (max-width: 800px) {
 		h2 {
-			font-size: $type-size-xs;
+			font-size: $type-size-12;
 			bottom: 60%;
 		}
 

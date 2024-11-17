@@ -201,7 +201,7 @@
 	<Tooltip {screenHeight} {screenWidth} />
 {/if}
 
-<style>
+<style lang="scss">
 	.plot {
 		position: sticky;
 		margin: auto;
@@ -209,8 +209,7 @@
 		top: 0vh;
 		height: calc(100vh - 56px);
 		z-index: 0 !important;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+
+		@include center-flex-vertically-and-horizontally;
 	}
 </style>

@@ -13,7 +13,7 @@ article {
 }
 
 text {
-	font-size: 0.6rem;
+	font-size: $type-size-10;
 	color: $color-light_grey;
 	fill: $color-light_grey;
 }
@@ -35,12 +35,12 @@ text {
 
 .step-content {
 	background: $color-dark_grey;
-	font-size: $type-size-sm;
-	line-height: $type-line_height-small;
-	color: $color-light_grey;
-	opacity: 95%;
-	backdrop-filter: blur(10px);
-	border-radius: 5px;
+	font-size: $type-size-16;
+	line-height: $type-line_height-medium;
+	color: $color-white;
+	background-color: rgba(64, 64, 64, 0.97);
+	backdrop-filter: blur(4px);
+	border-radius: 4px;
 	padding: 0.5rem 1rem;
 	display: flex;
 	flex-direction: column;
@@ -74,20 +74,13 @@ text {
 	color: $color-white;
 }
 
-p {
-	font-size: $type-size-xs;
-	line-height: 24px;
-}
-
 button {
+	@include center-flex-vertically-and-horizontally;
 	border: 1px solid $color-black;
 	color: #a7a294;
 	background-color: $color-black;
 	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: $type-size-med;
+	font-size: $type-size-14;
 	padding: 8px 16px;
 	border-radius: 100px;
 	gap: 4px;
@@ -114,7 +107,7 @@ button:focus {
 
 .highlighted-step-text {
 	background-color: $color-accent;
-	color: $color-white;
+	color: #f3e9d1;
 	padding: 2px 6px;
 	border-radius: 4px;
 }
