@@ -79,6 +79,6 @@
 
 	.black {
 		fill: $color-black;
-		@include transition-fill;
+		@include transition-fill-with-1s-delay;
 	}
 </style>
