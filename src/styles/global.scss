@@ -1,11 +1,4 @@
-$color-black: #202020;
-$color-dark_grey: #404040;
-$color-light_grey: #cac7be;
-$color-white: #dad3c1;
-$color-accent: #d63e30;
-$type-size-small: 14pt;
-$type-size-very_small: 10pt;
-$type-line_height-small: 22pt;
+@import 'variables';
 
 body {
 	font-family: sans-serif;
@@ -42,7 +35,7 @@ text {
 
 .step-content {
 	background: $color-dark_grey;
-	font-size: $type-size-small;
+	font-size: $type-size-sm;
 	line-height: $type-line_height-small;
 	color: $color-light_grey;
 	opacity: 95%;
@@ -77,24 +70,24 @@ text {
 
 .album-title-text {
 	font-style: italic;
-	padding: 0px 2px 0px 2px;
-	color: #dad3c1;
+	font-weight: bold;
+	color: $color-white;
 }
 
 p {
-	font-size: 16px;
+	font-size: $type-size-xs;
 	line-height: 24px;
 }
 
 button {
-	border: 1px solid #202020;
+	border: 1px solid $color-black;
 	color: #a7a294;
-	background-color: #202020;
+	background-color: $color-black;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 16px;
+	font-size: $type-size-med;
 	padding: 8px 16px;
 	border-radius: 100px;
 	gap: 4px;
@@ -120,8 +113,8 @@ button:focus {
 }
 
 .highlighted-step-text {
-	background-color: #d63e30;
-	color: #dad3c1;
+	background-color: $color-accent;
+	color: $color-white;
 	padding: 2px 6px;
 	border-radius: 4px;
 }

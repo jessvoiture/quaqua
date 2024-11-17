@@ -52,14 +52,15 @@
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	// @import '../styles/variables.scss';
 	.hero {
 		min-height: 100vh;
 		width: 100vw;
 		position: relative;
 		overflow: hidden;
 		display: flex;
-		background-color: #202020;
+		background-color: $color-black;
 	}
 
 	.scroll-reminder {
@@ -68,7 +69,7 @@
 		right: 48px;
 		max-width: 200px;
 		text-align: left;
-		font-size: 16px;
+		font-size: $type-size-xs;
 		color: #a7a294;
 	}
 
@@ -82,7 +83,7 @@
 
 	.vinyl {
 		border-radius: 50%;
-		background-color: #dad3c1;
+		background-color: $color-white;
 		position: absolute;
 	}
 
@@ -95,7 +96,7 @@
 	}
 
 	.header {
-		background-color: #d63e30;
+		background-color: $color-accent;
 		position: absolute;
 		border-radius: 50%;
 		top: 50%;
@@ -117,10 +118,10 @@
 
 	h2 {
 		font-weight: normal;
-		color: #dad3c1;
+		color: $color-white;
 		position: absolute;
 		width: 50%;
-		font-size: 14px;
+		font-size: $type-size-xs;
 		bottom: 70%;
 		transform: rotate(180deg);
 		line-height: 125%;
@@ -128,8 +129,8 @@
 
 	.detail {
 		transform: rotate(180deg);
-		font-size: 10px;
-		color: #dad3c1;
+		font-size: $type-size-xxs;
+		color: $color-white;
 		font-weight: normal;
 		position: absolute;
 		width: 30%;
@@ -151,7 +152,7 @@
 		width: 3%;
 		height: 3%;
 		border-radius: 50%;
-		background-color: #dad3c1;
+		background-color: $color-white;
 	}
 
 	@keyframes spin {
@@ -166,7 +167,7 @@
 	/* landscape */
 	@media (max-width: 800px) {
 		h2 {
-			font-size: 12px;
+			font-size: $type-size-xs;
 			bottom: 60%;
 		}
 
