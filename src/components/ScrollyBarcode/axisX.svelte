@@ -27,12 +27,9 @@
 	$: if (currentStep == 0) {
 		axisLabel = 'Album Release Date';
 		setTicksToReleaseDate();
-	} else if ((currentStep >= 1) & (currentStep < 4)) {
+	} else if (currentStep >= 1) {
 		axisLabel = 'Years Since Debut Album Was Released';
 		setTicksToDaysActive();
-	} else if (currentStep >= 4) {
-		axisLabel = 'Average Time Between Albums In Years';
-		setTicksToEraLength();
 	}
 
 	// format a date as (YYYY)
@@ -58,10 +55,6 @@
 
 	const setTicksToDaysActive = () => {
 		tweenedTicks.set(axisTicks.map((d) => d.daysActive));
-	};
-
-	const setTicksToEraLength = () => {
-		tweenedTicks.set(axisTicks.map((d) => d.eraLength));
 	};
 </script>
 
