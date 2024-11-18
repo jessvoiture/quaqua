@@ -46,7 +46,7 @@
 
 	<div class="scroll-reminder {y > 0 ? 'hidden' : ''}">
 		<!-- <button> -->
-		Play some music and/or scroll
+		Play some music and scroll
 		<i class="material-icons"> arrow_downward </i>
 		<!-- </button> -->
 	</div>
@@ -63,13 +63,16 @@
 	}
 
 	.scroll-reminder {
+		background-color: $color-black;
 		position: absolute;
 		bottom: 104px;
-		right: 48px;
+		right: 44px;
 		max-width: 150px;
 		text-align: left;
 		font-size: $type-size-16;
 		color: #a7a294;
+		padding: 4px 8px;
+		border-radius: 4px;
 	}
 
 	.hidden {
@@ -158,7 +161,7 @@
 
 		.scroll-reminder {
 			right: 16px;
-			bottom: 88px;
+			bottom: 112px;
 		}
 	}
 </style>

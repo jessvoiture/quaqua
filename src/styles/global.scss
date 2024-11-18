@@ -34,12 +34,10 @@ text {
 }
 
 .step-content {
-	background: $color-dark_grey;
+	@include dark-grey-background-blur;
 	font-size: $type-size-16;
 	line-height: $type-line_height-medium;
 	color: $color-white;
-	background-color: rgba(64, 64, 64, 0.97);
-	backdrop-filter: blur(4px);
 	border-radius: 4px;
 	padding: 0.5rem 1rem;
 	display: flex;
