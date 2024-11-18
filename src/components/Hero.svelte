@@ -35,8 +35,12 @@
 			<img id="album-drops-title" src="/new_title.svg" alt="Album Drops" draggable="false" />
 
 			<h2>An analysis of top selling artists' album drops</h2>
-			<a href="https://jessvoiture.github.io/home/" target="_blank" class="detail" id="name"
-				>by Jess Carr</a
+			<a
+				href="https://jessvoiture.github.io/home/"
+				target="_blank"
+				class="detail"
+				id="name"
+				aria-label="Link to author's personal website">by Jess Carr</a
 			>
 			<div class="detail" id="date">Oct 2024</div>
 		</div>

@@ -160,30 +160,32 @@
 
 			<div class="music-controls">
 				<!-- pause and play -->
-				<button on:click={handlePlayPause} class="button-icon">
-					<i class="material-icons">
+				<button on:click={handlePlayPause} class="button-icon" aria-label="Toggle music play">
+					<i class="material-icons" aria-hidden="true">
 						{$isPlaying ? 'pause' : 'play_arrow'}
 					</i>
 				</button>
 
 				<!-- skip song -->
-				<button on:click={handleSkip} class="button-icon">
-					<i class="material-icons">skip_next</i>
+				<button on:click={handleSkip} class="button-icon" aria-label="Skip to next song">
+					<i class="material-icons" aria-hidden="true">skip_next</i>
 				</button>
 
 				<!-- spotify link -->
 				<a
 					href="https://open.spotify.com/playlist/2c4NBWpM0AX96R6uB5YEmg?si=3882570dedd04fd2"
 					target="_blank"
+					id="spotify-link"
+					aria-label="Open playlist in Spotify"
 				>
-					<button class="button-icon">
-						<img
-							id="spotify-logo-svg"
-							src="/spotify.svg"
-							alt="Open playlist in spotify"
-							draggable="false"
-						/>
-					</button>
+					<img
+						class="button-img"
+						id="spotify-logo-svg"
+						src="/spotify.svg"
+						alt=""
+						aria-hidden="true"
+						draggable="false"
+					/>
 				</a>
 			</div>
 		</div>
@@ -231,9 +233,21 @@
 		max-width: 126px;
 	}
 
-	button img {
-		width: 20px;
-		height: 20px;
+	#spotify-link {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		border-radius: 50%;
+		@include center-flex-vertically-and-horizontally;
+	}
+
+	#spotify-link:hover {
+		background-color: #2b2b2b;
+	}
+
+	.button-img {
+		width: 18px;
+		height: 18px;
 		vertical-align: middle;
 	}
 
