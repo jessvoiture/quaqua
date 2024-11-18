@@ -10,7 +10,6 @@
 	let EmbedController;
 	let songIndex = 0;
 	let timerTime = 30;
-	let lastPlayAttempt = 0;
 	let timerInterval;
 
 	const timer = tweened(timerTime, { duration: 1000 });
@@ -33,73 +32,11 @@
 		}
 
 		if (EmbedController) {
-			await EmbedController.loadUri(`spotify:track:${songUris[songIndex].uri}`);
-
-			// Add retry logic for mobile playback
-			try {
-				await playWithRetry();
-			} catch (error) {
-				console.error('Playback failed:', error);
-			}
-
+			EmbedController.loadUri(`spotify:track:${songUris[songIndex].uri}`);
+			EmbedController.play();
 			resetTimer();
 			isPlaying.set(true);
 		}
-	}
-
-	async function playWithRetry(maxAttempts = 3) {
-		const currentTime = Date.now();
-
-		// If we've recently tried to play, wait a bit
-		if (currentTime - lastPlayAttempt < 1000) {
-			await new Promise((resolve) => setTimeout(resolve, 1000));
-		}
-
-		lastPlayAttempt = currentTime;
-
-		for (let attempt = 0; attempt < maxAttempts; attempt++) {
-			try {
-				await EmbedController.resume();
-				// If play succeeds, break out of the retry loop
-				return;
-			} catch (error) {
-				console.warn(`Play attempt ${attempt + 1} failed:`, error);
-				if (attempt < maxAttempts - 1) {
-					// Wait before next attempt, increasing delay each time
-					await new Promise((resolve) => setTimeout(resolve, 1000 * (attempt + 1)));
-				} else {
-					throw error; // Re-throw if all attempts fail
-				}
-			}
-		}
-	}
-
-	// Modified handlePlayPause to use async/await
-	async function handlePlayPause() {
-		if (EmbedController) {
-			if ($isPlaying) {
-				await EmbedController.pause();
-				stopTimer();
-				isPlaying.set(false);
-			} else {
-				try {
-					await playWithRetry();
-					isPlaying.set(true);
-					startTimer();
-				} catch (error) {
-					console.error('Failed to resume playback:', error);
-					isPlaying.set(false);
-				}
-			}
-		}
-	}
-
-	// Modified handleSkip to use async/await
-	async function handleSkip() {
-		await incrementCount();
-		resetTimer();
-		isPlaying.set(true);
-		startTimer();
 	}
 
 	function startTimer() {
@@ -136,9 +73,33 @@
 		}
 	}
 
+	// Handle play/pause toggle
+	async function handlePlayPause() {
+		if (EmbedController) {
+			if ($isPlaying) {
+				EmbedController.pause();
+				stopTimer();
+				isPlaying.set(false);
+			} else {
+				EmbedController.resume();
+				isPlaying.set(true);
+				startTimer();
+			}
+		}
+	}
+
+	// Handle skip button
+	async function handleSkip() {
+		incrementCount();
+		resetTimer();
+		isPlaying.set(true);
+		startTimer();
+	}
+
+	// Load the Spotify IFrame API dynamically
 	function loadSpotifyIframeApi() {
 		if (window.onSpotifyIframeApiReady) {
-			return;
+			return; // Prevent loading the API again
 		}
 
 		const script = document.createElement('script');
@@ -162,6 +123,7 @@
 		};
 	}
 
+	// Load the API on component mount
 	onMount(() => {
 		loadSpotifyIframeApi();
 	});
