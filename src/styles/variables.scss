@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@font-face {
+	font-family: 'custom';
+	src: url('/fonts/Notable-Regular.ttf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Assign the font to a variable
+$font-family-accent: 'custom', serif;
 
 $color-black: #202020;
 $color-dark_grey: #404040;
@@ -48,17 +56,19 @@ $type-line_height-medium: 24px;
 	-o-transition: fill 0.5s 1s ease-in-out;
 }
 
-@mixin type-serif {
-	font-family: 'Notable', serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-@mixin type-sans_serif {
-	font-family: 'sans-serif';
-}
-
 @mixin dark-grey-background-blur {
 	background-color: rgba(64, 64, 64, 0.95);
 	backdrop-filter: blur(4px);
+}
+
+@mixin font-accent {
+	font-family: $font-family-accent;
+	color: $color-white;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+@mixin font-h4 {
+	@include font-accent;
+	font-size: 24px;
 }
