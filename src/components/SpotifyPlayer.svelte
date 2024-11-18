@@ -150,11 +150,9 @@
 			/>
 
 			<div class="title-details">
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="title-details-title">
 					{songUris[songIndex].song}
 				</div>
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
 				<div class="title-details-artist">
 					{songUris[songIndex].artist}
 				</div>
@@ -194,12 +192,14 @@
 
 <style lang="scss">
 	.music {
-		position: sticky;
+		position: fixed;
 		bottom: 0px;
 		width: 100%;
 		max-width: 100%;
 		overflow-x: hidden;
 		overflow-y: hidden;
+		background-color: $color-black;
+		z-index: 10000000;
 	}
 
 	.playing-bar {

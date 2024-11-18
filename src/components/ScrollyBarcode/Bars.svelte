@@ -9,10 +9,7 @@
 </script>
 
 <g class="bars">
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	{#each artistsSorted as d, i}
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<rect
 			class={'first-width-transition'}
 			class:highlightedBar={highlightedGroup.includes(d.artist)}

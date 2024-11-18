@@ -25,11 +25,11 @@
 </script>
 
 <g class="barcode">
-	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	{#each albumsSorted as d, i}
 		<g>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<!-- invisible rectangles fo touch area -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 			<rect
 				x={xScale($tweenedX[i]) - rectTouchAreaSize / 2}
 				y={yScale($tweenedY[i]) - rectTouchAreaSize / 4}
@@ -37,6 +37,7 @@
 				height={rectTouchAreaSize}
 				fill="transparent"
 				pointer-events="all"
+				aria-label={`touch area for ${d.Album}`}
 				on:mouseover={function (event) {
 					handleMouseover(event, d);
 				}}
@@ -46,7 +47,6 @@
 			/>
 
 			<!-- visilbe rectangles plotting albums -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<rect
 				x={xScale($tweenedX[i])}
 				y={$isDataHovered && $hoveredData?.album == d.album
@@ -56,11 +56,19 @@
 				height={$isDataHovered && $hoveredData?.album == d.album ? rectHeight * 1.5 : rectHeight}
 				class={colourClass}
 				pointer-events="all"
+				role="button"
+				tabindex="0"
 				aria-label="Data point for the album, {d.album} by {d.artist}."
 				on:mouseover={function (event) {
 					handleMouseover(event, d);
 				}}
 				on:mouseout={function () {
+					handleMouseout();
+				}}
+				on:focus={function (event) {
+					handleMouseover(event, d);
+				}}
+				on:blur={function () {
 					handleMouseout();
 				}}
 			/>

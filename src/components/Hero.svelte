@@ -31,8 +31,7 @@
 		style="width: {vinylSize}px; height: {vinylSize}px; top: calc({topTranslate}%); left: calc({leftTranslate}%);"
 	>
 		<div class="header">
-			<!-- svelte-ignore a11y-missing-content -->
-			<h1 aria-label="Album Drops" sr-only></h1>
+			<h1 class="sr-only">Album Drops</h1>
 			<img id="album-drops-title" src="/new_title.svg" alt="Album Drops" draggable="false" />
 
 			<h2>An analysis of top selling artists' album drops</h2>

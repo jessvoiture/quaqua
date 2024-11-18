@@ -18,10 +18,7 @@
 
 <g class="artist-labels axis yaxis">
 	{#each artistsSorted as a, i}
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 		<g>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<rect
 				class={a.artist}
 				x="0"
@@ -38,13 +35,13 @@
 						: 0}
 				rx="4"
 				ry="4"
+				role="button"
+				tabindex="0"
 				aria-label="Row for {artistsSorted[i]}"
-				on:mouseover={function () {
-					handleMouseoverLabel(a);
-				}}
-				on:mouseout={function () {
-					handleMouseoutLabel();
-				}}
+				on:mouseover={() => handleMouseoverLabel(a)}
+				on:mouseout={() => handleMouseoutLabel()}
+				on:focus={() => handleMouseoverLabel(a)}
+				on:blur={() => handleMouseoutLabel()}
 			/>
 
 			<text
