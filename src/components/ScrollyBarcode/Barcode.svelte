@@ -13,8 +13,19 @@
 
 	const handleMouseover = function (event, d) {
 		hoveredData.set(d);
+		console.log($hoveredData);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
+		isDataHovered.set(true);
+	};
+
+	const handleFocus = function (event, d) {
+		const rect = event.target.getBoundingClientRect();
+		const centerX = rect.left + rect.width / 2;
+		const centerY = rect.top + rect.height / 2;
+		hoveredData.set(d);
+		mouseX.set(centerX);
+		mouseY.set(centerY);
 		isDataHovered.set(true);
 	};
 
@@ -66,7 +77,8 @@
 					handleMouseout();
 				}}
 				on:focus={function (event) {
-					handleMouseover(event, d);
+					console.log('event', event);
+					handleFocus(event, d);
 				}}
 				on:blur={function () {
 					handleMouseout();
