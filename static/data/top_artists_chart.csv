@@ -1,0 +1,750 @@
+artist,album,album_release_date,type,first_album_release_date,days_since_first_release,days_since_last_release,notes,peak_pos,wks_on_chart,isBestAlbum,wks_on_chart_norm
+ABBA,Ring Ring,1973-03-26,Studio,1973-03-26,0,0,,NA,0,FALSE,0
+ABBA,Waterloo,1974-03-04,Studio,1973-03-26,343,343,,145,8,FALSE,0.16
+ABBA,ABBA,1975-04-21,Studio,1973-03-26,756,413,,174,3,FALSE,0.06
+ABBA,Arrival,1976-10-11,Studio,1973-03-26,1295,539,,20,50,TRUE,1
+ABBA,ABBA: The Album,1977-12-12,Studio,1973-03-26,1722,427,,NA,0,FALSE,0
+ABBA,Voulez-Vous,1979-04-23,Studio,1973-03-26,2219,497,,19,27,FALSE,0.54
+ABBA,Super Trouper,1980-11-03,Studio,1973-03-26,2779,560,,17,38,FALSE,0.76
+ABBA,The Visitors,1981-11-30,Studio,1973-03-26,3171,392,,29,17,FALSE,0.34
+ABBA,Voyage,2021-11-05,Studio,1973-03-26,17756,14585,,2,7,FALSE,0.14
+AC/DC,High Voltage,1975-02-17,Studio,1975-02-17,0,0,"Where regional release dates differed, took the earlier release date",146,19,FALSE,0.24675324675324675
+AC/DC,T.N.T.,1975-12-01,Studio,1975-02-17,287,287,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+AC/DC,Dirty Deeds Done Dirt Cheap,1976-09-20,Studio,1975-02-17,581,294,"Where regional release dates differed, took the earlier release date",3,55,FALSE,0.7142857142857143
+AC/DC,Let There Be Rock,1977-03-21,Studio,1975-02-17,763,182,"Where regional release dates differed, took the earlier release date",154,11,FALSE,0.14285714285714285
+AC/DC,Powerage,1978-05-05,Studio,1975-02-17,1173,410,"Where regional release dates differed, took the earlier release date",133,17,FALSE,0.22077922077922077
+AC/DC,Highway to Hell,1979-07-27,Studio,1975-02-17,1621,448,,NA,0,FALSE,0
+AC/DC,Back in Black,1980-07-25,Studio,1975-02-17,1985,364,,NA,0,FALSE,0
+AC/DC,For Those About to Rock We Salute You,1981-11-20,Studio,1975-02-17,2468,483,,NA,0,FALSE,0
+AC/DC,Flick of the Switch,1983-08-19,Studio,1975-02-17,3105,637,,NA,0,FALSE,0
+AC/DC,Fly on the Wall,1985-06-28,Studio,1975-02-17,3784,679,,NA,0,FALSE,0
+AC/DC,Who Made Who,1986-05-20,Soundtrack,1975-02-17,4110,326,,33,42,FALSE,0.5454545454545454
+AC/DC,Blow Up Your Video,1988-01-29,Studio,1975-02-17,4729,619,,12,24,FALSE,0.3116883116883117
+AC/DC,The Razors Edge,1990-09-24,Studio,1975-02-17,5698,969,,2,77,TRUE,1
+AC/DC,Ballbreaker,1995-09-22,Studio,1975-02-17,7522,1824,,4,30,FALSE,0.38961038961038963
+AC/DC,Stiff Upper Lip,2000-02-28,Studio,1975-02-17,9142,1620,,7,28,FALSE,0.36363636363636365
+AC/DC,Black Ice,2008-10-17,Studio,1975-02-17,12296,3154,,1,35,FALSE,0.45454545454545453
+AC/DC,Iron Man 2,2010-04-19,Soundtrack,1975-02-17,12845,549,,NA,0,FALSE,0
+AC/DC,Rock or Bust,2014-11-28,Studio,1975-02-17,14529,1684,,NA,0,FALSE,0
+AC/DC,Power Up,2020-11-13,Studio,1975-02-17,16706,2177,,1,9,FALSE,0.11688311688311688
+Adele,19,2008-01-28,Studio,2008-01-28,0,0,,4,222,FALSE,0.2791970802919708
+Adele,21,2011-01-24,Studio,2008-01-28,1092,1092,,1,617,TRUE,1
+Adele,25,2015-11-20,Studio,2008-01-28,2853,1761,,1,223,FALSE,0.28102189781021897
+Adele,30,2021-11-19,Studio,2008-01-28,5044,2191,,1,69,FALSE,0
+Aerosmith,Aerosmith,1973-01-05,Studio,1973-01-05,0,0,,21,59,FALSE,0.5363636363636364
+Aerosmith,Get Your Wings,1974-03-15,Studio,1973-01-05,434,434,,74,86,FALSE,0.7818181818181819
+Aerosmith,Toys in the Attic,1975-04-08,Studio,1973-01-05,823,389,,NA,0,FALSE,0
+Aerosmith,Rocks,1976-05-14,Studio,1973-01-05,1225,402,,3,53,FALSE,0.4818181818181818
+Aerosmith,Draw the Line,1977-12-09,Studio,1973-01-05,1799,574,,NA,0,FALSE,0
+Aerosmith,Night in the Ruts,1979-11-16,Studio,1973-01-05,2506,707,,NA,0,FALSE,0
+Aerosmith,Rock in a Hard Place,1982-08-01,Studio,1973-01-05,3495,989,,NA,0,FALSE,0
+Aerosmith,Done with Mirrors,1985-11-04,Studio,1973-01-05,4686,1191,,NA,0,FALSE,0
+Aerosmith,Permanent Vacation,1987-08-18,Studio,1973-01-05,5338,652,,11,67,FALSE,0.6090909090909091
+Aerosmith,Pump,1989-09-12,Studio,1973-01-05,6094,756,,5,110,TRUE,1
+Aerosmith,Get a Grip,1993-04-20,Studio,1973-01-05,7410,1316,,NA,0,FALSE,0
+Aerosmith,Nine Lives,1997-03-18,Studio,1973-01-05,8838,1428,,1,77,FALSE,0.7
+Aerosmith,Just Push Play,2001-03-06,Studio,1973-01-05,10287,1449,,2,27,FALSE,0.24545454545454545
+Aerosmith,Honkin' on Bobo,2004-03-30,Studio,1973-01-05,11407,1120,,NA,0,FALSE,0
+Aerosmith,Music from Another Dimension!,2012-11-06,Studio,1973-01-05,14550,3143,,NA,0,FALSE,0
+Barbra Streisand,The Barbra Streisand Album,1963-02-25,Studio,1963-02-25,0,0,,NA,0,FALSE,0
+Barbra Streisand,The Second Barbra Streisand Album,1963-08-01,Studio,1963-02-25,157,157,,NA,0,FALSE,0
+Barbra Streisand,The Third Album,1964-02-01,Studio,1963-02-25,341,184,,NA,0,FALSE,0
+Barbra Streisand,People,1964-09-01,Studio,1963-02-25,554,213,,NA,0,FALSE,0
+Barbra Streisand,My Name Is Barbra,1965-05-01,Studio,1963-02-25,796,242,,NA,0,FALSE,0
+Barbra Streisand,"My Name Is Barbra, Two...",1965-10-01,Studio,1963-02-25,949,153,,NA,0,FALSE,0
+Barbra Streisand,Color Me Barbra,1966-03-01,Studio,1963-02-25,1100,151,,NA,0,FALSE,0
+Barbra Streisand,Je m'appelle Barbra,1966-10-01,Studio,1963-02-25,1314,214,,NA,0,FALSE,0
+Barbra Streisand,Simply Streisand,1967-10-01,Studio,1963-02-25,1679,365,,12,23,FALSE,0.46
+Barbra Streisand,A Christmas Album,1967-10-01,Studio,1963-02-25,1679,0,,108,19,FALSE,0.38
+Barbra Streisand,What About Today?,1969-07-01,Studio,1963-02-25,2318,639,,31,17,FALSE,0.34
+Barbra Streisand,Stoney End,1971-02-01,Studio,1963-02-25,2898,580,,10,29,FALSE,0.58
+Barbra Streisand,Barbra Joan Streisand,1971-08-01,Studio,1963-02-25,3079,181,,11,26,FALSE,0.52
+Barbra Streisand,Barbra Streisand...and Other Musical Instruments,1973-11-02,Studio,1963-02-25,3903,824,,NA,0,FALSE,0
+Barbra Streisand,The Way We Were,1974-01-30,Studio,1963-02-25,3992,89,,1,31,FALSE,0.62
+Barbra Streisand,ButterFly,1974-10-01,Studio,1963-02-25,4236,244,,13,24,FALSE,0.48
+Barbra Streisand,Lazy Afternoon,1975-10-14,Studio,1963-02-25,4614,378,,12,20,FALSE,0.4
+Barbra Streisand,Classical Barbra,1976-02-01,Studio,1963-02-25,4724,110,,46,14,FALSE,0.28
+Barbra Streisand,Superman,1977-06-01,Studio,1963-02-25,5210,486,,NA,0,FALSE,0
+Barbra Streisand,Songbird,1978-05-01,Studio,1963-02-25,5544,334,,12,27,FALSE,0.54
+Barbra Streisand,Wet,1979-10-01,Studio,1963-02-25,6062,518,,7,26,FALSE,0.52
+Barbra Streisand,Guilty,1980-09-23,Studio,1963-02-25,6420,358,,1,49,FALSE,0.98
+Barbra Streisand,Emotion,1984-10-09,Studio,1963-02-25,7897,1477,,19,28,FALSE,0.56
+Barbra Streisand,The Broadway Album,1985-11-05,Studio,1963-02-25,8289,392,,1,50,TRUE,1
+Barbra Streisand,Till I Loved You,1988-10-25,Studio,1963-02-25,9374,1085,,10,26,FALSE,0.52
+Barbra Streisand,Back to Broadway,1993-06-29,Studio,1963-02-25,11082,1708,,NA,0,FALSE,0
+Barbra Streisand,Higher Ground,1997-11-11,Studio,1963-02-25,12678,1596,,1,27,FALSE,0.54
+Barbra Streisand,A Love Like Ours,1999-09-21,Studio,1963-02-25,13357,679,,6,23,FALSE,0.46
+Barbra Streisand,Christmas Memories,2001-10-30,Studio,1963-02-25,14127,770,,15,9,FALSE,0.18
+Barbra Streisand,The Movie Album,2003-10-14,Studio,1963-02-25,14841,714,,5,14,FALSE,0.28
+Barbra Streisand,Guilty Pleasures,2005-09-20,Studio,1963-02-25,15548,707,,5,19,FALSE,0.38
+Barbra Streisand,Love Is the Answer,2009-09-29,Studio,1963-02-25,17018,1470,,NA,0,FALSE,0
+Barbra Streisand,What Matters Most,2011-08-23,Studio,1963-02-25,17711,693,,4,10,FALSE,0.2
+Barbra Streisand,Partners,2014-09-16,Studio,1963-02-25,18831,1120,,1,24,FALSE,0.48
+Barbra Streisand,Encore: Movie Partners Sing Broadway,2016-08-26,Studio,1963-02-25,19541,710,,1,11,FALSE,0.22
+Barbra Streisand,Walls,2018-11-02,Studio,1963-02-25,20339,798,,12,2,FALSE,0.04
+Bee Gees,The Bee Gees Sing and Play 14 Barry Gibb Songs,1965-11-01,Studio,1965-11-01,0,0,,NA,0,FALSE,0
+Bee Gees,Spicks and Specks,1966-11-01,Studio,1965-11-01,365,365,,NA,0,FALSE,0
+Bee Gees,Bee Gees' 1st,1967-08-09,Studio,1965-11-01,646,281,,7,52,FALSE,0.6933333333333334
+Bee Gees,Horizontal,1968-01-27,Studio,1965-11-01,817,171,,12,22,FALSE,0.29333333333333333
+Bee Gees,Idea,1968-09-01,Studio,1965-11-01,1035,218,,17,27,FALSE,0.36
+Bee Gees,Odessa,1969-03-30,Studio,1965-11-01,1245,210,,20,25,FALSE,0.3333333333333333
+Bee Gees,Cucumber Castle,1970-04-01,Studio,1965-11-01,1612,367,,94,8,FALSE,0.10666666666666667
+Bee Gees,2 Years On,1970-11-01,Studio,1965-11-01,1826,214,,32,14,FALSE,0.18666666666666668
+Bee Gees,Trafalgar,1971-09-01,Studio,1965-11-01,2130,304,,34,14,FALSE,0.18666666666666668
+Bee Gees,To Whom It May Concern,1972-10-01,Studio,1965-11-01,2526,396,,35,14,FALSE,0.18666666666666668
+Bee Gees,Life in a Tin Can,1973-01-19,Studio,1965-11-01,2636,110,,NA,0,FALSE,0
+Bee Gees,Mr. Natural,1974-05-13,Studio,1965-11-01,3115,479,,178,5,FALSE,0.06666666666666667
+Bee Gees,Main Course,1975-06-01,Studio,1965-11-01,3499,384,,14,75,TRUE,1
+Bee Gees,Children of the World,1976-09-13,Studio,1965-11-01,3969,470,,NA,0,FALSE,0
+Bee Gees,Spirits Having Flown,1979-02-05,Studio,1965-11-01,4844,875,,1,55,FALSE,0.7333333333333333
+Bee Gees,Living Eyes,1981-10-01,Studio,1965-11-01,5813,969,,41,12,FALSE,0.16
+Bee Gees,E·S·P,1987-09-22,Studio,1965-11-01,7995,2182,,NA,0,FALSE,0
+Bee Gees,One,1989-04-10,Studio,1965-11-01,8561,566,,68,13,FALSE,0.17333333333333334
+Bee Gees,High Civilization,1991-03-26,Studio,1965-11-01,9276,715,,NA,0,FALSE,0
+Bee Gees,Size Isn't Everything,1993-09-14,Studio,1965-11-01,10179,903,,153,3,FALSE,0.04
+Bee Gees,Still Waters,1997-03-11,Studio,1965-11-01,11453,1274,,11,21,FALSE,0.28
+Bee Gees,This Is Where I Came In,2001-04-24,Studio,1965-11-01,12958,1505,,16,8,FALSE,0.10666666666666667
+Beyoncé,Dangerously in Love,2003-06-23,Studio,2003-06-23,0,0,,NA,0,TRUE,NA
+Beyoncé,B'Day,2006-09-01,Studio,2003-06-23,1166,1166,,NA,0,TRUE,NA
+Beyoncé,I Am... Sasha Fierce,2008-11-14,Studio,2003-06-23,1971,805,,NA,0,TRUE,NA
+Beyoncé,4,2011-06-24,Studio,2003-06-23,2923,952,,NA,0,TRUE,NA
+Beyoncé,Beyoncé,2013-12-13,Studio,2003-06-23,3826,903,,NA,0,TRUE,NA
+Beyoncé,Lemonade,2016-04-23,Studio,2003-06-23,4688,862,,NA,0,TRUE,NA
+Beyoncé,Everything is Love,2018-06-16,Collaborative,2003-06-23,5472,784,,NA,0,TRUE,NA
+Beyoncé,The Lion King: The Gift,2019-07-19,Soundtrack,2003-06-23,5870,398,,NA,0,TRUE,NA
+Beyoncé,Renaissance,2022-07-29,Studio,2003-06-23,6976,1106,,NA,0,TRUE,NA
+Beyoncé,Cowboy Carter,2024-03-29,Studio,2003-06-23,7585,609,,NA,0,TRUE,NA
+Billy Joel,Cold Spring Harbor,1971-11-01,Studio,1971-11-01,0,0,,158,8,FALSE,0.057971014492753624
+Billy Joel,Piano Man,1973-11-14,Studio,1971-11-01,744,744,,27,45,FALSE,0.32608695652173914
+Billy Joel,Streetlife Serenade,1974-10-11,Studio,1971-11-01,1075,331,,35,18,FALSE,0.13043478260869565
+Billy Joel,Turnstiles,1976-05-19,Studio,1971-11-01,1661,586,,122,12,FALSE,0.08695652173913043
+Billy Joel,The Stranger,1977-09-29,Studio,1971-11-01,2159,498,,2,138,TRUE,1
+Billy Joel,52nd Street,1978-10-11,Studio,1971-11-01,2536,377,,1,76,FALSE,0.5507246376811594
+Billy Joel,Glass Houses,1980-03-12,Studio,1971-11-01,3054,518,,1,73,FALSE,0.5289855072463768
+Billy Joel,The Nylon Curtain,1982-09-23,Studio,1971-11-01,3979,925,,7,35,FALSE,0.2536231884057971
+Billy Joel,An Innocent Man,1983-08-08,Studio,1971-11-01,4298,319,,4,111,FALSE,0.8043478260869565
+Billy Joel,The Bridge,1986-07-29,Studio,1971-11-01,5384,1086,,7,47,FALSE,0.34057971014492755
+Billy Joel,Storm Front,1989-10-17,Studio,1971-11-01,6560,1176,,1,69,FALSE,0.5
+Billy Joel,River of Dreams,1993-08-10,Studio,1971-11-01,7953,1393,,NA,0,FALSE,0
+Billy Joel,Fantasies & Delusions,2001-10-02,Studio,1971-11-01,10928,2975,,NA,0,FALSE,0
+Bon Jovi,Bon Jovi,1984-01-21,Studio,1984-01-21,0,0,,43,86,FALSE,0.7288135593220338
+Bon Jovi,7800° Fahrenheit,1985-03-27,Studio,1984-01-21,431,431,,NA,0,FALSE,0
+Bon Jovi,Slippery When Wet,1986-08-18,Studio,1984-01-21,940,509,,1,118,TRUE,1
+Bon Jovi,New Jersey,1988-09-19,Studio,1984-01-21,1703,763,,1,77,FALSE,0.652542372881356
+Bon Jovi,Keep the Faith,1992-11-03,Studio,1984-01-21,3209,1506,,NA,0,FALSE,0
+Bon Jovi,These Days,1995-06-27,Studio,1984-01-21,4175,966,,9,20,FALSE,0.1694915254237288
+Bon Jovi,Crush,2000-06-13,Studio,1984-01-21,5988,1813,,9,51,FALSE,0.4322033898305085
+Bon Jovi,Bounce,2002-10-08,Studio,1984-01-21,6835,847,,2,29,FALSE,0.2457627118644068
+Bon Jovi,Have a Nice Day,2005-09-20,Studio,1984-01-21,7913,1078,,NA,0,FALSE,0
+Bon Jovi,Lost Highway,2007-06-19,Studio,1984-01-21,8550,637,,1,45,FALSE,0.3813559322033898
+Bon Jovi,The Circle,2009-11-10,Studio,1984-01-21,9425,875,,1,26,FALSE,0.22033898305084745
+Bon Jovi,What About Now,2013-03-08,Studio,1984-01-21,10639,1214,,1,10,FALSE,0.0847457627118644
+Bon Jovi,Burning Bridges,2015-08-21,Studio,1984-01-21,11535,896,,13,3,FALSE,0.025423728813559324
+Bon Jovi,This House Is Not for Sale,2016-11-04,Studio,1984-01-21,11976,441,,NA,0,FALSE,0
+Bon Jovi,2020,2020-10-02,Studio,1984-01-21,13404,1428,,19,2,FALSE,0.01694915254237288
+Britney Spears,...Baby One More Time,1999-01-12,Studio,1999-01-12,0,0,,1,103,TRUE,1
+Britney Spears,Oops!... I Did It Again,2000-05-16,Studio,1999-01-12,490,490,,NA,0,FALSE,0
+Britney Spears,Britney,2001-11-06,Studio,1999-01-12,1029,539,,1,58,FALSE,0.5631067961165048
+Britney Spears,In the Zone,2003-11-18,Studio,1999-01-12,1771,742,,NA,0,FALSE,0
+Britney Spears,Blackout,2007-10-30,Studio,1999-01-12,3213,1442,,2,34,FALSE,0.3300970873786408
+Britney Spears,Circus,2008-12-02,Studio,1999-01-12,3612,399,,1,42,FALSE,0.4077669902912621
+Britney Spears,Femme Fatale,2011-03-29,Studio,1999-01-12,4459,847,,1,33,FALSE,0.32038834951456313
+Britney Spears,Britney Jean,2013-12-03,Studio,1999-01-12,5439,980,,4,11,FALSE,0.10679611650485436
+Britney Spears,Glory,2016-08-26,Studio,1999-01-12,6436,997,,3,8,FALSE,0.07766990291262135
+Bruce Springsteen,"Greetings from Asbury Park, N.J.",1973-01-05,Studio,1973-01-05,0,0,,NA,0,FALSE,0
+Bruce Springsteen,"The Wild, the Innocent & the E Street Shuffle",1973-11-05,Studio,1973-01-05,304,304,,NA,0,FALSE,0
+Bruce Springsteen,Born to Run,1975-08-25,Studio,1973-01-05,962,658,,NA,0,FALSE,0
+Bruce Springsteen,Darkness on the Edge of Town,1978-06-02,Studio,1973-01-05,1974,1012,,NA,0,FALSE,0
+Bruce Springsteen,The River,1980-10-17,Studio,1973-01-05,2842,868,,1,107,TRUE,1
+Bruce Springsteen,Nebraska,1982-09-30,Studio,1973-01-05,3555,713,,3,29,FALSE,0.27102803738317754
+Bruce Springsteen,Born in the U.S.A.,1984-06-04,Studio,1973-01-05,4168,613,,NA,0,FALSE,0
+Bruce Springsteen,Tunnel of Love,1987-10-02,Studio,1973-01-05,5383,1215,,NA,0,FALSE,0
+Bruce Springsteen,Human Touch,1992-03-31,Studio,1973-01-05,7025,1642,,2,27,FALSE,0.2523364485981308
+Bruce Springsteen,Lucky Town,1992-03-31,Studio,1973-01-05,7025,0,,3,23,FALSE,0.21495327102803738
+Bruce Springsteen,The Ghost of Tom Joad,1995-11-21,Studio,1973-01-05,8355,1330,,NA,0,FALSE,0
+Bruce Springsteen,The Rising,2002-07-30,Studio,1973-01-05,10798,2443,,1,37,FALSE,0.34579439252336447
+Bruce Springsteen,Devils & Dust,2005-04-26,Studio,1973-01-05,11799,1001,,1,13,FALSE,0.12149532710280374
+Bruce Springsteen,We Shall Overcome: The Seeger Sessions,2006-04-25,Studio,1973-01-05,12163,364,,3,22,FALSE,0.205607476635514
+Bruce Springsteen,Magic,2007-09-25,Studio,1973-01-05,12681,518,,1,26,FALSE,0.24299065420560748
+Bruce Springsteen,Working on a Dream,2009-01-27,Studio,1973-01-05,13171,490,,NA,0,FALSE,0
+Bruce Springsteen,Wrecking Ball,2012-03-06,Studio,1973-01-05,14305,1134,,1,26,FALSE,0.24299065420560748
+Bruce Springsteen,High Hopes,2014-01-14,Studio,1973-01-05,14984,679,,1,14,FALSE,0.1308411214953271
+Bruce Springsteen,Western Stars,2019-06-14,Studio,1973-01-05,16961,1977,,2,4,FALSE,0.037383177570093455
+Bruce Springsteen,Letter to You,2020-10-23,Studio,1973-01-05,17458,497,,NA,0,FALSE,0
+Bruce Springsteen,Only the Strong Survive,2022-11-11,Studio,1973-01-05,18207,749,,NA,0,FALSE,0
+Bruno Mars,Doo-Wops & Hooligans,2010-10-04,Studio,2010-10-04,0,0,,3,718,TRUE,1
+Bruno Mars,Unorthodox Jukebox,2012-12-07,Studio,2010-10-04,795,795,,1,251,FALSE,0.34958217270194986
+Bruno Mars,24K Magic,2016-11-18,Studio,2010-10-04,2237,1442,,2,198,FALSE,0.2757660167130919
+Bruno Mars,An Evening with Silk Sonic,2021-11-12,Collaborative,2010-10-04,4057,1820,,NA,0,FALSE,0
+Celine Dion,La voix du bon Dieu,1981-11-06,Studio,1981-11-06,0,0,,NA,0,FALSE,0
+Celine Dion,Céline Dion chante Noël,1981-12-04,Studio,1981-11-06,28,28,,NA,0,FALSE,0
+Celine Dion,Tellement j'ai d'amour...,1982-09-07,Studio,1981-11-06,305,277,,NA,0,FALSE,0
+Celine Dion,Les chemins de ma maison,1983-09-07,Studio,1981-11-06,670,365,,NA,0,FALSE,0
+Celine Dion,Chants et contes de Noël,1983-12-03,Studio,1981-11-06,757,87,,NA,0,FALSE,0
+Celine Dion,Mélanie,1984-08-22,Studio,1981-11-06,1020,263,,NA,0,FALSE,0
+Celine Dion,C'est pour toi,1985-08-27,Studio,1981-11-06,1390,370,,NA,0,FALSE,0
+Celine Dion,Incognito,1987-04-02,Studio,1981-11-06,1973,583,,NA,0,FALSE,0
+Celine Dion,Unison,1990-04-02,Studio,1981-11-06,3069,1096,,74,26,FALSE,0.30952380952380953
+Celine Dion,Dion chante Plamondon (Des mots qui sonnent),1991-11-04,Studio,1981-11-06,3650,581,,NA,0,FALSE,0
+Celine Dion,Celine Dion,1992-03-30,Studio,1981-11-06,3797,147,,34,76,FALSE,0.9047619047619048
+Celine Dion,The Colour of My Love,1993-11-09,Studio,1981-11-06,4386,589,,NA,0,FALSE,0
+Celine Dion,D'eux (The French Album),1995-03-27,Studio,1981-11-06,4889,503,,NA,0,FALSE,0
+Celine Dion,Falling into You,1996-03-11,Studio,1981-11-06,5239,350,,NA,0,FALSE,0
+Celine Dion,Let's Talk About Love,1997-11-14,Studio,1981-11-06,5852,613,,1,84,TRUE,1
+Celine Dion,S'il suffisait d'aimer,1998-08-31,Studio,1981-11-06,6142,290,,NA,0,FALSE,0
+Celine Dion,These Are Special Times,1998-10-30,Studio,1981-11-06,6202,60,,2,81,FALSE,0.9642857142857143
+Celine Dion,A New Day Has Come,2002-03-22,Studio,1981-11-06,7441,1239,,1,60,FALSE,0.7142857142857143
+Celine Dion,One Heart,2003-03-24,Studio,1981-11-06,7808,367,,2,32,FALSE,0.38095238095238093
+Celine Dion,1 fille & 4 types,2003-10-13,Studio,1981-11-06,8011,203,,NA,0,FALSE,0
+Celine Dion,Miracle,2004-10-11,Studio,1981-11-06,8375,364,,4,22,FALSE,0.2619047619047619
+Celine Dion,D'elles,2007-05-18,Studio,1981-11-06,9324,949,,NA,0,FALSE,0
+Celine Dion,Taking Chances,2007-11-07,Studio,1981-11-06,9497,173,,3,26,FALSE,0.30952380952380953
+Celine Dion,Sans attendre,2012-11-02,Studio,1981-11-06,11319,1822,,NA,0,FALSE,0
+Celine Dion,Loved Me Back to Life,2013-11-01,Studio,1981-11-06,11683,364,,NA,0,FALSE,0
+Celine Dion,Encore un soir,2016-08-26,Studio,1981-11-06,12712,1029,,NA,0,FALSE,0
+Celine Dion,Courage,2019-11-15,Studio,1981-11-06,13888,1176,,1,4,FALSE,0.047619047619047616
+Celine Dion,Love Again,2023-05-12,Soundtrack,1981-11-06,15162,1274,,NA,0,FALSE,0
+Chris Brown,Chris Brown,2005-11-29,Studio,2005-11-29,0,0,,2,71,FALSE,0.3837837837837838
+Chris Brown,Exclusive,2007-11-06,Studio,2005-11-29,707,707,,4,65,FALSE,0.35135135135135137
+Chris Brown,Graffiti,2009-12-08,Studio,2005-11-29,1470,763,,7,13,FALSE,0.07027027027027027
+Chris Brown,F.A.M.E.,2011-03-22,Studio,2005-11-29,1939,469,,1,47,FALSE,0.25405405405405407
+Chris Brown,Fortune,2012-07-03,Studio,2005-11-29,2408,469,,1,31,FALSE,0.16756756756756758
+Chris Brown,X,2014-09-16,Studio,2005-11-29,3213,805,,2,59,FALSE,0.31891891891891894
+Chris Brown,Fan of a Fan: The Album,2015-02-24,Collaborative,2005-11-29,3374,161,,NA,0,FALSE,0
+Chris Brown,Royalty,2015-12-18,Studio,2005-11-29,3671,297,,3,41,FALSE,0.22162162162162163
+Chris Brown,Heartbreak on a Full Moon,2017-10-31,Studio,2005-11-29,4354,683,,NA,0,FALSE,0
+Chris Brown,Indigo,2019-06-28,Studio,2005-11-29,4959,605,,1,185,TRUE,1
+Chris Brown,Breezy,2022-06-24,Studio,2005-11-29,6051,1092,,4,23,FALSE,0.12432432432432433
+Chris Brown,11:11,2023-11-10,Studio,2005-11-29,6555,504,,9,60,FALSE,0.32432432432432434
+Drake,Room for Improvement,2006-02-14,Mixtape,2006-02-14,0,0,,NA,0,FALSE,0
+Drake,Comeback Season,2007-09-01,Mixtape,2006-02-14,564,564,,NA,0,FALSE,0
+Drake,So Far Gone,2009-02-13,Mixtape,2006-02-14,1095,531,,5,6,FALSE,0.009569377990430622
+Drake,Thank Me Later,2010-06-15,Studio,2006-02-14,1582,487,,1,115,FALSE,0.18341307814992025
+Drake,Take Care,2011-11-15,Studio,2006-02-14,2100,518,,1,627,TRUE,1
+Drake,Nothing Was the Same,2013-09-24,Studio,2006-02-14,2779,679,,NA,0,FALSE,0
+Drake,If You're Reading This It's Too Late,2015-02-13,Mixtape,2006-02-14,3286,507,,1,201,FALSE,0.32057416267942584
+Drake,What a Time to Be Alive (with Future),2015-09-20,Mixtape,2006-02-14,3505,219,,NA,0,FALSE,0
+Drake,Views,2016-04-29,Studio,2006-02-14,3727,222,,1,460,FALSE,0.733652312599681
+Drake,More Life,2017-03-18,Mixtape,2006-02-14,4050,323,,1,371,FALSE,0.5917065390749602
+Drake,Scorpion,2018-06-29,Studio,2006-02-14,4518,468,,1,349,FALSE,0.5566188197767146
+Drake,Dark Lane Demo Tapes,2020-05-01,Mixtape,2006-02-14,5190,672,,2,76,FALSE,0.12121212121212122
+Drake,Certified Lover Boy,2021-09-03,Studio,2006-02-14,5680,490,,1,183,FALSE,0.291866028708134
+Drake,"Honestly, Nevermind",2022-06-17,Studio,2006-02-14,5967,287,,1,69,FALSE,0.11004784688995216
+Drake,Her Loss,2022-11-04,Collaborative,2006-02-14,6107,140,,NA,0,FALSE,0
+Drake,For All the Dogs,2023-10-06,Studio,2006-02-14,6443,336,,NA,0,FALSE,0
+Eagles,Eagles,1972-06-01,Studio,1972-06-01,0,0,,NA,0,FALSE,0
+Eagles,Desperado,1973-04-17,Studio,1972-06-01,320,320,,41,70,FALSE,0.4430379746835443
+Eagles,On the Border,1974-03-22,Studio,1972-06-01,659,339,,NA,0,FALSE,0
+Eagles,One of These Nights,1975-06-10,Studio,1972-06-01,1104,445,,NA,0,FALSE,0
+Eagles,Hotel California,1976-12-08,Studio,1972-06-01,1651,547,,1,158,TRUE,1
+Eagles,The Long Run,1979-09-24,Studio,1972-06-01,2671,1020,,1,57,FALSE,0.36075949367088606
+Eagles,Long Road Out of Eden,2007-10-30,Studio,1972-06-01,12934,10263,,NA,0,FALSE,0
+Ed Sheeran,+,2011-09-09,Studio,2011-09-09,0,0,,5,243,TRUE,1
+Ed Sheeran,×,2014-06-23,Studio,2011-09-09,1018,1018,,NA,0,FALSE,0
+Ed Sheeran,÷,2017-03-03,Studio,2011-09-09,2002,984,,NA,0,FALSE,0
+Ed Sheeran,No.6 Collaborations Project,2019-07-12,Studio,2011-09-09,2863,861,,1,73,FALSE,0.3004115226337449
+Ed Sheeran,=,2021-10-29,Studio,2011-09-09,3703,840,,1,122,FALSE,0.5020576131687243
+Ed Sheeran,−,2023-05-05,Studio,2011-09-09,4256,553,,NA,0,FALSE,0
+Ed Sheeran,Autumn Variations,2023-09-29,Studio,2011-09-09,4403,147,,4,2,FALSE,0.00823045267489712
+Elton John,Empty Sky,1969-06-06,Studio,1969-06-06,0,0,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,6,18,FALSE,0.16216216216216217
+Elton John,Elton John,1970-04-10,Studio,1969-06-06,308,308,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,4,52,FALSE,0.46846846846846846
+Elton John,Tumbleweed Connection,1970-10-30,Studio,1969-06-06,511,203,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,5,37,FALSE,0.3333333333333333
+Elton John,Madman Across the Water,1971-11-05,Studio,1969-06-06,882,371,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Honky Château,1972-05-19,Studio,1969-06-06,1078,196,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Don't Shoot Me I'm Only the Piano Player,1973-01-22,Studio,1969-06-06,1326,248,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Goodbye Yellow Brick Road,1973-10-05,Studio,1969-06-06,1582,256,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,1,111,TRUE,1
+Elton John,Caribou,1974-06-28,Studio,1969-06-06,1848,266,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,1,54,FALSE,0.4864864864864865
+Elton John,Captain Fantastic and the Brown Dirt Cowboy,1975-05-19,Studio,1969-06-06,2173,325,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Rock of the Westies,1975-10-24,Studio,1969-06-06,2331,158,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Blue Moves,1976-10-22,Studio,1969-06-06,2695,364,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,3,22,FALSE,0.1981981981981982
+Elton John,A Single Man,1978-10-16,Studio,1969-06-06,3419,724,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,15,18,FALSE,0.16216216216216217
+Elton John,Victim of Love,1979-10-01,Studio,1969-06-06,3769,350,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,21 at 33,1980-05-13,Studio,1969-06-06,3994,225,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,The Fox,1981-05-20,Studio,1969-06-06,4366,372,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,21,19,FALSE,0.17117117117117117
+Elton John,Jump Up!,1982-04-09,Studio,1969-06-06,4690,324,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Too Low for Zero,1983-05-30,Studio,1969-06-06,5106,416,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Breaking Hearts,1984-07-09,Studio,1969-06-06,5512,406,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,20,34,FALSE,0.3063063063063063
+Elton John,Ice on Fire,1985-11-07,Studio,1969-06-06,5998,486,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Leather Jackets,1986-10-15,Studio,1969-06-06,6340,342,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,91,9,FALSE,0.08108108108108109
+Elton John,Reg Strikes Back,1988-06-24,Studio,1969-06-06,6958,618,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,16,29,FALSE,0.26126126126126126
+Elton John,Sleeping with the Past,1989-08-29,Studio,1969-06-06,7389,431,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,The One,1992-06-22,Studio,1969-06-06,8417,1028,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,8,53,FALSE,0.4774774774774775
+Elton John,Duets,1993-11-23,Collaborative,1969-06-06,8936,519,,25,22,FALSE,0.1981981981981982
+Elton John,Made in England,1995-03-17,Studio,1969-06-06,9415,479,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,The Big Picture,1997-09-22,Studio,1969-06-06,10335,920,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,9,23,FALSE,0.2072072072072072
+Elton John,Songs from the West Coast,2001-10-01,Studio,1969-06-06,11805,1470,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,Peachtree Road,2004-11-09,Studio,1969-06-06,12940,1135,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,17,10,FALSE,0.09009009009009009
+Elton John,The Captain & the Kid,2006-09-18,Studio,1969-06-06,13618,678,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,NA,0,FALSE,0
+Elton John,The Union,2010-10-19,Collaborative,1969-06-06,15110,1492,,NA,0,FALSE,0
+Elton John,The Diving Board,2013-09-13,Studio,1969-06-06,16170,1060,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,4,8,FALSE,0.07207207207207207
+Elton John,Wonderful Crazy Night,2016-02-05,Studio,1969-06-06,17045,875,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,8,4,FALSE,0.036036036036036036
+Elton John,Regimental Sgt. Zippo,2021-06-12,Studio,1969-06-06,18999,1954,Excludes Good Morning to the Night and The Lockdown Sessions as they were not new material. Excludes Soundtracks,197,1,FALSE,0.009009009009009009
+Elvis Presley,Elvis Presley,1956-03-23,Studio,1956-03-23,0,0,,NA,0,FALSE,0
+Elvis Presley,Elvis,1956-10-19,Studio,1956-03-23,210,210,,52,13,FALSE,0.40625
+Elvis Presley,Loving You,1957-06-20,Soundtrack,1956-03-23,454,244,,NA,0,FALSE,0
+Elvis Presley,Elvis' Christmas Album,1957-10-15,Studio,1956-03-23,571,117,,28,3,FALSE,0.09375
+Elvis Presley,King Creole,1958-09-19,Soundtrack,1956-03-23,910,339,,NA,0,FALSE,0
+Elvis Presley,Elvis Is Back!,1960-04-08,Studio,1956-03-23,1477,567,,199,1,FALSE,0.03125
+Elvis Presley,G.I. Blues,1960-09-23,Soundtrack,1956-03-23,1645,168,,NA,0,FALSE,0
+Elvis Presley,His Hand in Mine,1960-11-10,Studio,1956-03-23,1693,48,,NA,0,FALSE,0
+Elvis Presley,Something for Everybody,1961-05-19,Studio,1956-03-23,1883,190,,NA,0,FALSE,0
+Elvis Presley,Blue Hawaii,1961-10-20,Soundtrack,1956-03-23,2037,154,,NA,0,FALSE,0
+Elvis Presley,Pot Luck,1962-06-05,Studio,1956-03-23,2265,228,,NA,0,FALSE,0
+Elvis Presley,Girls! Girls! Girls!,1962-11-09,Soundtrack,1956-03-23,2422,157,,NA,0,FALSE,0
+Elvis Presley,It Happened at the World's Fair,1963-04-10,Soundtrack,1956-03-23,2574,152,,NA,0,FALSE,0
+Elvis Presley,Fun in Acapulco,1963-11-15,Soundtrack,1956-03-23,2793,219,,NA,0,FALSE,0
+Elvis Presley,Kissin' Cousins,1964-04-02,Soundtrack,1956-03-23,2932,139,,NA,0,FALSE,0
+Elvis Presley,Roustabout,1964-10-20,Soundtrack,1956-03-23,3133,201,,NA,0,FALSE,0
+Elvis Presley,Girl Happy,1965-03-02,Soundtrack,1956-03-23,3266,133,,NA,0,FALSE,0
+Elvis Presley,Harum Scarum,1965-11-03,Soundtrack,1956-03-23,3512,246,,NA,0,FALSE,0
+Elvis Presley,Frankie and Johnny,1966-04-01,Soundtrack,1956-03-23,3661,149,,NA,0,FALSE,0
+Elvis Presley,"Paradise, Hawaiian Style",1966-06-10,Soundtrack,1956-03-23,3731,70,,NA,0,FALSE,0
+Elvis Presley,Spinout,1966-10-31,Soundtrack,1956-03-23,3874,143,,18,32,TRUE,1
+Elvis Presley,How Great Thou Art,1967-02-27,Studio,1956-03-23,3993,119,,18,29,FALSE,0.90625
+Elvis Presley,Double Trouble,1967-06-01,Soundtrack,1956-03-23,4087,94,,47,20,FALSE,0.625
+Elvis Presley,Clambake,1967-10-10,Soundtrack,1956-03-23,4218,131,,40,14,FALSE,0.4375
+Elvis Presley,Speedway,1968-05-01,Soundtrack,1956-03-23,4422,204,,82,13,FALSE,0.40625
+Elvis Presley,From Elvis in Memphis,1969-06-02,Studio,1956-03-23,4819,397,,NA,0,FALSE,0
+Elvis Presley,That's the Way It Is,1970-11-11,Studio,1956-03-23,5346,527,,NA,0,FALSE,0
+Elvis Presley,"Elvis Country (I'm 10,000 Years Old)",1971-01-07,Studio,1956-03-23,5403,57,,NA,0,FALSE,0
+Elvis Presley,Love Letters from Elvis,1971-06-16,Studio,1956-03-23,5563,160,,NA,0,FALSE,0
+Elvis Presley,Elvis Sings The Wonderful World of Christmas,1971-10-20,Studio,1956-03-23,5689,126,,NA,0,FALSE,0
+Elvis Presley,Elvis Now,1972-02-01,Studio,1956-03-23,5793,104,,43,19,FALSE,0.59375
+Elvis Presley,He Touched Me,1972-04-01,Studio,1956-03-23,5853,60,,79,10,FALSE,0.3125
+Elvis Presley,"Elvis (The ""Fool"" Album)",1973-07-01,Studio,1956-03-23,6309,456,,NA,0,FALSE,0
+Elvis Presley,Raised on Rock / For Ol' Times Sake,1973-10-01,Studio,1956-03-23,6401,92,,NA,0,FALSE,0
+Elvis Presley,Good Times,1974-03-20,Studio,1956-03-23,6571,170,,90,8,FALSE,0.25
+Elvis Presley,Promised Land,1975-01-08,Studio,1956-03-23,6865,294,,47,12,FALSE,0.375
+Elvis Presley,Today,1975-05-07,Studio,1956-03-23,6984,119,,57,13,FALSE,0.40625
+Elvis Presley,"From Elvis Presley Boulevard, Memphis, Tennessee",1976-05-01,Studio,1956-03-23,7344,360,,NA,0,FALSE,0
+Elvis Presley,Moody Blue,1977-06-01,Studio,1956-03-23,7740,396,,3,31,FALSE,0.96875
+Eminem,Infinite,1996-11-12,Studio,1996-11-12,0,0,Excludes Soundtrack Albums,NA,0,FALSE,0
+Eminem,The Slim Shady LP,1999-02-23,Studio,1996-11-12,833,833,Excludes Soundtrack Albums,2,105,FALSE,0.23702031602708803
+Eminem,The Marshall Mathers LP,2000-05-23,Studio,1996-11-12,1288,455,Excludes Soundtrack Albums,1,173,FALSE,0.3905191873589165
+Eminem,The Eminem Show,2002-05-26,Studio,1996-11-12,2021,733,Excludes Soundtrack Albums,1,443,TRUE,1
+Eminem,Encore,2004-11-12,Studio,1996-11-12,2922,901,Excludes Soundtrack Albums,1,54,FALSE,0.12189616252821671
+Eminem,Eminem Presents: The Re-Up,2006-12-04,Collaborative,1996-11-12,3674,752,,NA,0,FALSE,0
+Eminem,Relapse,2009-05-15,Studio,1996-11-12,4567,893,Excludes Soundtrack Albums,1,90,FALSE,0.20316027088036118
+Eminem,Recovery,2010-06-18,Studio,1996-11-12,4966,399,Excludes Soundtrack Albums,1,322,FALSE,0.7268623024830699
+Eminem,The Marshall Mathers LP 2,2013-11-05,Studio,1996-11-12,6202,1236,Excludes Soundtrack Albums,1,189,FALSE,0.42663656884875845
+Eminem,Shady XV,2014-11-24,Collaborative,1996-11-12,6586,384,,NA,0,FALSE,0
+Eminem,Revival,2017-12-15,Studio,1996-11-12,7703,1117,Excludes Soundtrack Albums,1,31,FALSE,0.06997742663656885
+Eminem,Kamikaze,2018-08-31,Studio,1996-11-12,7962,259,Excludes Soundtrack Albums,1,73,FALSE,0.16478555304740405
+Eminem,Music to Be Murdered By,2020-01-17,Studio,1996-11-12,8466,504,Excludes Soundtrack Albums,NA,0,FALSE,0
+Eminem,The Death of Slim Shady (Coup de Grâce),2024-07-12,,1996-11-12,10104,1638,,NA,0,FALSE,0
+Fleetwood Mac,7936 South Rhodes,1968-01-25,Collaborative,1968-01-25,0,0,,NA,0,FALSE,0
+Fleetwood Mac,Fleetwood Mac (also known as Peter Green's Fleetwood Mac),1968-02-01,Studio,1968-01-25,7,7,,NA,0,FALSE,0
+Fleetwood Mac,Mr. Wonderful,1968-08-23,Studio,1968-01-25,211,204,,NA,0,FALSE,0
+Fleetwood Mac,Then Play On,1969-09-19,Studio,1968-01-25,603,392,,109,22,FALSE,0.03531300160513644
+Fleetwood Mac,Fleetwood Mac in Chicago (album by Fleetwood Mac and seven Chicago blues musicians),1969-12-05,Studio,1968-01-25,680,77,,NA,0,FALSE,0
+Fleetwood Mac,Kiln House,1970-09-18,Studio,1968-01-25,967,287,,69,14,FALSE,0.02247191011235955
+Fleetwood Mac,Future Games,1971-09-03,Studio,1968-01-25,1317,350,,91,12,FALSE,0.019261637239165328
+Fleetwood Mac,Bare Trees,1972-03-01,Studio,1968-01-25,1497,180,,70,27,FALSE,0.04333868378812199
+Fleetwood Mac,Penguin,1973-03-01,Studio,1968-01-25,1862,365,,49,13,FALSE,0.02086677367576244
+Fleetwood Mac,Mystery to Me,1973-10-15,Studio,1968-01-25,2090,228,,NA,0,FALSE,0
+Fleetwood Mac,Heroes Are Hard to Find,1974-09-13,Studio,1968-01-25,2423,333,,NA,0,FALSE,0
+Fleetwood Mac,Fleetwood Mac (also known as The White Album),1975-07-11,Studio,1968-01-25,2724,301,,NA,0,FALSE,0
+Fleetwood Mac,Rumours,1977-02-04,Studio,1968-01-25,3298,574,,1,623,TRUE,1
+Fleetwood Mac,Tusk,1979-10-12,Studio,1968-01-25,4278,980,,4,37,FALSE,0.0593900481540931
+Fleetwood Mac,Mirage,1982-07-02,Studio,1968-01-25,5272,994,,1,45,FALSE,0.07223113964686999
+Fleetwood Mac,Tango in the Night,1987-04-13,Studio,1968-01-25,7018,1746,,NA,0,FALSE,0
+Fleetwood Mac,Behind the Mask,1990-04-09,Studio,1968-01-25,8110,1092,,NA,0,FALSE,0
+Fleetwood Mac,Time,1995-10-10,Studio,1968-01-25,10120,2010,,NA,0,FALSE,0
+Fleetwood Mac,Say You Will,2003-04-15,Studio,1968-01-25,12864,2744,,3,23,FALSE,0.03691813804173355
+Frank Sinatra,The Voice of Frank Sinatra,1946-03-04,Studio,1946-03-04,0,0,,NA,0,FALSE,0
+Frank Sinatra,Songs by Sinatra,1947-04-01,Studio,1946-03-04,393,393,,NA,0,FALSE,0
+Frank Sinatra,Christmas Songs by Sinatra,1948-11-01,Studio,1946-03-04,973,580,,NA,0,FALSE,0
+Frank Sinatra,Frankly Sentimental,1949-06-20,Studio,1946-03-04,1204,231,,NA,0,FALSE,0
+Frank Sinatra,Dedicated to You,1950-03-01,Studio,1946-03-04,1458,254,,NA,0,FALSE,0
+Frank Sinatra,Sing and Dance with Frank Sinatra,1950-10-16,Studio,1946-03-04,1687,229,,NA,0,FALSE,0
+Frank Sinatra,Songs for Young Lovers,1954-01-01,Studio,1946-03-04,2860,1173,,NA,0,FALSE,0
+Frank Sinatra,Swing Easy!,1954-08-02,Studio,1946-03-04,3073,213,,NA,0,FALSE,0
+Frank Sinatra,In the Wee Small Hours,1955-04-01,Studio,1946-03-04,3315,242,,NA,0,FALSE,0
+Frank Sinatra,Songs for Swingin' Lovers!,1956-03-01,Studio,1946-03-04,3650,335,,NA,0,FALSE,0
+Frank Sinatra,Close to You,1957-01-01,Studio,1946-03-04,3956,306,,NA,0,FALSE,0
+Frank Sinatra,A Swingin' Affair!,1957-06-01,Studio,1946-03-04,4107,151,,NA,0,FALSE,0
+Frank Sinatra,Where Are You?,1957-09-01,Studio,1946-03-04,4199,92,,NA,0,FALSE,0
+Frank Sinatra,A Jolly Christmas from Frank Sinatra (The Sinatra Christmas Album),1957-09-21,Studio,1946-03-04,4219,20,,NA,0,FALSE,0
+Frank Sinatra,Come Fly with Me,1958-01-01,Studio,1946-03-04,4321,102,,NA,0,FALSE,0
+Frank Sinatra,Frank Sinatra Sings for Only the Lonely,1958-09-01,Studio,1946-03-04,4564,243,,NA,0,FALSE,0
+Frank Sinatra,Come Dance with Me!,1959-01-01,Studio,1946-03-04,4686,122,,NA,0,FALSE,0
+Frank Sinatra,No One Cares,1959-07-01,Studio,1946-03-04,4867,181,,NA,0,FALSE,0
+Frank Sinatra,Nice 'n' Easy,1960-07-01,Studio,1946-03-04,5233,366,,NA,0,FALSE,0
+Frank Sinatra,Sinatra's Swingin' Session!!!,1961-01-01,Studio,1946-03-04,5417,184,,NA,0,FALSE,0
+Frank Sinatra,Ring-a-Ding-Ding!,1961-03-01,Studio,1946-03-04,5476,59,,NA,0,FALSE,0
+Frank Sinatra,Come Swing with Me!,1961-07-01,Studio,1946-03-04,5598,122,,NA,0,FALSE,0
+Frank Sinatra,Swing Along With Me (Sinatra Swings),1961-07-01,Studio,1946-03-04,5598,0,,NA,0,FALSE,0
+Frank Sinatra,I Remember Tommy,1961-10-01,Studio,1946-03-04,5690,92,,NA,0,FALSE,0
+Frank Sinatra,Sinatra and Strings,1962-01-01,Studio,1946-03-04,5782,92,,NA,0,FALSE,0
+Frank Sinatra,Point of No Return,1962-03-01,Studio,1946-03-04,5841,59,,NA,0,FALSE,0
+Frank Sinatra,Sinatra and Swingin' Brass,1962-07-01,Studio,1946-03-04,5963,122,,NA,0,FALSE,0
+Frank Sinatra,All Alone,1962-10-01,Studio,1946-03-04,6055,92,,NA,0,FALSE,0
+Frank Sinatra,Sinatra Sings Great Songs from Great Britain,1962-11-01,Studio,1946-03-04,6086,31,,NA,0,FALSE,0
+Frank Sinatra,Sinatra–Basie: An Historic Musical First (with Count Basie),1962-12-10,Studio,1946-03-04,6125,39,,NA,0,FALSE,0
+Frank Sinatra,The Concert Sinatra,1963-05-01,Studio,1946-03-04,6267,142,,NA,0,FALSE,0
+Frank Sinatra,Sinatra's Sinatra,1963-08-01,Studio,1946-03-04,6359,92,,NA,0,FALSE,0
+Frank Sinatra,"Sinatra Sings Days of Wine and Roses, Moon River, and Other Academy Award Winners",1964-03-01,Studio,1946-03-04,6572,213,,NA,0,FALSE,0
+Frank Sinatra,"America, I Hear You Singing (with Bing Crosby and Fred Waring)",1964-04-01,Studio,1946-03-04,6603,31,,NA,0,FALSE,0
+Frank Sinatra,It Might as Well Be Swing (with Count Basie),1964-08-01,Studio,1946-03-04,6725,122,,NA,0,FALSE,0
+Frank Sinatra,12 Songs of Christmas (with Bing Crosby and Fred Waring),1964-08-01,Studio,1946-03-04,6725,0,,NA,0,FALSE,0
+Frank Sinatra,"Softly, as I Leave You",1964-11-01,Studio,1946-03-04,6817,92,,NA,0,FALSE,0
+Frank Sinatra,September of My Years,1965-08-01,Studio,1946-03-04,7090,273,,NA,0,FALSE,0
+Frank Sinatra,My Kind of Broadway,1965-11-01,Studio,1946-03-04,7182,92,,NA,0,FALSE,0
+Frank Sinatra,A Man and His Music,1965-11-01,Studio,1946-03-04,7182,0,,NA,0,FALSE,0
+Frank Sinatra,Moonlight Sinatra,1966-03-01,Studio,1946-03-04,7302,120,,NA,0,FALSE,0
+Frank Sinatra,Strangers in the Night,1966-05-01,Studio,1946-03-04,7363,61,,NA,0,FALSE,0
+Frank Sinatra,That's Life,1966-12-31,Studio,1946-03-04,7607,244,,6,61,TRUE,1
+Frank Sinatra,Francis Albert Sinatra & Antonio Carlos Jobim (with Antonio Carlos Jobim),1967-03-01,Studio,1946-03-04,7667,60,,NA,0,FALSE,0
+Frank Sinatra,The World We Knew,1967-08-01,Studio,1946-03-04,7820,153,,NA,0,FALSE,0
+Frank Sinatra,Francis A. & Edward K. (with Duke Ellington),1968-01-01,Studio,1946-03-04,7973,153,,NA,0,FALSE,0
+Frank Sinatra,"The Sinatra Family Wish You a Merry Christmas (with Frank Sinatra, Jr., Nancy Sinatra and Tina Sinatra)",1968-09-01,Studio,1946-03-04,8217,244,,NA,0,FALSE,0
+Frank Sinatra,Cycles,1968-11-01,Studio,1946-03-04,8278,61,,18,28,FALSE,0.45901639344262296
+Frank Sinatra,My Way,1969-03-01,Studio,1946-03-04,8398,120,,11,19,FALSE,0.3114754098360656
+Frank Sinatra,A Man Alone,1969-08-01,Studio,1946-03-04,8551,153,,NA,0,FALSE,0
+Frank Sinatra,Watertown,1970-03-01,Studio,1946-03-04,8763,212,,101,10,FALSE,0.16393442622950818
+Garth Brooks,Garth Brooks,1989-04-12,Studio,1989-04-12,0,0,,13,224,TRUE,1
+Garth Brooks,No Fences,1990-08-27,Studio,1989-04-12,502,502,,3,224,TRUE,1
+Garth Brooks,Ropin' the Wind,1991-09-10,Studio,1989-04-12,881,379,,NA,0,FALSE,0
+Garth Brooks,Beyond the Season,1992-08-25,Studio,1989-04-12,1231,350,,NA,0,FALSE,0
+Garth Brooks,The Chase,1992-09-14,Studio,1989-04-12,1251,20,,1,64,FALSE,0.2857142857142857
+Garth Brooks,In Pieces,1993-08-31,Studio,1989-04-12,1602,351,,1,76,FALSE,0.3392857142857143
+Garth Brooks,Fresh Horses,1995-11-21,Studio,1989-04-12,2414,812,,2,66,FALSE,0.29464285714285715
+Garth Brooks,Sevens,1997-11-25,Studio,1989-04-12,3149,735,,1,58,FALSE,0.25892857142857145
+Garth Brooks,Garth Brooks in...the Life of Chris Gaines,1999-09-28,Studio,1989-04-12,3821,672,,NA,0,FALSE,0
+Garth Brooks,Garth Brooks & the Magic of Christmas,1999-11-23,Studio,1989-04-12,3877,56,,NA,0,FALSE,0
+Garth Brooks,Scarecrow,2001-11-13,Studio,1989-04-12,4598,721,,1,28,FALSE,0.125
+Garth Brooks,The Lost Sessions,2005-11-25,Studio,1989-04-12,6071,1473,,NA,0,FALSE,0
+Garth Brooks,Man Against Machine,2014-11-11,Studio,1989-04-12,9344,3273,,4,20,FALSE,0.08928571428571429
+Garth Brooks,Christmas Together (with Trisha Yearwood),2016-11-11,Studio,1989-04-12,10075,731,,NA,0,FALSE,0
+Garth Brooks,Gunslinger,2016-11-25,Studio,1989-04-12,10089,14,,25,5,FALSE,0.022321428571428572
+Garth Brooks,Fun,2020-11-20,Studio,1989-04-12,11545,1456,,42,5,FALSE,0.022321428571428572
+Garth Brooks,Time Traveler,2023-11-07,Studio,1989-04-12,12627,1082,,NA,0,FALSE,0
+Jay-Z,Reasonable Doubt,1996-06-25,Studio,1996-06-25,0,0,,NA,0,TRUE,NA
+Jay-Z,"In My Lifetime, Vol. 1",1997-11-04,Studio,1996-06-25,497,497,,NA,0,TRUE,NA
+Jay-Z,Vol. 2... Hard Knock Life,1998-09-29,Studio,1996-06-25,826,329,,NA,0,TRUE,NA
+Jay-Z,Vol. 3... Life and Times of S. Carter,1999-12-28,Studio,1996-06-25,1281,455,,NA,0,TRUE,NA
+Jay-Z,The Dynasty: Roc La Familia,2000-10-31,Studio,1996-06-25,1589,308,,NA,0,TRUE,NA
+Jay-Z,The Blueprint,2001-09-11,Studio,1996-06-25,1904,315,,NA,0,TRUE,NA
+Jay-Z,The Best of Both Worlds,2002-03-19,Collaborative,1996-06-25,2093,189,,NA,0,TRUE,NA
+Jay-Z,The Blueprint 2: The Gift & The Curse,2002-11-12,Studio,1996-06-25,2331,238,,NA,0,TRUE,NA
+Jay-Z,The Black Album,2003-11-14,Studio,1996-06-25,2698,367,,NA,0,TRUE,NA
+Jay-Z,Unfinished Business,2004-10-26,Collaborative,1996-06-25,3045,347,,NA,0,TRUE,NA
+Jay-Z,Collision Course,2004-11-30,Collaborative,1996-06-25,3080,35,,NA,0,TRUE,NA
+Jay-Z,Kingdom Come,2006-11-21,Studio,1996-06-25,3801,721,,NA,0,TRUE,NA
+Jay-Z,American Gangster,2007-11-06,Studio,1996-06-25,4151,350,,NA,0,TRUE,NA
+Jay-Z,The Blueprint 3,2009-09-08,Studio,1996-06-25,4823,672,,NA,0,TRUE,NA
+Jay-Z,Watch the Throne,2011-08-08,Collaborative,1996-06-25,5522,699,,NA,0,TRUE,NA
+Jay-Z,Magna Carta... Holy Grail,2013-07-09,Studio,1996-06-25,6223,701,,NA,0,TRUE,NA
+Jay-Z,4:44,2017-06-30,Studio,1996-06-25,7675,1452,,NA,0,TRUE,NA
+Jay-Z,Everything Is Love,2018-06-16,Collaborative,1996-06-25,8026,351,,NA,0,TRUE,NA
+Julio Iglesias,Yo canto,1969-01-01,Studio,1969-01-01,0,0,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Gwendolyne,1970-02-12,Studio,1969-01-01,407,407,Only year listed. Used date of performance of lead single on Eurovision,NA,0,FALSE,0
+Julio Iglesias,Un canto a Galicia (Por una mujer),1972-01-01,Studio,1969-01-01,1095,688,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Und Das Meer Singt Sein Lied,1973-01-01,Studio,1969-01-01,1461,366,,NA,0,FALSE,0
+Julio Iglesias,Soy,1973-07-01,Studio,1969-01-01,1642,181,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Ich Shick' Dir Eine Weisse Wolke,1974-01-01,Studio,1969-01-01,1826,184,,NA,0,FALSE,0
+Julio Iglesias,A flor de piel,1974-10-01,Studio,1969-01-01,2099,273,Only month and year listed,NA,0,FALSE,0
+Julio Iglesias,Manuela,1975-01-01,Studio,1969-01-01,2191,92,,NA,0,FALSE,0
+Julio Iglesias,A México,1975-04-01,Studio,1969-01-01,2281,90,Only year listed,NA,0,FALSE,0
+Julio Iglesias,El amor,1975-08-01,Studio,1969-01-01,2403,122,Only year listed,NA,0,FALSE,0
+Julio Iglesias,América,1976-12-01,Studio,1969-01-01,2891,488,Only year listed. Billboard No2 in December 1976,NA,0,FALSE,0
+Julio Iglesias,A mis 33 años,1977-09-23,Studio,1969-01-01,3187,296,,NA,0,FALSE,0
+Julio Iglesias,Aimer la vie,1978-01-01,Studio,1969-01-01,3287,100,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Emociones,1978-11-07,Studio,1969-01-01,3597,310,Only year listed,NA,0,FALSE,0
+Julio Iglesias,À vous les femmes,1979-01-01,Studio,1969-01-01,3652,55,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Innamorarsi alla mia età,1979-12-01,Studio,1969-01-01,3986,334,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Hey!,1980-01-01,Studio,1969-01-01,4017,31,Only year listed,179,6,FALSE,0.17647058823529413
+Julio Iglesias,Sentimental,1980-04-01,Studio,1969-01-01,4108,91,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Amanti,1980-08-01,Studio,1969-01-01,4230,122,Only year listed,NA,0,FALSE,0
+Julio Iglesias,De niña a mujer/From a Child to a Woman,1981-01-01,Studio,1969-01-01,4383,153,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Fidèle,1981-03-01,Studio,1969-01-01,4442,59,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Zartlichkeiten,1981-06-01,Studio,1969-01-01,4534,92,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Begin the Beguine,1981-08-01,Studio,1969-01-01,4595,61,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Momentos,1981-10-01,Studio,1969-01-01,4656,61,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Momenti,1982-01-01,Studio,1969-01-01,4748,92,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Amor,1982-05-01,Studio,1969-01-01,4868,120,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Et l'amour crea la femme,1982-10-01,Studio,1969-01-01,5021,153,Only year listed,NA,0,FALSE,0
+Julio Iglesias,1100 Bel Air Place,1984-08-10,Studio,1969-01-01,5700,679,,5,34,TRUE,1
+Julio Iglesias,Libra,1985-10-29,Studio,1969-01-01,6145,445,,92,12,FALSE,0.35294117647058826
+Julio Iglesias,Un hombre solo,1987-04-01,Studio,1969-01-01,6664,519,Only month and year listed,NA,0,FALSE,0
+Julio Iglesias,Tutto l'amore che ti manca,1987-08-02,Studio,1969-01-01,6787,123,,NA,0,FALSE,0
+Julio Iglesias,Non Stop,1988-12-10,Studio,1969-01-01,7283,496,,52,17,FALSE,0.5
+Julio Iglesias,Raíces,1989-01-01,Studio,1969-01-01,7305,22,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Starry Night,1990-11-06,Studio,1969-01-01,7979,674,,37,31,FALSE,0.9117647058823529
+Julio Iglesias,Calor,1992-04-05,Studio,1969-01-01,8495,516,,186,2,FALSE,0.058823529411764705
+Julio Iglesias,Anche senza di te,1992-08-01,Studio,1969-01-01,8613,118,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Crazy,1994-05-17,Studio,1969-01-01,9267,654,,30,19,FALSE,0.5588235294117647
+Julio Iglesias,La carretera,1995-01-01,Studio,1969-01-01,9496,229,Only year listed,NA,0,FALSE,0
+Julio Iglesias,A Estrada,1995-07-01,Studio,1969-01-01,9677,181,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Tango,1996-11-19,Studio,1969-01-01,10184,507,,81,18,FALSE,0.5294117647058824
+Julio Iglesias,Noche de cuatro lunas,2000-01-01,Studio,1969-01-01,11322,1138,Only year listed,NA,0,FALSE,0
+Julio Iglesias,1,2001-01-01,Studio,1969-01-01,11688,366,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Ao Meu Brasil,2001-12-18,Studio,1969-01-01,12039,351,,NA,0,FALSE,0
+Julio Iglesias,Una donna può cambiar la vita,2001-12-31,Studio,1969-01-01,12052,13,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Divorcio,2003-12-14,Studio,1969-01-01,12765,713,,NA,0,FALSE,0
+Julio Iglesias,En français...,2004-01-01,Studio,1969-01-01,12783,18,Only year listed,NA,0,FALSE,0
+Julio Iglesias,L'Homme que je suis,2005-01-01,Studio,1969-01-01,13149,366,Only year listed,NA,0,FALSE,0
+Julio Iglesias,Romantic Classics,2006-06-06,Studio,1969-01-01,13670,521,,43,3,FALSE,0.08823529411764706
+Julio Iglesias,Quelque chose de France,2007-05-23,Studio,1969-01-01,14021,351,Spotify Date,NA,0,FALSE,0
+Julio Iglesias,México,2015-03-02,Studio,1969-01-01,16861,2840,Spotify Date,NA,0,FALSE,0
+Julio Iglesias,México & Amigos,2017-05-01,Studio,1969-01-01,17652,791,Spotify Date,NA,0,FALSE,0
+Justin Bieber,My World 2.0,2010-03-19,Studio,2010-03-19,0,0,,1,125,FALSE,0.8012820512820513
+Justin Bieber,Under the Mistletoe,2011-11-01,Studio,2010-03-19,592,592,,NA,0,FALSE,0
+Justin Bieber,Believe,2012-06-15,Studio,2010-03-19,819,227,,1,59,FALSE,0.3782051282051282
+Justin Bieber,Purpose,2015-11-13,Studio,2010-03-19,2065,1246,,1,156,TRUE,1
+Justin Bieber,Changes,2020-02-14,Studio,2010-03-19,3619,1554,,1,49,FALSE,0.3141025641025641
+Justin Bieber,Justice,2021-03-19,Studio,2010-03-19,4018,399,,1,117,FALSE,0.75
+Kanye West,The College Dropout,2004-02-10,Studio,2004-02-10,0,0,,2,157,FALSE,0.4243243243243243
+Kanye West,Late Registration,2005-08-30,Studio,2004-02-10,567,567,,1,48,FALSE,0.12972972972972974
+Kanye West,Graduation,2007-09-11,Studio,2004-02-10,1309,742,,1,370,TRUE,1
+Kanye West,808s & Heartbreak,2008-11-24,Studio,2004-02-10,1749,440,,1,39,FALSE,0.10540540540540541
+Kanye West,My Beautiful Dark Twisted Fantasy,2010-11-22,Studio,2004-02-10,2477,728,,1,305,FALSE,0.8243243243243243
+Kanye West,Watch the Throne,2011-08-08,Collaborative,2004-02-10,2736,259,,NA,0,FALSE,0
+Kanye West,Yeezus,2013-06-18,Studio,2004-02-10,3416,680,,1,36,FALSE,0.0972972972972973
+Kanye West,The Life of Pablo,2016-02-14,Studio,2004-02-10,4387,971,,NA,0,FALSE,0
+Kanye West,Ye,2018-06-01,Studio,2004-02-10,5225,838,,NA,0,FALSE,0
+Kanye West,Kids See Ghosts,2018-06-08,Collaborative,2004-02-10,5232,7,,NA,0,FALSE,0
+Kanye West,Jesus Is King,2019-10-25,Studio,2004-02-10,5736,504,,NA,0,FALSE,0
+Kanye West,Donda,2021-08-29,Studio,2004-02-10,6410,674,,1,62,FALSE,0.16756756756756758
+Kanye West,Vultures 1,2024-02-10,Collaborative,2004-02-10,7305,895,,NA,0,FALSE,0
+Kanye West,Vultures 2,2024-03-08,Collaborative,2004-02-10,7332,27,,NA,0,FALSE,0
+Kanye West,Vultures 3,2024-04-05,Collaborative,2004-02-10,7360,28,,NA,0,FALSE,0
+Katy Perry,Katy Hudson,2001-03-06,Studio,2001-03-06,0,0,,NA,0,FALSE,0
+Katy Perry,One of the Boys,2008-06-17,Studio,2001-03-06,2660,2660,,NA,0,FALSE,0
+Katy Perry,Teenage Dream,2010-08-24,Studio,2001-03-06,3458,798,,1,412,TRUE,1
+Katy Perry,Prism,2013-10-18,Studio,2001-03-06,4609,1151,,NA,0,FALSE,0
+Katy Perry,Witness,2017-06-09,Studio,2001-03-06,5939,1330,,1,21,FALSE,0.050970873786407765
+Katy Perry,Smile,2020-08-28,Studio,2001-03-06,7115,1176,,5,4,FALSE,0.009708737864077669
+Katy Perry,143,2024-09-20,Studio,2001-03-06,8599,1484,,6,2,FALSE,0.0048543689320388345
+Lady Gaga,The Fame,2008-08-19,Studio,2008-08-19,0,0,,2,406,TRUE,1
+Lady Gaga,Born This Way,2011-05-23,Studio,2008-08-19,1007,1007,,1,61,FALSE,0.15024630541871922
+Lady Gaga,Artpop,2013-11-06,Studio,2008-08-19,1905,898,,NA,0,FALSE,0
+Lady Gaga,Joanne,2016-10-21,Studio,2008-08-19,2985,1080,,1,49,FALSE,0.1206896551724138
+Lady Gaga,Chromatica,2020-05-29,Studio,2008-08-19,4301,1316,,1,41,FALSE,0.10098522167487685
+Lady Gaga,Harlequin,2024-09-27,Studio,2008-08-19,5883,1582,,20,1,FALSE,0.0024630541871921183
+Led Zeppelin,Led Zeppelin,1969-01-12,Studio,1969-01-12,0,0,,7,115,FALSE,0.40069686411149824
+Led Zeppelin,Led Zeppelin II,1969-10-22,Studio,1969-01-12,283,283,,1,117,FALSE,0.4076655052264808
+Led Zeppelin,Led Zeppelin III,1970-10-05,Studio,1969-01-12,631,348,,1,59,FALSE,0.20557491289198607
+Led Zeppelin,Led Zeppelin IV,1971-11-08,Studio,1969-01-12,1030,399,,2,287,TRUE,1
+Led Zeppelin,Houses of the Holy,1973-03-28,Studio,1969-01-12,1536,506,,NA,0,FALSE,0
+Led Zeppelin,Physical Graffiti,1975-02-24,Studio,1969-01-12,2234,698,,1,48,FALSE,0.1672473867595819
+Led Zeppelin,Presence,1976-03-31,Studio,1969-01-12,2635,401,,1,32,FALSE,0.11149825783972125
+Led Zeppelin,In Through the Out Door,1979-08-22,Studio,1969-01-12,3874,1239,,NA,0,FALSE,0
+Lil Wayne,Tha Block Is Hot,1999-11-02,Studio,1999-11-02,0,0,,3,26,FALSE,0.09187279151943463
+Lil Wayne,Lights Out,2000-12-19,Studio,1999-11-02,413,413,,16,20,FALSE,0.0706713780918728
+Lil Wayne,500 Degreez,2002-07-23,Studio,1999-11-02,994,581,,6,14,FALSE,0.04946996466431095
+Lil Wayne,Tha Carter,2004-06-29,Studio,1999-11-02,1701,707,,5,36,FALSE,0.127208480565371
+Lil Wayne,Tha Carter II,2005-12-06,Studio,1999-11-02,2226,525,,2,44,FALSE,0.15547703180212014
+Lil Wayne,"Like Father, Like Son (with Birdman)",2006-10-31,Studio,1999-11-02,2555,329,,NA,0,FALSE,0
+Lil Wayne,Tha Carter III,2008-06-10,Studio,1999-11-02,3143,588,,1,283,TRUE,1
+Lil Wayne,Rebirth,2010-02-02,Studio,1999-11-02,3745,602,,2,39,FALSE,0.13780918727915195
+Lil Wayne,I Am Not a Human Being,2010-09-27,Studio,1999-11-02,3982,237,,NA,0,FALSE,0
+Lil Wayne,Tha Carter IV,2011-08-29,Studio,1999-11-02,4318,336,,1,65,FALSE,0.22968197879858657
+Lil Wayne,I Am Not a Human Being II,2013-03-26,Studio,1999-11-02,4893,575,,NA,0,FALSE,0
+Lil Wayne,Free Weezy Album,2015-07-04,Studio,1999-11-02,5723,830,,NA,0,FALSE,0
+Lil Wayne,Tha Carter V,2018-09-28,Studio,1999-11-02,6905,1182,,1,81,FALSE,0.2862190812720848
+Lil Wayne,Funeral,2020-01-31,Studio,1999-11-02,7395,490,,1,19,FALSE,0.06713780918727916
+Madonna,Madonna,1983-07-27,Studio,1983-07-27,0,0,,8,168,TRUE,1
+Madonna,Like a Virgin,1984-11-12,Studio,1983-07-27,474,474,,NA,0,FALSE,0
+Madonna,True Blue,1986-06-30,Studio,1983-07-27,1069,595,,1,82,FALSE,0.4880952380952381
+Madonna,Who's That Girl,1987-07-21,Soundtrack,1983-07-27,1455,386,,NA,0,FALSE,0
+Madonna,Like a Prayer,1989-03-21,Studio,1983-07-27,2064,609,,NA,0,FALSE,0
+Madonna,I'm Breathless,1990-05-22,Soundtrack,1983-07-27,2491,427,,NA,0,FALSE,0
+Madonna,Erotica,1992-10-20,Studio,1983-07-27,3373,882,,2,53,FALSE,0.31547619047619047
+Madonna,Bedtime Stories,1994-10-25,Studio,1983-07-27,4108,735,,3,48,FALSE,0.2857142857142857
+Madonna,Evita,1996-11-12,Soundtrack,1983-07-27,4857,749,,NA,0,FALSE,0
+Madonna,Ray of Light,1998-03-03,Studio,1983-07-27,5333,476,,NA,0,FALSE,0
+Madonna,Music,2000-09-19,Studio,1983-07-27,6264,931,,1,55,FALSE,0.3273809523809524
+Madonna,American Life,2003-04-22,Studio,1983-07-27,7209,945,,1,14,FALSE,0.08333333333333333
+Madonna,Confessions on a Dance Floor,2005-11-11,Studio,1983-07-27,8143,934,,NA,0,FALSE,0
+Madonna,Hard Candy,2008-04-19,Studio,1983-07-27,9033,890,,1,30,FALSE,0.17857142857142858
+Madonna,MDNA,2012-03-23,Studio,1983-07-27,10467,1434,,1,13,FALSE,0.07738095238095238
+Madonna,Rebel Heart,2015-03-06,Studio,1983-07-27,11545,1078,,2,11,FALSE,0.06547619047619048
+Madonna,Madame X,2019-06-14,Studio,1983-07-27,13106,1561,,1,2,FALSE,0.011904761904761904
+Mariah Carey,Mariah Carey,1990-06-12,Studio,1990-06-12,0,0,,1,113,FALSE,0.849624060150376
+Mariah Carey,Emotions,1991-09-13,Studio,1990-06-12,458,458,,4,54,FALSE,0.40601503759398494
+Mariah Carey,Music Box,1993-08-31,Studio,1990-06-12,1176,718,,1,128,FALSE,0.9624060150375939
+Mariah Carey,Merry Christmas,1994-10-28,Studio,1990-06-12,1599,423,,3,133,TRUE,1
+Mariah Carey,Daydream,1995-09-26,Studio,1990-06-12,1932,333,,1,81,FALSE,0.6090225563909775
+Mariah Carey,Butterfly,1997-09-10,Studio,1990-06-12,2647,715,,1,55,FALSE,0.41353383458646614
+Mariah Carey,Rainbow,1999-10-27,Studio,1990-06-12,3424,777,,2,35,FALSE,0.2631578947368421
+Mariah Carey,Glitter,2001-08-18,Studio,1990-06-12,4085,661,,NA,0,FALSE,0
+Mariah Carey,Charmbracelet,2002-11-20,Studio,1990-06-12,4544,459,,3,22,FALSE,0.16541353383458646
+Mariah Carey,The Emancipation of Mimi,2005-03-30,Studio,1990-06-12,5405,861,,NA,0,FALSE,0
+Mariah Carey,E=MC²,2008-04-14,Studio,1990-06-12,6516,1111,,NA,0,FALSE,0
+Mariah Carey,Memoirs of an Imperfect Angel,2009-09-22,Studio,1990-06-12,7042,526,,NA,0,FALSE,0
+Mariah Carey,Merry Christmas II You,2010-11-02,Studio,1990-06-12,7448,406,,4,15,FALSE,0.11278195488721804
+Mariah Carey,Me. I Am Mariah... The Elusive Chanteuse,2014-05-06,Studio,1990-06-12,8729,1281,,3,8,FALSE,0.06015037593984962
+Mariah Carey,Caution,2018-11-16,Studio,1990-06-12,10384,1655,,5,3,FALSE,0.022556390977443608
+Mariah Carey,Mariah Carey's Magical Christmas Special,2020-12-04,Soundtrack,1990-06-12,11133,749,,NA,0,FALSE,0
+Maroon 5,We Like Digging?,1995-09-15,Studio,1995-09-15,0,0,As Kara's Flowers,NA,0,FALSE,0
+Maroon 5,The Fourth World,1997-08-19,Studio,1995-09-15,704,704,As Kara's Flowers,NA,0,FALSE,0
+Maroon 5,Songs About Jane,2002-06-25,Studio,1995-09-15,2475,1771,,6,158,TRUE,1
+Maroon 5,It Won't Be Soon Before Long,2007-05-22,Studio,1995-09-15,4267,1792,,1,84,FALSE,0.5316455696202531
+Maroon 5,Hands All Over,2010-09-21,Studio,1995-09-15,5485,1218,,2,124,FALSE,0.7848101265822784
+Maroon 5,Overexposed,2012-06-26,Studio,1995-09-15,6129,644,,2,95,FALSE,0.6012658227848101
+Maroon 5,V,2014-09-02,Studio,1995-09-15,6927,798,,1,123,FALSE,0.7784810126582279
+Maroon 5,Red Pill Blues,2017-11-03,Studio,1995-09-15,8085,1158,,2,110,FALSE,0.6962025316455697
+Maroon 5,Jordi,2021-06-11,Studio,1995-09-15,9401,1316,,8,20,FALSE,0.12658227848101267
+Metallica,Kill 'Em All,1983-07-25,Studio,1983-07-25,0,0,,66,22,FALSE,0.028241335044929396
+Metallica,Ride the Lightning,1984-07-27,Studio,1983-07-25,368,368,,NA,0,FALSE,0
+Metallica,Master of Puppets,1986-03-03,Studio,1983-07-25,952,584,,NA,0,FALSE,0
+Metallica,...And Justice for All,1988-09-07,Studio,1983-07-25,1871,919,,NA,0,FALSE,0
+Metallica,Metallica,1991-08-12,Studio,1983-07-25,2940,1069,,1,779,TRUE,1
+Metallica,Load,1996-06-04,Studio,1983-07-25,4698,1758,,1,98,FALSE,0.1258023106546855
+Metallica,Reload,1997-11-18,Studio,1983-07-25,5230,532,,NA,0,FALSE,0
+Metallica,St. Anger,2003-06-05,Studio,1983-07-25,7255,2025,,1,23,FALSE,0.029525032092426188
+Metallica,Death Magnetic,2008-09-12,Studio,1983-07-25,9181,1926,,1,50,FALSE,0.06418485237483953
+Metallica,Lulu,2011-11-01,Collaborative,1983-07-25,10326,1145,,NA,0,FALSE,0
+Metallica,Hardwired... to Self-Destruct,2016-11-18,Studio,1983-07-25,12170,1844,,NA,0,FALSE,0
+Metallica,72 Seasons,2023-04-14,Studio,1983-07-25,14508,2338,,2,5,FALSE,0.006418485237483954
+Michael Jackson,Got to Be There,1972-01-24,Studio,1972-01-24,0,0,Excludes Soundtrack Albums,NA,0,FALSE,0
+Michael Jackson,Ben,1972-08-04,Studio,1972-01-24,193,193,Excludes Soundtrack Albums,5,32,FALSE,0.04790419161676647
+Michael Jackson,Music & Me,1973-04-13,Studio,1972-01-24,445,252,Excludes Soundtrack Albums,92,12,FALSE,0.017964071856287425
+Michael Jackson,"Forever, Michael",1975-01-16,Studio,1972-01-24,1088,643,Excludes Soundtrack Albums,101,9,FALSE,0.01347305389221557
+Michael Jackson,Off the Wall,1979-08-10,Studio,1972-01-24,2755,1667,Excludes Soundtrack Albums,NA,0,FALSE,0
+Michael Jackson,Thriller,1982-11-30,Studio,1972-01-24,3963,1208,Excludes Soundtrack Albums,1,668,TRUE,1
+Michael Jackson,Bad,1987-08-31,Studio,1972-01-24,5698,1735,Excludes Soundtrack Albums,1,171,FALSE,0.2559880239520958
+Michael Jackson,Dangerous,1991-11-26,Studio,1972-01-24,7246,1548,Excludes Soundtrack Albums,1,120,FALSE,0.17964071856287425
+Michael Jackson,"HIStory: Past, Present and Future, Book I",1995-06-20,Studio,1972-01-24,8548,1302,Excludes Soundtrack Albums,NA,0,FALSE,0
+Michael Jackson,Invincible,2001-10-30,Studio,1972-01-24,10872,2324,Excludes Soundtrack Albums,1,28,FALSE,0.041916167664670656
+Phil Collins,Face Value,1981-02-13,Studio,1981-02-13,0,0,,7,164,TRUE,1
+Phil Collins,"Hello, I Must Be Going!",1982-11-05,Studio,1981-02-13,630,630,,8,141,FALSE,0.8597560975609756
+Phil Collins,No Jacket Required,1985-02-18,Studio,1981-02-13,1466,836,,1,123,FALSE,0.75
+Phil Collins,...But Seriously,1989-11-20,Studio,1981-02-13,3202,1736,,1,90,FALSE,0.5487804878048781
+Phil Collins,Both Sides,1993-11-08,Studio,1981-02-13,4651,1449,,13,30,FALSE,0.18292682926829268
+Phil Collins,Dance into the Light,1996-10-21,Studio,1981-02-13,5729,1078,,NA,0,FALSE,0
+Phil Collins,Testify,2002-11-11,Studio,1981-02-13,7941,2212,,30,16,FALSE,0.0975609756097561
+Phil Collins,Going Back,2010-09-13,Studio,1981-02-13,10804,2863,,34,4,FALSE,0.024390243902439025
+Pink Floyd,The Piper at the Gates of Dawn,1967-08-04,Studio,1967-08-04,0,0,,NA,0,FALSE,0
+Pink Floyd,A Saucerful of Secrets,1968-06-28,Studio,1967-08-04,329,329,,NA,0,FALSE,0
+Pink Floyd,Soundtrack From The Film More,1969-06-13,Studio,1967-08-04,679,350,,NA,0,FALSE,0
+Pink Floyd,Ummagumma,1969-11-07,Studio,1967-08-04,826,147,,74,27,FALSE,0.16875
+Pink Floyd,Atom Heart Mother,1970-10-02,Studio,1967-08-04,1155,329,,55,13,FALSE,0.08125
+Pink Floyd,Meddle,1971-11-05,Studio,1967-08-04,1554,399,,70,74,FALSE,0.4625
+Pink Floyd,Obscured by Clouds,1972-06-02,Studio,1967-08-04,1764,210,,NA,0,FALSE,0
+Pink Floyd,The Dark Side of the Moon,1973-03-01,Studio,1967-08-04,2036,272,,NA,0,FALSE,0
+Pink Floyd,Wish You Were Here,1975-09-12,Studio,1967-08-04,2961,925,,1,46,FALSE,0.2875
+Pink Floyd,Animals,1977-01-21,Studio,1967-08-04,3458,497,,3,32,FALSE,0.2
+Pink Floyd,The Wall,1979-11-30,Studio,1967-08-04,4501,1043,,1,160,TRUE,1
+Pink Floyd,The Final Cut,1983-03-21,Studio,1967-08-04,5708,1207,,6,23,FALSE,0.14375
+Pink Floyd,A Momentary Lapse of Reason,1987-09-07,Studio,1967-08-04,7339,1631,,NA,0,FALSE,0
+Pink Floyd,The Division Bell,1994-03-28,Studio,1967-08-04,9733,2394,,1,53,FALSE,0.33125
+Pink Floyd,The Endless River,2014-11-10,Studio,1967-08-04,17265,7532,,3,11,FALSE,0.06875
+Queen,Queen,1973-07-13,Studio,1973-07-13,0,0,,83,22,FALSE,0.5116279069767442
+Queen,Queen II,1974-03-08,Studio,1973-07-13,238,238,,49,13,FALSE,0.3023255813953488
+Queen,Sheer Heart Attack,1974-11-08,Studio,1973-07-13,483,245,,12,32,FALSE,0.7441860465116279
+Queen,A Night at the Opera,1975-11-21,Studio,1973-07-13,861,378,,NA,0,FALSE,0
+Queen,A Day at the Races,1976-12-10,Studio,1973-07-13,1246,385,,NA,0,FALSE,0
+Queen,News of the World,1977-10-28,Studio,1973-07-13,1568,322,,NA,0,FALSE,0
+Queen,Jazz,1978-11-10,Studio,1973-07-13,1946,378,,6,18,FALSE,0.4186046511627907
+Queen,The Game,1980-06-30,Studio,1973-07-13,2544,598,,1,43,TRUE,1
+Queen,Flash Gordon,1980-12-08,Studio,1973-07-13,2705,161,,NA,0,FALSE,0
+Queen,Hot Space,1982-05-04,Studio,1973-07-13,3217,512,,22,21,FALSE,0.4883720930232558
+Queen,The Works,1984-02-27,Studio,1973-07-13,3881,664,,23,20,FALSE,0.46511627906976744
+Queen,A Kind of Magic,1986-06-02,Studio,1973-07-13,4707,826,,NA,0,FALSE,0
+Queen,The Miracle,1989-05-22,Studio,1973-07-13,5792,1085,,24,14,FALSE,0.32558139534883723
+Queen,Innuendo,1991-02-04,Studio,1973-07-13,6415,623,,30,17,FALSE,0.3953488372093023
+Queen,Made in Heaven,1995-11-06,Studio,1973-07-13,8151,1736,,NA,0,FALSE,0
+Red Hot Chili Peppers,The Red Hot Chili Peppers,1984-08-10,Studio,1984-08-10,0,0,,NA,0,FALSE,0
+Red Hot Chili Peppers,Freaky Styley,1985-08-16,Studio,1984-08-10,371,371,,NA,0,FALSE,0
+Red Hot Chili Peppers,The Uplift Mofo Party Plan,1987-09-29,Studio,1984-08-10,1145,774,,NA,0,FALSE,0
+Red Hot Chili Peppers,Mother's Milk,1989-08-16,Studio,1984-08-10,1832,687,,52,42,FALSE,0.40384615384615385
+Red Hot Chili Peppers,Blood Sugar Sex Magik,1991-09-24,Studio,1984-08-10,2601,769,,3,97,FALSE,0.9326923076923077
+Red Hot Chili Peppers,One Hot Minute,1995-09-12,Studio,1984-08-10,4050,1449,,4,46,FALSE,0.4423076923076923
+Red Hot Chili Peppers,Californication,1999-06-08,Studio,1984-08-10,5415,1365,,3,104,TRUE,1
+Red Hot Chili Peppers,By the Way,2002-07-09,Studio,1984-08-10,6542,1127,,NA,0,FALSE,0
+Red Hot Chili Peppers,Stadium Arcadium,2006-05-09,Studio,1984-08-10,7942,1400,,1,66,FALSE,0.6346153846153846
+Red Hot Chili Peppers,I'm with You,2011-08-29,Studio,1984-08-10,9880,1938,,NA,0,FALSE,0
+Red Hot Chili Peppers,The Getaway,2016-06-17,Studio,1984-08-10,11634,1754,,2,37,FALSE,0.3557692307692308
+Red Hot Chili Peppers,Unlimited Love,2022-04-01,Studio,1984-08-10,13748,2114,,1,6,FALSE,0.057692307692307696
+Red Hot Chili Peppers,Return of the Dream Canteen,2022-10-14,Studio,1984-08-10,13944,196,,NA,0,FALSE,0
+Rihanna,Music of the Sun,2005-08-12,Studio,2005-08-12,0,0,,NA,0,FALSE,0
+Rihanna,A Girl like Me,2006-04-11,Studio,2005-08-12,242,242,,NA,0,FALSE,0
+Rihanna,Good Girl Gone Bad,2007-06-05,Studio,2005-08-12,662,420,,2,173,TRUE,1
+Rihanna,Rated R,2009-11-23,Studio,2005-08-12,1564,902,,4,45,FALSE,0.26011560693641617
+Rihanna,Loud,2010-11-16,Studio,2005-08-12,1922,358,,3,78,FALSE,0.4508670520231214
+Rihanna,Talk That Talk,2011-11-21,Studio,2005-08-12,2292,370,,3,57,FALSE,0.32947976878612717
+Rihanna,Unapologetic,2012-11-19,Studio,2005-08-12,2656,364,,1,80,FALSE,0.4624277456647399
+Rihanna,Anti,2016-01-28,Studio,2005-08-12,3821,1165,,NA,0,FALSE,0
+Taylor Swift,Taylor Swift,2006-10-24,Studio,2006-10-24,0,0,,5,284,FALSE,0.5472061657032755
+Taylor Swift,Fearless,2008-11-11,Studio,2006-10-24,749,749,,1,261,FALSE,0.5028901734104047
+Taylor Swift,Speak Now,2010-10-25,Studio,2006-10-24,1462,713,,1,193,FALSE,0.371868978805395
+Taylor Swift,Red,2012-10-22,Studio,2006-10-24,2190,728,,1,185,FALSE,0.35645472061657035
+Taylor Swift,1989,2014-10-27,Studio,2006-10-24,2925,735,,1,519,TRUE,1
+Taylor Swift,Reputation,2017-11-10,Studio,2006-10-24,4035,1110,,NA,0,FALSE,0
+Taylor Swift,Lover,2019-08-23,Studio,2006-10-24,4686,651,,1,289,FALSE,0.5568400770712909
+Taylor Swift,Folklore,2020-07-24,Studio,2006-10-24,5022,336,,1,241,FALSE,0.464354527938343
+Taylor Swift,Evermore,2020-12-11,Studio,2006-10-24,5162,140,,1,221,FALSE,0.4258188824662813
+Taylor Swift,Fearless (Taylor's Version),2021-04-09,Rerecording,2006-10-24,5281,119,,1,175,FALSE,0.3371868978805395
+Taylor Swift,Red (Taylor's Version),2021-11-12,Rerecording,2006-10-24,5498,217,,1,173,FALSE,0.3333333333333333
+Taylor Swift,Midnights,2022-10-21,Studio,2006-10-24,5841,343,,1,124,FALSE,0.23892100192678228
+Taylor Swift,Speak Now (Taylor's Version),2023-07-07,Rerecording,2006-10-24,6100,259,,1,85,FALSE,0.16377649325626203
+Taylor Swift,1989 (Taylor's Version),2023-10-27,Rerecording,2006-10-24,6212,112,,1,71,FALSE,0.13680154142581888
+Taylor Swift,The Tortured Poets Department,2024-04-19,Rerecording,2006-10-24,6387,175,,1,46,FALSE,0.08863198458574181
+The Beatles,Please Please Me,1963-03-22,Studio,1963-03-22,0,0,"Where regional release dates differed, took the earlier release date",155,1,FALSE,0.0020161290322580645
+The Beatles,With the Beatles,1963-11-22,Studio,1963-03-22,245,245,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,A Hard Day's Night,1964-06-26,Studio,1963-03-22,462,217,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,Beatles for Sale,1964-12-04,Studio,1963-03-22,623,161,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,Help!,1965-08-06,Studio,1963-03-22,868,245,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,Rubber Soul,1965-12-03,Studio,1963-03-22,987,119,"Where regional release dates differed, took the earlier release date",1,70,FALSE,0.14112903225806453
+The Beatles,Revolver,1966-08-05,Studio,1963-03-22,1232,245,"Where regional release dates differed, took the earlier release date",1,94,FALSE,0.18951612903225806
+The Beatles,Sgt. Pepper's Lonely Hearts Club Band,1967-05-26,Studio,1963-03-22,1526,294,"Where regional release dates differed, took the earlier release date",1,233,FALSE,0.46975806451612906
+The Beatles,Magical Mystery Tour,1967-11-27,Studio,1963-03-22,1711,185,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,"The Beatles (""The White Album"")",1968-11-22,Studio,1963-03-22,2072,361,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Beatles,Yellow Submarine,1969-01-13,Studio,1963-03-22,2124,52,"Where regional release dates differed, took the earlier release date",2,25,FALSE,0.05040322580645161
+The Beatles,Abbey Road,1969-10-01,Studio,1963-03-22,2385,261,"Where regional release dates differed, took the earlier release date",1,496,TRUE,1
+The Beatles,Let It Be,1970-05-08,Studio,1963-03-22,2604,219,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Rolling Stones,The Rolling Stones (England's Newest Hit Makers),1964-04-17,Studio,1964-04-17,0,0,"Where regional release dates differed, took the earlier release date",NA,0,FALSE,0
+The Rolling Stones,12 X 5,1964-11-01,Studio,1964-04-17,198,198,,NA,0,FALSE,0
+The Rolling Stones,The Rolling Stones No. 2,1965-01-15,Studio,1964-04-17,273,75,,NA,0,FALSE,0
+The Rolling Stones,"The Rolling Stones, Now!",1965-03-01,Studio,1964-04-17,318,45,,NA,0,FALSE,0
+The Rolling Stones,Out of Our Heads (US),1965-07-30,Studio,1964-04-17,469,151,,NA,0,FALSE,0
+The Rolling Stones,Out of Our Heads (UK),1965-09-24,Studio,1964-04-17,525,56,,NA,0,FALSE,0
+The Rolling Stones,December's Children (And Everybody's) (US),1965-12-03,Studio,1964-04-17,595,70,,NA,0,FALSE,0
+The Rolling Stones,Aftermath (UK),1966-04-15,Studio,1964-04-17,728,133,,NA,0,FALSE,0
+The Rolling Stones,Aftermath (US),1966-07-01,Studio,1964-04-17,805,77,,NA,0,FALSE,0
+The Rolling Stones,Between the Buttons (UK),1967-01-20,Studio,1964-04-17,1008,203,,NA,0,FALSE,0
+The Rolling Stones,Between the Buttons (US),1967-02-10,Studio,1964-04-17,1029,21,,NA,0,FALSE,0
+The Rolling Stones,Their Satanic Majesties Request,1967-12-08,Studio,1964-04-17,1330,301,,2,30,FALSE,0.3409090909090909
+The Rolling Stones,Beggars Banquet,1968-12-06,Studio,1964-04-17,1694,364,,5,33,FALSE,0.375
+The Rolling Stones,Let It Bleed,1969-11-28,Studio,1964-04-17,2051,357,,3,44,FALSE,0.5
+The Rolling Stones,Sticky Fingers,1971-04-23,Studio,1964-04-17,2562,511,,1,69,FALSE,0.7840909090909091
+The Rolling Stones,Exile on Main St.,1972-05-26,Studio,1964-04-17,2961,399,,NA,0,FALSE,0
+The Rolling Stones,Goats Head Soup,1973-08-31,Studio,1964-04-17,3423,462,,1,39,FALSE,0.4431818181818182
+The Rolling Stones,It's Only Rock 'n Roll,1974-10-18,Studio,1964-04-17,3836,413,,NA,0,FALSE,0
+The Rolling Stones,Black and Blue,1976-04-23,Studio,1964-04-17,4389,553,,NA,0,FALSE,0
+The Rolling Stones,Some Girls,1978-06-09,Studio,1964-04-17,5166,777,,1,88,TRUE,1
+The Rolling Stones,Emotional Rescue,1980-06-23,Studio,1964-04-17,5911,745,,1,51,FALSE,0.5795454545454546
+The Rolling Stones,Tattoo You,1981-08-24,Studio,1964-04-17,6338,427,,1,59,FALSE,0.6704545454545454
+The Rolling Stones,Undercover,1983-11-07,Studio,1964-04-17,7143,805,,4,23,FALSE,0.26136363636363635
+The Rolling Stones,Dirty Work,1986-03-24,Studio,1964-04-17,8011,868,,4,25,FALSE,0.2840909090909091
+The Rolling Stones,Steel Wheels,1989-08-29,Studio,1964-04-17,9265,1254,,3,36,FALSE,0.4090909090909091
+The Rolling Stones,Voodoo Lounge,1994-07-11,Studio,1964-04-17,11042,1777,,2,38,FALSE,0.4318181818181818
+The Rolling Stones,Bridges to Babylon,1997-09-29,Studio,1964-04-17,12218,1176,,NA,0,FALSE,0
+The Rolling Stones,A Bigger Bang,2005-09-06,Studio,1964-04-17,15117,2899,,3,19,FALSE,0.2159090909090909
+The Rolling Stones,Blue & Lonesome,2016-12-02,Studio,1964-04-17,19222,4105,,4,11,FALSE,0.125
+U2,Boy,1980-10-20,Studio,1980-10-20,0,0,,63,48,FALSE,0.26666666666666666
+U2,October,1981-10-12,Studio,1980-10-20,357,357,,104,38,FALSE,0.2111111111111111
+U2,War,1983-02-28,Studio,1980-10-20,861,504,,12,180,TRUE,1
+U2,The Unforgettable Fire,1984-10-01,Studio,1980-10-20,1442,581,,12,133,FALSE,0.7388888888888889
+U2,The Joshua Tree,1987-03-09,Studio,1980-10-20,2331,889,,1,121,FALSE,0.6722222222222223
+U2,Rattle and Hum,1988-10-10,Studio,1980-10-20,2912,581,,NA,0,FALSE,0
+U2,Achtung Baby,1991-11-18,Studio,1980-10-20,4046,1134,,1,101,FALSE,0.5611111111111111
+U2,Zooropa,1993-07-05,Studio,1980-10-20,4641,595,,1,40,FALSE,0.2222222222222222
+U2,Pop,1997-03-03,Studio,1980-10-20,5978,1337,,1,28,FALSE,0.15555555555555556
+U2,All That You Can't Leave Behind,2000-10-30,Studio,1980-10-20,7315,1337,,3,95,FALSE,0.5277777777777778
+U2,How to Dismantle an Atomic Bomb,2004-11-22,Studio,1980-10-20,8799,1484,,NA,0,FALSE,0
+U2,No Line on the Horizon,2009-02-27,Studio,1980-10-20,10357,1558,,NA,0,FALSE,0
+U2,Songs of Innocence,2014-09-09,Studio,1980-10-20,12377,2020,,NA,0,FALSE,0
+U2,Songs of Experience,2017-12-01,Studio,1980-10-20,13556,1179,,NA,0,FALSE,0
+U2,Songs of Surrender,2023-03-17,Studio,1980-10-20,15488,1932,,NA,0,FALSE,0
+Whitney Houston,Whitney Houston,1985-02-14,Studio,1985-02-14,0,0,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",1,176,TRUE,1
+Whitney Houston,Whitney,1987-06-02,Studio,1985-02-14,838,838,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",1,88,FALSE,0.5
+Whitney Houston,I'm Your Baby Tonight,1990-11-04,Studio,1985-02-14,2089,1251,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",3,57,FALSE,0.32386363636363635
+Whitney Houston,The Bodyguard,1992-11-17,Soundtrack,1985-02-14,2833,744,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",1,155,FALSE,0.8806818181818182
+Whitney Houston,The Preacher's Wife,1996-11-26,Soundtrack,1985-02-14,4303,1470,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",NA,0,FALSE,0
+Whitney Houston,My Love Is Your Love,1998-11-17,Studio,1985-02-14,5024,721,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",13,87,FALSE,0.4943181818181818
+Whitney Houston,Just Whitney,2002-12-10,Studio,1985-02-14,6508,1484,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",NA,0,FALSE,0
+Whitney Houston,One Wish: The Holiday Album,2003-11-18,Studio,1985-02-14,6851,343,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",49,13,FALSE,0.07386363636363637
+Whitney Houston,I Look to You,2009-08-31,Studio,1985-02-14,8964,2113,"I Wanna Dance with Somebody (The Movie: Whitney New, Classic and Reimagined) not included",NA,0,FALSE,0
