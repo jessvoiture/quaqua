@@ -30,6 +30,7 @@
 	let xExtent = [0, 0];
 	let colourClass = 'white';
 	let highlightedGroup = [];
+	let showingRelativeRelease = false;
 
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
@@ -76,21 +77,25 @@
 		setReleaseDate();
 		xExtent = extent($tweenedX);
 		colourClass = 'white';
+		showingRelativeRelease = false;
 		// 1: x axis by days since debut
 	} else if (currentStep === 1) {
 		setDiffToDebut();
 		xExtent = extent($tweenedX);
 		colourClass = 'white';
+		showingRelativeRelease = true;
 		// 2: add bars
 	} else if (currentStep === 2) {
 		setBarYearsActive();
 		xExtent = extent($tweenedX);
 		colourClass = 'black';
+		showingRelativeRelease = true;
 		// 3: sort by time active
 	} else if (currentStep >= 3) {
 		setYVals();
 		xExtent = [0, 20339];
 		colourClass = 'black';
+		showingRelativeRelease = true;
 	}
 
 	$: if (currentStep === 4) {
@@ -198,7 +203,7 @@
 
 <!-- Tooltip -->
 {#if ($hoveredData != undefined) & $isDataHovered}
-	<Tooltip {screenHeight} {screenWidth} />
+	<Tooltip {screenHeight} {screenWidth} {showingRelativeRelease} {albumsSorted} />
 {/if}
 
 <style lang="scss">

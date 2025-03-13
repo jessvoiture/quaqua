@@ -3,16 +3,19 @@
 
 	export let screenWidth;
 	export let screenHeight;
+	export let showingRelativeRelease;
+	export let albumsSorted;
 
-	const imgWidth = 100;
+	const imgWidth = 150;
 	const contentWidth = 200;
 	const padding = 12;
 
+	const tooltipWidthExcludingImage = contentWidth + 2 * padding;
+	const tooltipWidth = imgWidth + tooltipWidthExcludingImage;
+	const tooltipHeight = 150;
+
 	let adjustedMouseX;
 	let adjustedMouseY;
-
-	let tooltipWidth = imgWidth + contentWidth + 2 * padding;
-	let tooltipHeight = 150;
 
 	if ($mouseX + tooltipWidth + 50 < screenWidth) {
 		adjustedMouseX = $mouseX + 10;
@@ -62,12 +65,13 @@
 		<div class="tooltip-body">
 			{#if $hoveredData.days_since_first_release == 0}
 				<div class="tooltip-body-date">
-					Debut album, released {formatDate($hoveredData.album_release_date)}
+					Debut album, released {formatDate($hoveredData.album_release_date)}...
 				</div>
 			{:else}
 				<div class="tooltip-body-date">
-					Released {formatDate($hoveredData.album_release_date)}
+					Released {formatDate($hoveredData.album_release_date)}...
 				</div>
+				{#if showingRelativeRelease}
 				<div class="tooltip-calcs">
 					<div class="tooltip-body-text">
 						{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
@@ -84,16 +88,16 @@
 <style lang="scss">
 	.tooltip {
 		position: fixed;
-		background-color: #404040;
-		border: 1px solid #646464;
-		border-radius: 8px;
-		padding: 12px 16px;
+		background-color: $color-white-white;
+		border-radius: 0 8px 8px 0;
+		padding: 0px;
 		display: flex;
 		flex-direction: row;
 		gap: 16px;
 		justify-content: start;
 		align-items: flex-start;
 		box-sizing: border-box;
+		border: 1px solid $color-dark_grey;
 	}
 
 	img {
