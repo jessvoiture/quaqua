@@ -9,6 +9,9 @@
 	let topTranslate = 5;
 	let leftTranslate = 5;
 
+	let todaysDate = new Date();
+	$: formattedDate = todaysDate.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+
 	$: if (screenWidth > 800) {
 		vinylSize = 1.1 * screenHeight;
 		topTranslate = -20;
@@ -42,7 +45,7 @@
 				id="name"
 				aria-label="Link to author's personal website">by Jess Carr</a
 			>
-			<div class="detail" id="date">Oct 2024</div>
+			<div class="detail" id="date">{formattedDate}</div>
 		</div>
 		<div class="center-hole"></div>
 	</div>
