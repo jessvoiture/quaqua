@@ -1,5 +1,6 @@
 <script>
 	import { hoveredData, mouseX, mouseY } from '../stores';
+	import Histogram from './ScrollyBarcode/Histogram.svelte';
 
 	export let screenWidth;
 	export let screenHeight;
@@ -72,14 +73,22 @@
 					Released {formatDate($hoveredData.album_release_date)}...
 				</div>
 				{#if showingRelativeRelease}
-				<div class="tooltip-calcs">
-					<div class="tooltip-body-text">
-						{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
+					<div class="tooltip-calcs">
+						<div class="tooltip-body-text">
+							{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
+						</div>
+						<!-- <Histogram {albumsSorted} width={tooltipWidthExcludingImage} dataType={'since debut'} /> -->
+
+						<div class="tooltip-body-text">
+							{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
+						</div>
+						<!-- <Histogram
+							{albumsSorted}
+							width={tooltipWidthExcludingImage}
+							dataType={'since last album'}
+						/> -->
 					</div>
-					<div class="tooltip-body-text">
-						{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
-					</div>
-				</div>
+				{/if}
 			{/if}
 		</div>
 	</div>
@@ -92,8 +101,6 @@
 		border-radius: 0 8px 8px 0;
 		padding: 0px;
 		display: flex;
-		flex-direction: row;
-		gap: 16px;
 		justify-content: start;
 		align-items: flex-start;
 		box-sizing: border-box;
@@ -101,8 +108,11 @@
 	}
 
 	img {
-		width: 120px;
-		height: auto;
+		max-width: 200px;
+		width: auto;
+		height: 100%;
+		display: block;
+		// object-fit: cover;
 	}
 
 	.tooltip-content {
@@ -110,7 +120,7 @@
 		flex-direction: column;
 		gap: 24px;
 		margin: 0;
-		padding: 0;
+		padding: 12px;
 		width: 200px;
 		font-size: $type-size-14;
 	}
@@ -122,9 +132,10 @@
 	}
 
 	.header-main-title {
-		font-size: $type-size-16;
-		color: $color-white;
+		font-size: $type-size-24;
+		color: $color-black;
 		text-transform: capitalize;
+		font-weight: bold;
 	}
 
 	.tooltip-body {
@@ -134,19 +145,33 @@
 	}
 
 	.tooltip-body-date {
-		color: $color-white;
+		color: $color-black;
 		font-size: $type-size-14;
 		font-weight: bold;
 	}
 
 	.tooltip-body-text,
 	.header-artist {
-		color: $color-light_grey;
+		color: $color-black;
 	}
 
 	.tooltip-calcs {
 		display: flex;
 		flex-direction: column;
 		gap: 2px;
+	}
+
+	/* Minimum width */
+	@media (min-width: 400px) {
+		.tooltip {
+			flex-direction: row;
+		}
+	}
+
+	/* Maximum width */
+	@media (max-width: 400px) {
+		.tooltip {
+			flex-direction: column;
+		}
 	}
 </style>
