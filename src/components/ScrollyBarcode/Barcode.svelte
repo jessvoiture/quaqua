@@ -10,6 +10,7 @@
 	export let colourClass;
 	export let rectHeight;
 	export let rectWidth;
+	export let highlightedAlbums;
 
 	const handleMouseover = function (event, d) {
 		hoveredData.set(d);
@@ -64,7 +65,7 @@
 					: yScale($tweenedY[i])}
 				width={$isDataHovered && $hoveredData?.album == d.album ? rectWidth * 2 : rectWidth}
 				height={$isDataHovered && $hoveredData?.album == d.album ? rectHeight * 1.5 : rectHeight}
-				class={colourClass}
+				class={highlightedAlbums.some((a) => a.album === d.album) ? 'red' : colourClass}
 				pointer-events="all"
 				role="button"
 				tabindex="0"
@@ -93,6 +94,10 @@
 
 	.white {
 		fill: $color-white;
+	}
+
+	.red {
+		fill: red;
 	}
 
 	.black {

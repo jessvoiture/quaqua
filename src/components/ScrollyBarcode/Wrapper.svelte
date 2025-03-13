@@ -31,6 +31,8 @@
 	let colourClass = 'white';
 	let highlightedGroup = [];
 	let showingRelativeRelease = false;
+	let highlightedAlbums = [];
+	let debutAlbums = albumsSorted.filter((d) => d.days_since_first_release == 0);
 
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
@@ -96,6 +98,12 @@
 		xExtent = [0, 20339];
 		colourClass = 'black';
 		showingRelativeRelease = true;
+	}
+
+	$: if (currentStep <= 1) {
+		highlightedAlbums = debutAlbums;
+	} else {
+		highlightedAlbums = [];
 	}
 
 	$: if (currentStep === 4) {
@@ -181,6 +189,7 @@
 						{colourClass}
 						{rectHeight}
 						{rectWidth}
+						{highlightedAlbums}
 					/>
 				</g>
 			</g>

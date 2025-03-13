@@ -1,12 +1,12 @@
 export const steps = [
 	// 0
-	`<p>Let's plot the albums by release date, with artists sorted by the release of their debut albums, from Frank Sinatra's 1946 debut, <span class="album-title-text">The Voice of Frank Sinatra,</span> to Ed Sheeran's 2011 debut, <span class="album-title-text">=</span></p>`,
+	`<p>We'll start by plotting the albums by their <span class="highlighted-step-text">debut album's release date</span>, with artists sorted from oldest to most recent debut.`,
 	// 1
-	`<p>But rather than plot the albums by the date of release, let's look at time between each album's release date and the artist's debut album release date.</p>`,
+	`<p>To compare the span of careers, we'll plot each album by the time since the artist's debut album release date. The artists' <span class="highlighted-step-text">debut albums</span> are all aligned at 0 years since their debut album was released. </p>`,
 	// 2
-	`<p>To better visualise the total length of time an artist was active (ie the time between their first and last release), let's add bars.</p>`,
+	`<p>Let's add bars to visualise the total length of time an artist was active (ie the time between their first and last release).</p>`,
 	// 3
-	`<p>Sorting by the years active allows us to easily compare the artists' careers.</p>`,
+	`<p>Finally, let's sort by longest to shortest time active.</p>`,
 	// 4 highlight the beatles only
 	'<p><span class="highlighted-step-text">The Beatles</span> are the only artist whose career spans less than 10 years, with just 7 years and 1 month between their first and last albums.</p>',
 	// 5 highlight barbs, rs, and elton
@@ -14,5 +14,5 @@ export const steps = [
 	// 6 highlight abba, pf, and eags
 	`<p>Some artists released albums after long hiatuses. <span class="highlighted-step-text">ABBA</span> returned with an album after 40 years, <span class="highlighted-step-text">Pink Floyd</span> after 20 years, and the <span class="highlighted-step-text">Eagles</span> after 28 years.</p>`,
 	// 7 highlight artists with debut > 2000
-	'<p>11 of the 40 best selling artists <span class="highlighted-step-text">debuted after 2000</span> and thus their careers have been comparitvely shorter.</p>'
+	'<p>11 of the 40 best selling artists <span class="highlighted-step-text">debuted after 2000</span> and thus their careers have been relatively shorter.</p>'
 ];
