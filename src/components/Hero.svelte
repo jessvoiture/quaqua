@@ -167,7 +167,7 @@
 
 		.scroll-reminder {
 			right: 16px;
-			bottom: 112px;
+			bottom: 132px;
 		}
 	}
 </style>
