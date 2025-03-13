@@ -13,7 +13,6 @@
 
 	const handleMouseover = function (event, d) {
 		hoveredData.set(d);
-		console.log($hoveredData);
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 		isDataHovered.set(true);
@@ -77,7 +76,6 @@
 					handleMouseout();
 				}}
 				on:focus={function (event) {
-					console.log('event', event);
 					handleFocus(event, d);
 				}}
 				on:blur={function () {
