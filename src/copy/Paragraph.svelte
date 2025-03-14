@@ -1,7 +1,17 @@
+<script>
+	export let hasHeader;
+	export let header;
+	export let content = [];
+</script>
+
 <div class="paragraph-wrapper">
 	<div class="paragraph">
-		<h4>Years Active</h4>
-		<p>testing testing</p>
+		{#if hasHeader}
+			<h4>{header}</h4>
+		{/if}
+		{#each content as c}
+			<p>{c}</p>
+		{/each}
 	</div>
 </div>
 

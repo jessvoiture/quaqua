@@ -1,6 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
-	import Intro from '../copy/Intro.svelte';
+	import Paragraph from '../copy/Paragraph.svelte';
 	import Triangles from '../components/Triangles.svelte';
 	import Wrapper from '../components/ScrollyBarcode/Wrapper.svelte';
 	import Scatterplot from '../components/Scatterplot.svelte';
@@ -34,8 +34,9 @@
 <div class="content">
 	<Hero {screenWidth} {screenHeight} {y} />
 	<SpotifyPlayer {screenWidth} />
-	<Intro />
+	<Paragraph hasHeader={true} header="Years Active" content={['Intelligent Insight']} />
 	<Wrapper {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
 	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
 	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
+	<Paragraph />
 </div>
