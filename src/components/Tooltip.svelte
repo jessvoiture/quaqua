@@ -1,4 +1,5 @@
 <script>
+	import { differenceInYears, addYears, differenceInMonths } from 'date-fns';
 	import { hoveredData, mouseX, mouseY } from '../stores';
 	import Histogram from './ScrollyBarcode/Histogram.svelte';
 
@@ -31,14 +32,21 @@
 	}
 
 	function formatDaysToYears(days) {
-		const years = Math.round((days / 365.25) * 10) / 10;
+		const startDate = new Date(0);
+		const endDate = addYears(startDate, days / 365.25);
+
+		let years = differenceInYears(endDate, startDate);
+		let remainingMonths = differenceInMonths(endDate, addYears(startDate, years));
 
 		if (years < 1) {
-			const months = Math.round(days / 30.44); // Average month length in days
-			return `${months} month${months !== 1 ? 's' : ''}`;
+			return `${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
 		}
 
-		return `${years} year${years !== 1 ? 's' : ''}`;
+		// Convert remaining months into a fraction of a year
+		let fraction = remainingMonths / 12;
+		let roundedYears = Math.round((years + fraction) * 2) / 2; // Round to nearest 0.5
+
+		return `${roundedYears} year${roundedYears !== 1 ? 's' : ''}`;
 	}
 
 	function formatDate(dateString) {
@@ -66,11 +74,11 @@
 		<div class="tooltip-body">
 			{#if $hoveredData.days_since_first_release == 0}
 				<div class="tooltip-body-date">
-					Debut album, released {formatDate($hoveredData.album_release_date)}...
+					Debut album, released {formatDate($hoveredData.album_release_date)}
 				</div>
 			{:else}
 				<div class="tooltip-body-date">
-					Released {formatDate($hoveredData.album_release_date)}...
+					Released {formatDate($hoveredData.album_release_date)}
 				</div>
 				{#if showingRelativeRelease}
 					<div class="tooltip-calcs">
