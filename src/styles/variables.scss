@@ -73,4 +73,11 @@ $type-line_height-medium: 24px;
 @mixin font-h4 {
 	@include font-accent;
 	font-size: 24px;
+	margin: 0;
+}
+
+@mixin body-text {
+	font-size: $type-size-16;
+	line-height: $type-line_height-medium;
+	color: $color-white;
 }

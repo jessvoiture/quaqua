@@ -12,6 +12,10 @@ article {
 	background-color: $color-black;
 }
 
+h4 {
+	@include font-h4;
+}
+
 text {
 	font-size: $type-size-10;
 	color: $color-light_grey;
@@ -35,9 +39,7 @@ text {
 
 .step-content {
 	@include dark-grey-background-blur;
-	font-size: $type-size-16;
-	line-height: $type-line_height-medium;
-	color: $color-white;
+	@include body-text;
 	border-radius: 4px;
 	padding: 0.5rem 1rem;
 	display: flex;
@@ -58,11 +60,19 @@ text {
 	.step {
 		position: relative;
 	}
+
+	.paragraph {
+		width: 85%;
+	}
 }
 
 @media (min-width: 800px) {
 	.step-content {
 		max-width: 30vw;
+	}
+
+	.paragraph {
+		width: 50%;
 	}
 }
 
