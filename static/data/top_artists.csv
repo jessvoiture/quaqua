@@ -2,7 +2,7 @@ Artist,Album,Date_raw,Date,Type,Notes,Artist_Sales,Rank,Album_image,Artist_decad
 The Beatles,Please Please Me ,22 March 1963,3/22/1963,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Please_Please_Me.png/220px-Please_Please_Me.png,1960
 The Beatles,With the Beatles ,22 November 1963,11/22/1963,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/5/52/With_the_Beatles.png/220px-With_the_Beatles.png,1960
 The Beatles,A Hard Day's Night ,26 June 1964,6/26/1964,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/HardDayUK.jpg/220px-HardDayUK.jpg,1960
-The Beatles,Beatles for Sale ,4 December 1964,12/4/1964,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Parlophone_logo.svg/200px-Parlophone_logo.svg.png,1960
+The Beatles,Beatles for Sale ,4 December 1964,12/4/1964,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/4/40/Beatlesforsale.jpg,1960
 The Beatles,Help! ,6 August 1965,8/6/1965,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/The_Beatles_-_Help%21.png/220px-The_Beatles_-_Help%21.png,1960
 The Beatles,Rubber Soul ,3 December 1965,12/3/1965,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Rubber_Soul.png/220px-Rubber_Soul.png,1960
 The Beatles,Revolver ,5 August 1966,8/5/1966,Studio,"Where regional release dates differed, took the earlier release date",> 250 million,1,https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Revolver_%28album_cover%29.jpg/220px-Revolver_%28album_cover%29.jpg,1960
@@ -185,8 +185,8 @@ Mariah Carey,E=MC² ,"April 14, 2008",4/14/2008,Studio,,200 - 249 million,11,htt
 Mariah Carey,Memoirs of an Imperfect Angel ,"September 22, 2009",9/22/2009,Studio,,200 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Mariahcarey_memoirsofanimperfectangel.png/220px-Mariahcarey_memoirsofanimperfectangel.png,1990
 Mariah Carey,Merry Christmas II You ,"November 2, 2010",11/2/2010,Studio,,200 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Merry_Christmas_II_You_Mariah_Carey.png/220px-Merry_Christmas_II_You_Mariah_Carey.png,1990
 Mariah Carey,Me. I Am Mariah... The Elusive Chanteuse ,"May 6, 2014",5/6/2014,Studio,,200 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png,1990
-Mariah Carey,Caution,"November 16, 2018",11/16/2018,Studio,,200 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png,1990
-Mariah Carey,Mariah Carey's Magical Christmas Special,"December 4, 2020",12/4/2020,Soundtrack,,201 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png/220px-Mariah_Carey_-_Me_I_Am_Mariah_%28Official_Album_Cover%29.png,1991
+Mariah Carey,Caution,"November 16, 2018",11/16/2018,Studio,,200 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/8/8f/Mariah_Carey_-_Caution.png,1990
+Mariah Carey,Mariah Carey's Magical Christmas Special,"December 4, 2020",12/4/2020,Soundtrack,,201 - 249 million,11,https://upload.wikimedia.org/wikipedia/en/e/e9/Mariah_Carey%27s_Magical_Christmas_Special_Poster.jpg,1991
 Taylor Swift,Taylor Swift ,"October 24, 2006",10/24/2006,Studio,,200 - 249 million,12,https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Taylor_Swift_-_Taylor_Swift.png/220px-Taylor_Swift_-_Taylor_Swift.png,2000
 Taylor Swift,Fearless ,"November 11, 2008",11/11/2008,Studio,,200 - 249 million,12,https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Taylor_Swift_-_Fearless.png/220px-Taylor_Swift_-_Fearless.png,2000
 Taylor Swift,Speak Now ,"October 25, 2010",10/25/2010,Studio,,200 - 249 million,12,https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Taylor_Swift_-_Speak_Now_cover.png/220px-Taylor_Swift_-_Speak_Now_cover.png,2000
@@ -331,7 +331,7 @@ Garth Brooks,Sevens ,"November 25, 1997",11/25/1997,Studio,,120 - 199 million,20
 Garth Brooks,Garth Brooks in...the Life of Chris Gaines ,"September 28, 1999",9/28/1999,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/6/62/GarthBrooksintheLifeofChrisGaines.jpg/220px-GarthBrooksintheLifeofChrisGaines.jpg,1980
 Garth Brooks,Garth Brooks & the Magic of Christmas ,"November 23, 1999",11/23/1999,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/d/de/Garth_Brooks_Magic_of_Christmas.jpg/220px-Garth_Brooks_Magic_of_Christmas.jpg,1980
 Garth Brooks,Scarecrow ,"November 13, 2001",11/13/2001,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Garthscarecrow.jpg/220px-Garthscarecrow.jpg,1980
-Garth Brooks,The Lost Sessions ,"November 25, 2005",11/25/2005,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/6/65/Garthlimited05.jpg,1980
+Garth Brooks,The Lost Sessions ,"November 25, 2005",11/25/2005,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/2/2b/Garthlost.jpg,1980
 Garth Brooks,Man Against Machine ,"November 11, 2014",11/11/2014,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Man_Against_Machine_cover.jpg/220px-Man_Against_Machine_cover.jpg,1980
 Garth Brooks,Christmas Together (with Trisha Yearwood) ,"November 11, 2016",11/11/2016,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Christmastogether.jpg/220px-Christmastogether.jpg,1980
 Garth Brooks,Gunslinger ,"November 25, 2016",11/25/2016,Studio,,120 - 199 million,20,https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Garth-Gunslinger-Cover.jpg/220px-Garth-Gunslinger-Cover.jpg,1980
@@ -360,11 +360,11 @@ Kanye West,The Life of Pablo ,"February 14, 2016",2/14/2016,Studio,,120 - 199 mi
 Kanye West,Ye ,"June 1, 2018",6/1/2018,Studio,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Ye_album_cover.jpg/220px-Ye_album_cover.jpg,2000
 Kanye West,Jesus Is King ,"October 25, 2019",10/25/2019,Studio,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Kanye_West_-_Jesus_Is_King.png/220px-Kanye_West_-_Jesus_Is_King.png,2000
 Kanye West,Donda ,"August 29, 2021",8/29/2021,Studio,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Almost_black_square_020305.png/220px-Almost_black_square_020305.png,2000
-Kanye West,Watch the Throne ,"August 8, 2011",8/8/2011,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Roc_Nation_Logo.svg/220px-Roc_Nation_Logo.svg.png,2000
+Kanye West,Watch the Throne ,"August 8, 2011",8/8/2011,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/e/ee/Watch_The_Throne.jpg,2000
 Kanye West,Kids See Ghosts ,"June 8, 2018",6/8/2018,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Kids_See_Ghost.png/270px-Kids_See_Ghost.png,2000
-Kanye West,Vultures 1 ,"February 10, 2024",2/10/2024,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Kanye_West_and_Ty_Dolla_Sign_%28%C2%A5%24%29_%E2%80%93_Vultures.png/220px-Kanye_West_and_Ty_Dolla_Sign_%28%C2%A5%24%29_%E2%80%93_Vultures.png,2000
-Kanye West,Vultures 2 ,"March 8, 2024",3/8/2024,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/thumb/6/66/%C2%A5%24_-_Vultures_2.png/220px-%C2%A5%24_-_Vultures_2.png,2000
-Kanye West,Vultures 3 ,"April 5, 2024",4/5/2024,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Kanye_West_%40_MoMA_5.jpg/220px-Kanye_West_%40_MoMA_5.jpg,2000
+Kanye West,Vultures 1 ,"February 10, 2024",2/10/2024,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Kanye_West_and_Ty_Dolla_Sign_-_Vultures_Vol._1_%28Cover%29.png/220px-Kanye_West_and_Ty_Dolla_Sign_-_Vultures_Vol._1_%28Cover%29.png,2000
+Kanye West,Vultures 2 ,"March 8, 2024",3/8/2024,Collaborative,,120 - 199 million,22,https://upload.wikimedia.org/wikipedia/en/6/66/%C2%A5%24_-_Vultures_2.png,2000
+Kanye West,Vultures 3 ,"April 5, 2024",4/5/2024,Collaborative,,120 - 199 million,22,https://i.redd.it/zil51ypk7htc1.png,2000
 Justin Bieber,My World 2.0 ,"March 19, 2010",3/19/2010,Studio,,120 - 199 million,23,https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Myworld2.jpg/220px-Myworld2.jpg,2010
 Justin Bieber,Under the Mistletoe ,"November 1, 2011",11/1/2011,Studio,,120 - 199 million,23,https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Under_the_Mistletoe.jpg/220px-Under_the_Mistletoe.jpg,2010
 Justin Bieber,Believe ,"June 15, 2012",6/15/2012,Studio,,120 - 199 million,23,https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Believe-JB-Album.jpg/220px-Believe-JB-Album.jpg,2010
@@ -372,11 +372,11 @@ Justin Bieber,Purpose ,"November 13, 2015",11/13/2015,Studio,,120 - 199 million,
 Justin Bieber,Changes ,"February 14, 2020",2/14/2020,Studio,,120 - 199 million,23,https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Justin_Bieber_-_Changes.png/220px-Justin_Bieber_-_Changes.png,2010
 Justin Bieber,Justice ,"March 19, 2021",3/19/2021,Studio,,120 - 199 million,23,https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Justin_Bieber_-_Justice.png/220px-Justin_Bieber_-_Justice.png,2010
 Ed Sheeran,+,9 September 2011,9/9/2011,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/3/3f/Ed_Sheeran_%2B_cover.png,2010
-Ed Sheeran,× ,23 June 2014,6/23/2014,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ed_Sheeran_%288507731877%29.jpg/220px-Ed_Sheeran_%288507731877%29.jpg,2010
-Ed Sheeran,÷ ,3 March 2017,3/3/2017,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ed_Sheeran_%288507731877%29.jpg/220px-Ed_Sheeran_%288507731877%29.jpg,2010
+Ed Sheeran,× ,23 June 2014,6/23/2014,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/a/ad/X_cover.png,2010
+Ed Sheeran,÷ ,3 March 2017,3/3/2017,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/4/45/Divide_cover.png,2010
 Ed Sheeran,No.6 Collaborations Project ,12 July 2019,7/12/2019,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Ed_Sheeran_-_No._6_Collaborations_Project.png/220px-Ed_Sheeran_-_No._6_Collaborations_Project.png,2010
 Ed Sheeran,= ,29 October 2021,10/29/2021,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/c/cd/Ed_Sheeran_-_Equals.png,2010
-Ed Sheeran,− ,5 May 2023,5/5/2023,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ed_Sheeran_%288507731877%29.jpg/220px-Ed_Sheeran_%288507731877%29.jpg,2010
+Ed Sheeran,− ,5 May 2023,5/5/2023,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Ed_Sheeran_-_Subtract.png/220px-Ed_Sheeran_-_Subtract.png,2010
 Ed Sheeran,Autumn Variations ,29 September 2023,9/29/2023,Studio,,120 - 199 million,24,https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Autumn_Variations.png/220px-Autumn_Variations.png,2010
 Bruno Mars,Doo-Wops & Hooligans,"October 4, 2010",10/4/2010,Studio,,120 - 199 million,25,https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Bruno_Mars_-_Doo-Wops_%26_Hooligans.png/220px-Bruno_Mars_-_Doo-Wops_%26_Hooligans.png,2010
 Bruno Mars,Unorthodox Jukebox ,"December 7, 2012",12/7/2012,Studio,,120 - 199 million,25,https://upload.wikimedia.org/wikipedia/en/thumb/7/77/BrunoMarsUJAlbumCover.png/220px-BrunoMarsUJAlbumCover.png,2010
@@ -552,9 +552,9 @@ Frank Sinatra,Christmas Songs by Sinatra ,"November, 1948",11/1/1948,Studio,,120
 Frank Sinatra,Frankly Sentimental ,"June 20, 1949",6/20/1949,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Franklysentimental.jpg/220px-Franklysentimental.jpg,1940
 Frank Sinatra,Dedicated to You ,"March, 1950",3/1/1950,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/6/61/Frank_Sinatra_-_Dedicated_to_You_1950.jpg/220px-Frank_Sinatra_-_Dedicated_to_You_1950.jpg,1940
 Frank Sinatra,Sing and Dance with Frank Sinatra ,"October 16, 1950",10/16/1950,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Swinganddancewithfranksinatra.jpg/220px-Swinganddancewithfranksinatra.jpg,1940
-Frank Sinatra,Songs for Young Lovers ,"January, 1954",1/1/1954,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Capitol-Records-Logo.svg/200px-Capitol-Records-Logo.svg.png,1940
+Frank Sinatra,Songs for Young Lovers ,"January, 1954",1/1/1954,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/6/6d/Songsforyounglovers.jpg,1940
 Frank Sinatra,Swing Easy! ,"August 2, 1954",8/2/1954,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/SinatraSwingEasy.jpg/220px-SinatraSwingEasy.jpg,1940
-Frank Sinatra,In the Wee Small Hours ,"April, 1955",4/1/1955,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Capitol-Records-Logo.svg/200px-Capitol-Records-Logo.svg.png,1940
+Frank Sinatra,In the Wee Small Hours ,"April, 1955",4/1/1955,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/1/12/Wee_small_hours_album_cover_high_definition.jpg,1940
 Frank Sinatra,Songs for Swingin' Lovers! ,"March, 1956",3/1/1956,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Capitol-Records-Logo.svg/200px-Capitol-Records-Logo.svg.png,1940
 Frank Sinatra,Close to You ,"January, 1957",1/1/1957,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Sinatraclosetoyou.jpg/220px-Sinatraclosetoyou.jpg,1940
 Frank Sinatra,A Swingin' Affair! ,"June, 1957",6/1/1957,Studio,,120 - 199 million,34,https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Aswinginaffair.jpg/220px-Aswinginaffair.jpg,1940
@@ -632,7 +632,7 @@ Jay-Z,4:44,"June 30, 2017",6/30/2017,Studio,,120 - 199 million,37,https://upload
 Jay-Z,The Best of Both Worlds ,"March 19, 2002",3/19/2002,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Jay-Z%26R.KellyBestofBothWorlds.jpg/220px-Jay-Z%26R.KellyBestofBothWorlds.jpg,1990
 Jay-Z,Unfinished Business ,"October 26, 2004",10/26/2004,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Unfinished_BusinessJay-Z%26R.Kelly.jpg/220px-Unfinished_BusinessJay-Z%26R.Kelly.jpg,1990
 Jay-Z,Collision Course ,"November 30, 2004",11/30/2004,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Collision_Course_CD-DVD_cover.jpg/220px-Collision_Course_CD-DVD_cover.jpg,1990
-Jay-Z,Watch the Throne ,"August 8, 2011",8/8/2011,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Roc_Nation_Logo.svg/220px-Roc_Nation_Logo.svg.png,1990
+Jay-Z,Watch the Throne ,"August 8, 2011",8/8/2011,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/en/e/ee/Watch_The_Throne.jpg,1990
 Jay-Z,Everything Is Love ,"June 16, 2018",6/16/2018,Collaborative,,120 - 199 million,37,https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png/220px-The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png,1990
 Metallica,Lulu ,"November 1, 2011",11/1/2011,Collaborative,,120 - 199 million,38,https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Lou_Reed_and_Metallica_-_Lulu.jpg/220px-Lou_Reed_and_Metallica_-_Lulu.jpg,1980
 Metallica,Kill 'Em All ,"July 25, 1983",7/25/1983,Studio,,120 - 199 million,38,https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Metallica_-_Kill_%27Em_All_cover.jpg/220px-Metallica_-_Kill_%27Em_All_cover.jpg,1980
@@ -652,6 +652,7 @@ Lady Gaga,Artpop ,"November 6, 2013",11/6/2013,Studio,,120 - 199 million,39,http
 Lady Gaga,Joanne ,"October 21, 2016",10/21/2016,Studio,,120 - 199 million,39,https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Joanne_%28Official_Album_Cover%29.png,2000
 Lady Gaga,Chromatica ,"May 29, 2020",5/29/2020,Studio,,120 - 199 million,39,https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png/220px-Lady_Gaga_-_Chromatica_%28Official_Album_Cover%29.png,2000
 Lady Gaga,Harlequin,"September 27, 2024",9/27/2024,Studio,,121 - 199 million,39,https://upload.wikimedia.org/wikipedia/en/a/ab/Harlequin_Lady_Gaga_cover_art.png,2000
+Lady Gaga,Mayhem,"March 7, 2025",3/7/2025,Studio,,,39,https://upload.wikimedia.org/wikipedia/en/d/db/Lady_Gaga_-_Mayhem.png,2000
 Lil Wayne,Tha Block Is Hot ,"November 2, 1999",11/2/1999,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Thablockishot.jpg/220px-Thablockishot.jpg,1990
 Lil Wayne,Lights Out ,"December 19, 2000",12/19/2000,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/2/29/WayneLightsOut.jpg/220px-WayneLightsOut.jpg,1990
 Lil Wayne,500 Degreez ,"July 23, 2002",7/23/2002,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/The_Hot_Boys.jpg/220px-The_Hot_Boys.jpg,1990
@@ -664,7 +665,7 @@ Lil Wayne,I Am Not a Human Being ,"September 27, 2010",9/27/2010,Studio,,120 - 1
 Lil Wayne,Tha Carter IV ,"August 29, 2011",8/29/2011,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Lil_Wayne_-_Tha_Carter_IV.jpg/220px-Lil_Wayne_-_Tha_Carter_IV.jpg,1990
 Lil Wayne,I Am Not a Human Being II ,"March 26, 2013",3/26/2013,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Iamnotahumanbeingii.jpg/220px-Iamnotahumanbeingii.jpg,1990
 Lil Wayne,Free Weezy Album ,"July 4, 2015",7/4/2015,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/FreeWeezy.jpg/220px-FreeWeezy.jpg,1990
-Lil Wayne,Tha Carter V ,"September 28, 2018",9/28/2018,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Republic_Records_logo.svg/200px-Republic_Records_logo.svg.png,1990
+Lil Wayne,Tha Carter V ,"September 28, 2018",9/28/2018,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/0/00/Carterfive.jpeg,1990
 Lil Wayne,Funeral ,"January 31, 2020",1/31/2020,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Funeral_%28Lil_Wayne_album%29.jpg/220px-Funeral_%28Lil_Wayne_album%29.jpg,1990
 Lil Wayne,Tha Carter VI ,,,Studio,,120 - 199 million,40,https://i.scdn.co/image/ab67616d0000b273e521b35f461062a93d1a8d1a,1990
 Lil Wayne,I Am Not a Human Being III ,,,Studio,,120 - 199 million,40,https://upload.wikimedia.org/wikipedia/en/1/13/ImNotAHumanBeing.png,1990
