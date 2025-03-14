@@ -32,6 +32,10 @@
 	}
 
 	function formatDaysToYears(days) {
+		if (days < 30) {
+			return `${days} day${days !== 1 ? 's' : ''}`;
+		}
+
 		const startDate = new Date(0);
 		const endDate = addYears(startDate, days / 365.25);
 
