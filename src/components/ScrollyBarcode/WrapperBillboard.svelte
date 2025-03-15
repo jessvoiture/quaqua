@@ -30,8 +30,6 @@
 	let highlightedAlbums = [];
 	let isCircle = false;
 
-	console.log(albumsSorted);
-
 	const padding = { left: 128, right: 8, top: 16, bottom: 56 };
 	const stepWidth = 300;
 	const rectWidth = 1;
@@ -82,7 +80,7 @@
 	$: if (currentStep === 0) {
 		isCircle = false;
 		setBarcode();
-	} else if (currentStep === 1) {
+	} else if (currentStep >= 1) {
 		isCircle = true;
 		setSize();
 	}
@@ -157,7 +155,7 @@
 
 <!-- Tooltip -->
 {#if ($hoveredData != undefined) & $isDataHovered}
-	<Tooltip {screenHeight} {screenWidth} showingRelativeRelease={false} {albumsSorted} />
+	<Tooltip {screenHeight} {screenWidth} showingRelativeRelease={true} {albumsSorted} />
 {/if}
 
 <style lang="scss">

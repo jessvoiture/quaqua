@@ -1,12 +1,14 @@
 <script>
 	import { differenceInYears, addYears, differenceInMonths } from 'date-fns';
 	import { hoveredData, mouseX, mouseY } from '../stores';
-	import Histogram from './ScrollyBarcode/Histogram.svelte';
+	// import Histogram from './ScrollyBarcode/Histogram.svelte';
 
 	export let screenWidth;
 	export let screenHeight;
 	export let showingRelativeRelease;
 	export let albumsSorted;
+
+	$: console.log(showingRelativeRelease);
 
 	const imgWidth = 150;
 	const contentWidth = 200;
@@ -89,16 +91,10 @@
 						<div class="tooltip-body-text">
 							{formatDaysToYears($hoveredData.days_since_first_release)} since debut album
 						</div>
-						<!-- <Histogram {albumsSorted} width={tooltipWidthExcludingImage} dataType={'since debut'} /> -->
 
 						<div class="tooltip-body-text">
 							{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
 						</div>
-						<!-- <Histogram
-							{albumsSorted}
-							width={tooltipWidthExcludingImage}
-							dataType={'since last album'}
-						/> -->
 					</div>
 				{/if}
 			{/if}
