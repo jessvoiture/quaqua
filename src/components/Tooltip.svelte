@@ -119,12 +119,6 @@
 				<div class="header-main-title">{$hoveredData.album}</div>
 				<div class="header-artist">by {$hoveredData.artist}</div>
 			</div>
-
-			<!-- {#if isMobile}
-				<button on:click={handleMouseout} class="button-icon" aria-label="Close Popup">
-					<i class="material-icons" aria-hidden="true">close</i>
-				</button>
-			{/if} -->
 		</div>
 
 		<div class="tooltip-body">
