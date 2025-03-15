@@ -41,8 +41,6 @@
 		.range([height, 0]);
 
 	const barWidth = chartWidth / bins.length;
-
-	console.log(bins);
 </script>
 
 <svg {chartWidth} {height}>
