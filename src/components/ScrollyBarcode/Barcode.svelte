@@ -7,10 +7,13 @@
 	export let rectTouchAreaSize;
 	export let tweenedX;
 	export let tweenedY;
+	export let tweenedSizeWidth;
+	export let tweenedSizeHeight;
 	export let colourClass;
-	export let rectHeight;
-	export let rectWidth;
 	export let highlightedAlbums;
+	export let borderRadius;
+	export let isCircle;
+	export let rectHeight;
 
 	const handleMouseover = function (event, d) {
 		hoveredData.set(d);
@@ -61,11 +64,19 @@
 			<rect
 				x={xScale($tweenedX[i])}
 				y={$isDataHovered && $hoveredData?.album == d.album
-					? yScale($tweenedY[i]) - 0.25 * rectHeight
-					: yScale($tweenedY[i])}
-				width={$isDataHovered && $hoveredData?.album == d.album ? rectWidth * 2 : rectWidth}
-				height={$isDataHovered && $hoveredData?.album == d.album ? rectHeight * 1.5 : rectHeight}
+					? yScale($tweenedY[i]) - 0.5 * $tweenedSizeHeight[i]
+					: isCircle
+						? yScale($tweenedY[i]) - 0.5 * $tweenedSizeHeight[i] - 0.5 * rectHeight + rectHeight
+						: yScale($tweenedY[i])}
+				width={$isDataHovered && $hoveredData?.album == d.album
+					? $tweenedSizeWidth[i] * 2
+					: $tweenedSizeWidth[i]}
+				height={$isDataHovered && $hoveredData?.album == d.album
+					? $tweenedSizeHeight[i] * 2
+					: $tweenedSizeHeight[i]}
 				class={highlightedAlbums.some((a) => a.album === d.album) ? 'red' : colourClass}
+				rx={borderRadius}
+				ry={borderRadius}
 				pointer-events="all"
 				role="button"
 				tabindex="0"
@@ -88,10 +99,6 @@
 </g>
 
 <style lang="scss">
-	.full-opacity {
-		opacity: 1;
-	}
-
 	.white {
 		fill: $color-white;
 	}

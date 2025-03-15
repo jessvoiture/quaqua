@@ -135,7 +135,9 @@ export function flattenData(data) {
 			first_album_release_date: album.first_album_release_date,
 			days_since_first_release: album.days_since_first_release,
 			days_since_last_release: album.days_since_last_release,
-			notes: album.notes
+			notes: album.notes,
+			wks_on_chart: album.wks_on_chart,
+			wks_on_chart_norm: album.wks_on_chart_norm
 		}))
 	);
 

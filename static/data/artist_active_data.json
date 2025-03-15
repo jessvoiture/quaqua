@@ -1596,7 +1596,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Dangerously_In_Love_Album%282003%29.png/220px-Dangerously_In_Love_Album%282003%29.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "B'Day",
@@ -1609,7 +1610,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/c/c4/Beyonc%C3%A9_-_B%27Day.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "I Am... Sasha Fierce",
@@ -1622,7 +1624,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/I_Am..._Sasha_Fierce.png/220px-I_Am..._Sasha_Fierce.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "4",
@@ -1635,7 +1638,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Beyonc%C3%A9_-_4.png/220px-Beyonc%C3%A9_-_4.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Beyoncé",
@@ -1648,7 +1652,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Beyonc%C3%A9_-_Beyonc%C3%A9.svg/220px-Beyonc%C3%A9_-_Beyonc%C3%A9.svg.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Lemonade",
@@ -1661,7 +1666,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png/220px-Beyonce_-_Lemonade_%28Official_Album_Cover%29.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Everything is Love",
@@ -1674,7 +1680,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png/220px-The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Lion King: The Gift",
@@ -1687,7 +1694,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/The_Lion_King_The_Gift.png/220px-The_Lion_King_The_Gift.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Renaissance",
@@ -1700,7 +1708,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/Beyonc%C3%A9_-_Renaissance.png/220px-Beyonc%C3%A9_-_Renaissance.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Cowboy Carter",
@@ -1713,7 +1722,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Beyonc%C3%A9_-_Cowboy_Carter.png/220px-Beyonc%C3%A9_-_Cowboy_Carter.png",
         "artist_decade_debut": 2000,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       }
     ]
   },
@@ -6279,7 +6289,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Reasonable_Doubt_New.jpg/220px-Reasonable_Doubt_New.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "In My Lifetime, Vol. 1",
@@ -6292,7 +6303,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Jayz_inmylifetime.jpg/220px-Jayz_inmylifetime.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Vol. 2... Hard Knock Life",
@@ -6305,7 +6317,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Jay-z-vol-2-hard-knock-life.jpg/220px-Jay-z-vol-2-hard-knock-life.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Vol. 3... Life and Times of S. Carter",
@@ -6318,7 +6331,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Def_Jam_Recordings.svg/140px-Def_Jam_Recordings.svg.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Dynasty: Roc La Familia",
@@ -6331,7 +6345,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Jay-z-dynasty-roc-la-familia-2000.jpg/220px-Jay-z-dynasty-roc-la-familia-2000.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Blueprint",
@@ -6344,7 +6359,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/The_Blueprint.png/220px-The_Blueprint.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Best of Both Worlds",
@@ -6357,7 +6373,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Jay-Z%26R.KellyBestofBothWorlds.jpg/220px-Jay-Z%26R.KellyBestofBothWorlds.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Blueprint 2: The Gift & The Curse",
@@ -6370,7 +6387,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Jay-z-blueprint-2-gift-curse.jpg/220px-Jay-z-blueprint-2-gift-curse.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Black Album",
@@ -6383,7 +6401,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Jay-Z_-_The_Black_Album.png/220px-Jay-Z_-_The_Black_Album.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Unfinished Business",
@@ -6396,7 +6415,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Unfinished_BusinessJay-Z%26R.Kelly.jpg/220px-Unfinished_BusinessJay-Z%26R.Kelly.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Collision Course",
@@ -6409,7 +6429,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Collision_Course_CD-DVD_cover.jpg/220px-Collision_Course_CD-DVD_cover.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Kingdom Come",
@@ -6422,7 +6443,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Def_Jam_Recordings.svg/140px-Def_Jam_Recordings.svg.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "American Gangster",
@@ -6435,7 +6457,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Jay-Z_-_American_Gangster.png/220px-Jay-Z_-_American_Gangster.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "The Blueprint 3",
@@ -6448,7 +6471,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Jay-Z_-_The_Blueprint_3.jpg/220px-Jay-Z_-_The_Blueprint_3.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Watch the Throne",
@@ -6461,7 +6485,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/e/ee/Watch_The_Throne.jpg",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Magna Carta... Holy Grail",
@@ -6474,7 +6499,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Magna_Carta_Holy_Grail_cover.png/220px-Magna_Carta_Holy_Grail_cover.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "4:44",
@@ -6487,7 +6513,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/4-44_album_cover.svg/220px-4-44_album_cover.svg.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       },
       {
         "album": "Everything Is Love",
@@ -6500,7 +6527,8 @@
         "album_image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png/220px-The_Carters_-_Everything_Is_Love_%28Official_Album_Cover%29.png",
         "artist_decade_debut": 1990,
         "wks_on_chart": 0,
-        "isBestAlbum": true
+        "isBestAlbum": true,
+        "wks_on_chart_norm": 0
       }
     ]
   },

@@ -2,7 +2,7 @@
 	import { tweened } from 'svelte/motion';
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
-	import { steps } from '../../lib/steps.js';
+	import { steps } from '../../lib/barcodeSteps.js';
 	import { highlightArtists } from '../../lib/highlightArtists.js';
 
 	import Tooltip from '../Tooltip.svelte';
@@ -21,6 +21,8 @@
 	let tweenedY;
 	let tweenedX;
 	let tweenedBarWidth;
+	let tweenedSizeHeight;
+	let tweenedSizeWidth;
 	let tweenedNames;
 	let height;
 	let width;
@@ -68,6 +70,8 @@
 	$: tweenedY = tweened(albumsSorted.map((d) => d.indexByDebutDate));
 	$: tweenedBarWidth = tweened(artistsSorted.map(() => 0));
 	$: tweenedNames = tweened(artistsSorted.map((d) => d.indexByDebutDate));
+	$: tweenedSizeHeight = tweened(albumsSorted.map((d) => rectHeight));
+	$: tweenedSizeWidth = tweened(albumsSorted.map((d) => rectWidth));
 
 	// Define scales
 	$: xScale = scaleLinear().domain(xExtent).range([0, innerWidth]);
@@ -186,10 +190,13 @@
 						{rectTouchAreaSize}
 						{tweenedX}
 						{tweenedY}
-						{colourClass}
 						{rectHeight}
-						{rectWidth}
+						{tweenedSizeHeight}
+						{tweenedSizeWidth}
+						{colourClass}
 						{highlightedAlbums}
+						borderRadius="0"
+						isCircle={false}
 					/>
 				</g>
 			</g>

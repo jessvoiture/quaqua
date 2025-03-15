@@ -6,6 +6,7 @@
 	import Scatterplot from '../components/Scatterplot.svelte';
 	import Hero from '../components/Hero.svelte';
 	import SpotifyPlayer from '../components/SpotifyPlayer.svelte';
+	import WrapperBillboard from '../components/ScrollyBarcode/WrapperBillboard.svelte';
 
 	export let data;
 
@@ -34,9 +35,16 @@
 <div class="content">
 	<Hero {screenWidth} {screenHeight} {y} />
 	<SpotifyPlayer {screenWidth} />
+	<Paragraph hasHeader={false} content={['Hook em']} />
 	<Paragraph hasHeader={true} header="Years Active" content={['Intelligent Insight']} />
 	<Wrapper {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
-	<!-- <Triangles {screenWidth} {screenHeight} {artists} />
-	<Scatterplot {screenWidth} {screenHeight} data={flattened} /> -->
-	<Paragraph />
+	<Paragraph
+		hasHeader={true}
+		header="BB"
+		content={['You best believe these albums are not created equally']}
+	/>
+	<WrapperBillboard {screenWidth} {screenHeight} {albumsSorted} {artistsSorted} />
+	<!-- <Paragraph hasHeader={true} header="Gaps" content={['Gaps']} />
+	<Triangles {screenWidth} {screenHeight} {artists} /> -->
+	<Scatterplot {screenWidth} {screenHeight} data={flattened} />
 </div>
