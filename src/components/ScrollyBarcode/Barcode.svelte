@@ -20,6 +20,7 @@
 		mouseX.set(event.clientX);
 		mouseY.set(event.clientY);
 		isDataHovered.set(true);
+		console.log('clicked');
 	};
 
 	const handleFocus = function (event, d) {
@@ -33,6 +34,7 @@
 	};
 
 	const handleMouseout = function () {
+		console.log('off');
 		hoveredData.set(undefined);
 		isDataHovered.set(false);
 	};

@@ -8,28 +8,70 @@
 	export let showingRelativeRelease;
 	export let albumsSorted;
 
-	$: console.log(showingRelativeRelease);
+	$: isMobile = screenWidth < 800;
+	let imgWidth = 150;
+	let contentWidth = 250;
+	let padding = 12;
 
-	const imgWidth = 150;
-	const contentWidth = 200;
-	const padding = 12;
+	let tooltipWidthExcludingImage = contentWidth + 2 * padding;
+	let tooltipWidth = imgWidth + tooltipWidthExcludingImage;
+	let tooltipHeight = 150;
+	let tooltipWidthMobile = 250;
+	let tooltipHeightMobile = 400;
 
-	const tooltipWidthExcludingImage = contentWidth + 2 * padding;
-	const tooltipWidth = imgWidth + tooltipWidthExcludingImage;
-	const tooltipHeight = 150;
+	$: tooltipWidthExcludingImage = contentWidth + 2 * padding;
+	$: tooltipWidth = isMobile ? 0.9 * screenWidth : imgWidth + tooltipWidthExcludingImage;
+	$: tooltipHeight = isMobile ? 0.9 * screenHeight : 150;
+	$: padding = isMobile ? 24 : 12;
 
 	let adjustedMouseX;
 	let adjustedMouseY;
 
-	if ($mouseX + tooltipWidth + 50 < screenWidth) {
+	// small screens <400: position center horizontally
+	$: if (screenWidth <= 400) {
+		adjustedMouseX = (screenWidth - tooltipWidthMobile) / 2;
+		// smallish screens 400 - 800: position based on mouse position
+		// see if tooltip will fit to the right of mouse pos based on screen width
+	} else if (
+		(screenWidth <= 800) &
+		(screenWidth > 400) &
+		($mouseX + tooltipWidthMobile + 50 < screenWidth) // within screen
+	) {
+		adjustedMouseX = $mouseX + 10;
+		// translate tooltip by tooltipwidth if it will be off screen so it is to the left of mouse pos
+	} else if (
+		(screenWidth <= 800) &
+		(screenWidth > 400) &
+		($mouseX + tooltipWidthMobile + 50 > screenWidth) // extends off screen
+	) {
+		adjustedMouseX = $mouseX - tooltipWidthMobile + 10;
+		// big screens > 800: position based on mouse position
+		// check if extends off screen
+	} else if ($mouseX + tooltipWidth + 50 < screenWidth) {
 		adjustedMouseX = $mouseX + 10;
 	} else {
 		adjustedMouseX = $mouseX - tooltipWidth - 50;
 	}
 
-	if ($mouseY + tooltipHeight + 150 < screenHeight) {
+	// do the same for y position
+	$: if (screenWidth < 400) {
+		adjustedMouseY = (screenHeight - tooltipHeightMobile) / 2;
+	} else if (
+		(screenWidth < 800) &
+		(screenWidth > 400) &
+		($mouseY + tooltipHeightMobile + 75 > screenHeight) // extends off screen
+	) {
+		adjustedMouseY = $mouseY - tooltipHeightMobile / 1.25;
+	} else if (
+		(screenWidth < 800) &
+		(screenWidth > 400) &
+		($mouseY + tooltipHeightMobile + 50 < screenHeight) // on screen
+	) {
+		adjustedMouseY = $mouseY + 10;
+	} else if ($mouseY + tooltipHeight + 50 < screenHeight) {
 		adjustedMouseY = $mouseY + 10;
 	} else {
+		// off screen
 		adjustedMouseY = $mouseY - tooltipHeight;
 	}
 
@@ -73,8 +115,16 @@
 
 	<div class="tooltip-content">
 		<div class="header">
-			<div class="header-main-title">{$hoveredData.album}</div>
-			<div class="header-artist">by {$hoveredData.artist}</div>
+			<div class="titles">
+				<div class="header-main-title">{$hoveredData.album}</div>
+				<div class="header-artist">by {$hoveredData.artist}</div>
+			</div>
+
+			<!-- {#if isMobile}
+				<button on:click={handleMouseout} class="button-icon" aria-label="Close Popup">
+					<i class="material-icons" aria-hidden="true">close</i>
+				</button>
+			{/if} -->
 		</div>
 
 		<div class="tooltip-body">
@@ -106,21 +156,17 @@
 	.tooltip {
 		position: fixed;
 		background-color: $color-white-white;
-		border-radius: 0 8px 8px 0;
 		padding: 0px;
 		display: flex;
 		justify-content: start;
 		align-items: flex-start;
 		box-sizing: border-box;
 		border: 1px solid $color-dark_grey;
+		z-index: 1000 !important;
 	}
 
 	img {
-		max-width: 200px;
-		width: auto;
-		height: 100%;
 		display: block;
-		// object-fit: cover;
 	}
 
 	.tooltip-content {
@@ -129,7 +175,7 @@
 		gap: 24px;
 		margin: 0;
 		padding: 12px;
-		width: 200px;
+		width: 250px;
 		font-size: $type-size-14;
 	}
 
@@ -169,17 +215,39 @@
 		gap: 2px;
 	}
 
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
 	/* Minimum width */
-	@media (min-width: 400px) {
+	@media (min-width: 800px) {
 		.tooltip {
 			flex-direction: row;
+			border-radius: 0 8px 8px 0;
+		}
+
+		img {
+			max-width: 250px;
+			width: auto;
+			height: 100%;
 		}
 	}
 
 	/* Maximum width */
-	@media (max-width: 400px) {
+	@media (max-width: 800px) {
 		.tooltip {
 			flex-direction: column;
+			height: auto;
+			width: 250px;
+			pointer-events: none;
+			border-radius: 0 0px 8px 8px;
+		}
+
+		img {
+			width: 250px;
+			height: auto;
 		}
 	}
 </style>
