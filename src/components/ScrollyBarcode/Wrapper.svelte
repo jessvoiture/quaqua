@@ -219,7 +219,13 @@
 
 <!-- Tooltip -->
 {#if ($hoveredData != undefined) & $isDataHovered}
-	<Tooltip {screenHeight} {screenWidth} {showingRelativeRelease} {albumsSorted} />
+	<Tooltip
+		{screenHeight}
+		{screenWidth}
+		{showingRelativeRelease}
+		{albumsSorted}
+		showingBillboardWeeks={false}
+	/>
 {/if}
 
 <style lang="scss">

@@ -73,7 +73,7 @@
 	$: yScale = scaleLinear().domain(yExtent).range([0, innerHeight]);
 	$: sizeScale = scaleLinear()
 		.domain(sizeExtent)
-		.range([1, rectHeight * 1]);
+		.range([2, rectHeight * 1.5]);
 
 	// Update the positions according to the current step
 	// 0: show barcode
@@ -155,7 +155,13 @@
 
 <!-- Tooltip -->
 {#if ($hoveredData != undefined) & $isDataHovered}
-	<Tooltip {screenHeight} {screenWidth} showingRelativeRelease={true} {albumsSorted} />
+	<Tooltip
+		{screenHeight}
+		{screenWidth}
+		showingRelativeRelease={true}
+		{albumsSorted}
+		showingBillboardWeeks={isCircle}
+	/>
 {/if}
 
 <style lang="scss">

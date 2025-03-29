@@ -6,6 +6,7 @@
 	export let screenWidth;
 	export let screenHeight;
 	export let showingRelativeRelease;
+	export let showingBillboardWeeks;
 	export let albumsSorted;
 
 	$: isMobile = screenWidth < 800;
@@ -65,10 +66,10 @@
 	} else if (
 		(screenWidth < 800) &
 		(screenWidth > 400) &
-		($mouseY + tooltipHeightMobile + 50 < screenHeight) // on screen
+		($mouseY + tooltipHeightMobile + 75 < screenHeight) // on screen
 	) {
 		adjustedMouseY = $mouseY + 10;
-	} else if ($mouseY + tooltipHeight + 50 < screenHeight) {
+	} else if ($mouseY + tooltipHeight + 150 < screenHeight) {
 		adjustedMouseY = $mouseY + 10;
 	} else {
 		// off screen
@@ -126,6 +127,14 @@
 				<div class="tooltip-body-date">
 					Debut album, released {formatDate($hoveredData.album_release_date)}
 				</div>
+
+				{#if showingBillboardWeeks}
+					<div class="tooltip-calcs">
+						<div class="tooltip-body-text">
+							{$hoveredData.wks_on_chart} weeks on Billboard Hot 100
+						</div>
+					</div>
+				{/if}
 			{:else}
 				<div class="tooltip-body-date">
 					Released {formatDate($hoveredData.album_release_date)}
@@ -139,6 +148,12 @@
 						<div class="tooltip-body-text">
 							{formatDaysToYears($hoveredData.days_since_last_release)} since previous album
 						</div>
+
+						{#if showingBillboardWeeks}
+							<div class="tooltip-body-text">
+								{$hoveredData.wks_on_chart} weeks on Billboard Hot 100
+							</div>
+						{/if}
 					</div>
 				{/if}
 			{/if}
@@ -180,7 +195,7 @@
 	}
 
 	.header-main-title {
-		font-size: $type-size-24;
+		font-size: $type-size-18;
 		color: $color-black;
 		text-transform: capitalize;
 		font-weight: bold;

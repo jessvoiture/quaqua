@@ -79,6 +79,7 @@
 				class={highlightedAlbums.some((a) => a.album === d.album) ? 'red' : colourClass}
 				rx={borderRadius}
 				ry={borderRadius}
+				opacity={isCircle ? 0.8 : 1}
 				pointer-events="all"
 				role="button"
 				tabindex="0"

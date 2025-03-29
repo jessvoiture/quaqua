@@ -12,6 +12,10 @@ article {
 	background-color: $color-black;
 }
 
+p {
+	margin: 0;
+}
+
 h4 {
 	@include font-h4;
 }
@@ -41,7 +45,7 @@ text {
 	@include dark-grey-background-blur;
 	@include body-text;
 	border-radius: 4px;
-	padding: 0.5rem 1rem;
+	padding: 1rem 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
