@@ -10,9 +10,11 @@ export const steps = [
 	// 4 highlight the beatles only
 	'<p><span class="highlighted-step-text">The Beatles</span> (right at the bottom of the screen!) are the only artist whose career spans less than 10 years, with just 7 years and 1 month between their first and last albums.</p>',
 	// 5 highlight barbs, rs, and elton
-	'<p>At the other end of the spectrum, are legacy acts like <span class="highlighted-step-text">Barbra Streisand</span>, <span class="highlighted-step-text">The Rolling Stones</span>, and <span class="highlighted-step-text">Elton John</span> who have somewhat steadily released albums over time.</p>',
+	'<p>At the other end of the spectrum, are legacy acts like <span class="highlighted-step-text">The Rolling Stones</span> and <span class="highlighted-step-text">Elton John</span> who have somewhat steadily released albums over time.</p>',
+	// '<p>At the other end of the spectrum, are legacy acts like <span class="highlighted-step-text">Barbra Streisand</span>, <span class="highlighted-step-text">The Rolling Stones</span>, and <span class="highlighted-step-text">Elton John</span> who have somewhat steadily released albums over time.</p>',
 	// 6 highlight abba, pf, and eags
-	`<p>Some artists released albums after long hiatuses. <span class="highlighted-step-text">ABBA</span> returned with an album after 40 years, <span class="highlighted-step-text">Pink Floyd</span> after 20 years, and the <span class="highlighted-step-text">Eagles</span> after 28 years.</p>`,
+	`<p>Some artists released albums after long hiatuses. <span class="highlighted-step-text">Pink Floyd</span> returned with an album after 20 years, and the <span class="highlighted-step-text">Eagles</span> after 28 years.</p>`,
+	// `<p>Some artists released albums after long hiatuses. <span class="highlighted-step-text">ABBA</span> returned with an album after 40 years, <span class="highlighted-step-text">Pink Floyd</span> after 20 years, and the <span class="highlighted-step-text">Eagles</span> after 28 years.</p>`,
 	// 7 highlight artists with debut > 2000
-	'<p>11 of the 40 best selling artists <span class="highlighted-step-text">debuted after 2000</span> and thus their careers have been relatively shorter.</p>'
+	'<p>8 of the 30 best selling artists <span class="highlighted-step-text">debuted after 2000</span> and thus their careers have been relatively shorter.</p>'
 ];

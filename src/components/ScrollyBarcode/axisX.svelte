@@ -109,6 +109,6 @@
 	}
 
 	text {
-		font-size: $type-size-10;
+		font-size: $type-size-12;
 	}
 </style>

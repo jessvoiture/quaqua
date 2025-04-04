@@ -46,7 +46,7 @@
 
 			<text
 				x="8"
-				y={yScale($tweenedNames[i]) + rectHeight / 1.1}
+				y={yScale($tweenedNames[i]) + rectHeight / 1.3}
 				height={rectHeight}
 				class="artist-label"
 				aria-label={artistsSorted[i]}>{a.artist}</text
